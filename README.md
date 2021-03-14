@@ -6,5 +6,5 @@
 
 [02_GeneralGuidance_Overfitting](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/02_GeneralGuidance.html)
 
-[02_SmallGradient_Local Minimum And Saddle Point](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/02_Local%20Minimum%20And%20Saddle%20Point.html)
+[02_SmallGradient_Local Minimum And Saddle Point](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/02_SmallGradient_Local%20Minimum%20And%20Saddle%20Point.html)
 
