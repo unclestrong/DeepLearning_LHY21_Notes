@@ -10,7 +10,7 @@
 
 ​	测试集,**测试集就是你只有x没有y**,其实在之后每一个作业,看起来都是非常类似的格式
 
-![image-20210311203322900](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311203322900.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311203322900.png" alt="image-20210311203322900" style="zoom:67%;" />
 
 
 
@@ -19,7 +19,7 @@
 - 作业四是**语者辨识**,语者辨识要做的事情是,这个x也是一段声音讯号,ŷ现在不是phoneme,ŷ是现在是哪一个人在说话,这样的系统,现在其实非常的有用,如果你打电话去银行的客服,现在都有自动的语者辨认系统,它会听说现在打电话进来的人,是不是客户本人,就少了客服人员问你身份验证的时间
 - 作业五是做**机器翻译**,x就是某一个语言,比如说,这是我唯一会的一句日文,痛みを知れ,它的ŷ就是另外一句话。
 
-![image-20210311203956745](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311203956745.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311203956745.png" alt="image-20210311203956745" style="zoom: 67%;" />
 
 ​	训练集就要拿来训练我们的Model,训练Model的过程上週已经讲过了,训练的过程就是**三个步骤**
 
@@ -35,7 +35,7 @@
 
 ​	以下就是如何让你做得更好的攻略,它适用於前期所有的作业,这个攻略是怎麼走的呢?
 
-![image-20210311205104719](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205104719.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205104719.png" alt="image-20210311205104719" style="zoom:67%;" />
 
 ​	从最上面开始走起,第一个是你今天如果你觉得,你在Kaggle上的结果不满意的话,第一件事情你要做的事情是,**检查你的training data的loss**
 
@@ -47,7 +47,7 @@
 
 ​	model的bias这件事情,我们在上週已经跟大家讲过了,所谓model bias的意思是说,假设你的model太过简单。
 
-![image-20210311205956634](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205956634.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205956634.png" alt="image-20210311205956634" style="zoom:67%;" />
 
 ​	举例来说,我们现在写了一个有未知parameter的function,这个未知的parameter,我们可以代各种不同的数字,你代θ¹ 得到一个function $f_{θ^1}(x)$,我们把那个function用这个,一个点来表示,θ² 得到另一个function $f_{θ^1}(x)$,你把所有的function集合起来,得到一个function的set.
 
@@ -57,13 +57,13 @@
 
 ​	这个状况就是你想要在**大海裡面捞针**,这个针指的是一个loss低的function,结果**针根本就不在海裡**,白忙一场,你怎麼捞都捞不出针,因為针根本就不在你的,这个function set裡面,不在你的这个大海裡面,所以怎麼办？
 
-![image-20210311212242288](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311212242288.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311212242288.png" alt="image-20210311212242288" style="zoom:67%;" />
 
 ​	这个时候**重新设计一个model,给你的model更大的弹性**,举例来说,你可以增加你输入的features,我们上週说,本来我们输入的features,只有前一天的资讯,假设我们要预测接下来的这个,观看人数的话,我们用前一天的资讯,不够多,那用56天前的资讯,那model的弹性就比较大了
 
 ​	你也可以用Deep Learning,增加更多的弹性,所以如果你觉得,你的model的弹性不够大,那你可以增加更多features,可以设一个更大的model,可以用deep learning,来增加model的弹性,这是第一个可以的解法。
 
-![image-20210311205104719](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205104719.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205104719.png" alt="image-20210311205104719" style="zoom:67%;" />
 
 ​	但是并不是training的时候,loss大就代表一定是model bias,你可能会遇到另外一个问题,这个问题是什麼,这个问题是**optimization做得不好**,什麼意思呢？
 
@@ -73,7 +73,7 @@
 
 ​	举例来说 我们上週也讲过说,你可能会卡在==local minima==的地方,你没有办法找到一个,真的可以让loss很低的参数,如果用图具象化的方式来表示,就像这个样子
 
-​	![image-20210311213108040](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311213108040.png)
+​	<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311213108040.png" alt="image-20210311213108040" style="zoom:67%;" />
 
 ​	蓝色部分是你的model可以表示的函式所形成的集合,你可以把θ 代入不同的数值,形成不同的function,把所有的function通通集合在一起,得到这个蓝色的set,这个蓝色的set裡面,确实包含了一些function,这些function它的loss是低的。
 
@@ -94,7 +94,7 @@
 
 ​	一个建议判断的方法,就是你可以**透过比较不同的模型,来得知说,你的model现在到底够不够大**,怎麼说呢
 
-![image-20210311214054168](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311214054168.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311214054168.png" alt="image-20210311214054168" style="zoom:67%;" />
 
 ​	我们这边举一个例子,这一个实验是从residual network,那篇paper裡面节录出来的,我们把paper链接：http://arxiv.org/abs/1512.03385
 
@@ -137,7 +137,7 @@
 
 ​	接下来还缺一个深的model,如果你发现你深的model,跟浅的model比起来,深的model明明弹性比较大,但loss却没有办法比浅的model压得更低,那就代表说你的optimization有问题,你的gradient descent不给力,那你要有一些其它的方法,来把optimization这件事情做得更好
 
-![image-20210313203557412](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313203557412.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313203557412.png" alt="image-20210313203557412" style="zoom:67%;" />
 
 ​	举例来说,我们上次看到的这个,观看人数预测的例子,我们说在训练集上面,2017年到2020年的资料是训练集,一层的network,它的loss是0.28k,2层就降到0.18k,3层就降到0.14k,4层就降到0.10k。
 
@@ -147,11 +147,11 @@
 
 ​	那如果optimization做得不好的话,怎麼办呢,这个我们下一节课,就会告诉大家要怎麼办,你现在就知道怎麼判断,现在如果你的training的loss大,到底是model bias还是optimization,如果model bias 那就把model变大,如果是optimization失败了,那就看等一下的课程怎麼解这个问题。
 
-​	![image-20210313203829786](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313203829786.png)
+​	<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313203829786.png" alt="image-20210313203829786" style="zoom:67%;" />
 
 ​	假设你现在经过一番的努力,你已经可以让你的,training data的loss变小了,那接下来你就可以来看,testing data loss,如果testing data loss也小,有比这个strong baseline还要小就结束了,没什麼好做的就结束了。
 
-![image-20210313204055684](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313204055684.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313204055684.png" alt="image-20210313204055684" style="zoom:67%;" />
 
 ​	那但是如果你觉得还不够小呢,==如果training data上面的loss小,testing data上的loss大,那你可能就是真的遇到overfitting的问题==
 
@@ -163,7 +163,7 @@
 
 ​	為什麼会有overfitting这样的状况呢,為什麼有可能training的loss小,testing的loss大呢,这边就举一个极端的例子来告诉你说,為什麼会发生这样子的状况
 
-​	![image-20210313204504732](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313204504732.png)
+​	<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313204504732.png" alt="image-20210313204504732" style="zoom:67%;" />
 
 ​	这是我们的训练集,假设根据这些训练集,某一个很废的,machine learning的方法,它找出了一个一无是处的function
 
@@ -177,15 +177,15 @@
 
 ​	举例来说,假设我们输入的feature叫做x,我们输出的level叫做y,那x跟y都是一维的
 
-![image-20210313205555809](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205555809.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205555809.png" alt="image-20210313205555809" style="zoom: 50%;" />
 
 ​	x跟y之间的关係,是这个二次的曲线,这个曲线我们刻意用虚线来表示,因為我们通常没有办法,直接观察到这条曲线,我们真正可以观察到的是什麼,我们真正可以观察到的,是我们的训练集,训练集 你可以想像成,就是从这条曲线上面,随机sample出来的几个点
 
-![image-20210313205653097](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205653097.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205653097.png" alt="image-20210313205653097" style="zoom:50%;" />
 
 ​	今天的模型 它的能力非常的强,它的flexibility很大,它的弹性很大的话,你只给它这三个点,它会知道说,在这三个点上面我们要让loss低,所以今天你的model,它的这个曲线会通过这三个点,但是其它没有训练集做為限制的地方,它就会有freestyle,因為它的flexibility很大,它弹性很大,所以你的model,可以变成各式各样的function,你没有给它资料做為训练,它就会有freestyle，可以產生各式各样奇怪的结果。
 
-![image-20210313205918762](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205918762.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205918762.png" alt="image-20210313205918762" style="zoom:50%;" />
 
 ​	这个时候,如果你再丢进你的testing data,你的testing data 和training的data,当然不会一模一样,它们可能是从同一个,distribution sample出来的,testing data是橙色的这些点,训练data是蓝色的这些点
 
@@ -197,7 +197,7 @@
 
 1. 第一个方向是,也许这个方向往往是最有效的方向,是**增加你的训练集**
 
-![image-20210313210215733](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210215733.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210215733.png" alt="image-20210313210215733" style="zoom:67%;" />
 
 ​	今天假设你自己,想要做一个application,你发现有overfitting的问题,其实我觉得,最简单解决overfitting的方法,就是增加你的训练集
 
@@ -205,7 +205,7 @@
 
 ​	那你可以做什麼呢,你可以做**data augmentation**，这个方法并不算是使用了额外的资料。
 
-![image-20210313210406236](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210406236.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210406236.png" alt="image-20210313210406236" style="zoom:67%;" />
 
 ​	Data augmentation就是,你用一些你对於这个问题的理解,自己创造出新的资料。
 
@@ -219,13 +219,13 @@
 
 2. 另外一个解法就是**不要让你的模型,有那麼大的弹性**,给它一些限制,
 
-![image-20210313210826241](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210826241.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210826241.png" alt="image-20210313210826241" style="zoom:67%;" />
 
 ​	举例来说 假设我们直接限制说,现在我们的model,我们somehow猜测出 知道说,x跟y背后的关係,其实就是一条二次曲线,只是我们不明确的知道这二次曲线,裡面的每一个参数长什麼样
 
 ​	那你说你怎麼会猜测出这样子的结果,你怎麼会知道说,**要用多constrain的model才会好呢**,那这就取决於你对这个问题的理解,因為这种model是你自己设计的,到底model要多constrain多flexible,结果才会好,那这个要问你自己,那要看这个设计出不同的模型,你就会得出不同的结果
 
-![image-20210313211712938](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313211712938.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313211712938.png" alt="image-20210313211712938" style="zoom:67%;" />
 
 ​	那现在假设我们已经知道说,模型就是二次曲线,那你就会给你,你就会在选择function的时候,有很大的限制,因為二次曲线要嘛就是这样子,来来去去就是那几个形状而已,所以当我们的训练集有限的时候,因為我们来来去去,只能够选那几个function
 
@@ -235,7 +235,7 @@
 
 ​	有哪些方法可以给model製造限制呢,举例来说,
 
-![image-20210313211849093](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313211849093.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313211849093.png" alt="image-20210313211849093" style="zoom:67%;" />
 
 - 给它**比较少的参数**,如果是deep learning的话,就给它比较少的神经元的数目,本来每层一千个神经元,改成一百个神经元之类的,或者是你可以让model共用参数,你可以让一些参数有一样的数值,那这个部分如果你没有很清楚的话,也没有关係,我们之后在讲CNN的时候,会讲到这个部分,所以这边先前情 先预告一下,就是我们之前讲的network的架构,叫做==fully-connected network==,那fully-connected network,其实是一个比较有弹性的架构,而==CNN是一个比较有限制的架构==,就说你可能会说,CNN不是比较厉害吗,大家都说做影像就是要CNN,比较厉害的model,难道它比较没有弹性吗,没错,它是一种比较没有弹性的model,它厉害的地方就是,它是针对影像的特性,来限制模型的弹性,所以你今天fully-connected的network,可以找出来的function所形成的集合,其实是比较大的,CNN这个model所找出来的function,它形成的集合其实是比较小的,其实包含在fully-connected的,network裡面的,但是就是因為CNN给了,比较大的限制,所以CNN在影像上,反而会做得比较好,那这个之后都还会再提到,
 - 另外一个就是用**比较少的features**,那刚才助教已经示范过,本来给三天的资料,改成用给两天的资料,其实结果就好了一些,那这个是一个招数
@@ -248,7 +248,7 @@
 
 ​	假设我们现在给模型更大的限制说,我们假设我们的模型,一定是Linear的Model,一定是写成y=a+bx,那你的model它能够產生的function,就一定是一条直线
 
-![image-20210313212322570](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313212322570.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313212322570.png" alt="image-20210313212322570" style="zoom:67%;" />
 
 ​	今天给三个点,没有任何一条直线,可以同时通过这三个点,但是你只能找到一条直线,这条直线跟这些点比起来,它们的距离是比较近的,但是你没有办法找到任何一条直线,同时通过这三个点,这个时候你的模型的限制就太大了,你在测试集上就不会得到好的结果
 
@@ -258,7 +258,7 @@
 
 ​	所以你就会发现说,这边**產生了一个矛盾的状况**,今天你让你的模型的复杂的程度,或这样让你的模型的弹性越来越大,但是什麼叫做复杂的程度,什麼叫做弹性,在今天这堂课裡面,我们其实都没有给明确的定义,只给你一个概念上的叙述,那在下下週的课程裡面,你会真的认识到,什麼叫做一个模型很复杂,什麼叫做一个模型有弹性,怎麼真的衡量一个模型的弹性,复杂的程度有多大,那今天我们先用直观的来了解
 
-![image-20210313212632577](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313212632577.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313212632577.png" alt="image-20210313212632577" style="zoom:50%;" />
 
 ​	所谓比较复杂就是,**它可以包含的function比较多,它的参数比较多,这个就是一个比较复杂的model**
 
@@ -268,7 +268,7 @@
 
 ​	一个很直觉的 你很有可能,没有人告诉你要怎麼做的话,你可能很直觉就会这麼做的,做法就是说,这个kaggle不是立刻上传,就可以知道答案了吗
 
-![image-20210313213154441](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213154441.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213154441.png" alt="image-20210313213154441" style="zoom:67%;" />
 
 ​	所以假设我们有三个模型,它们的复杂的程度不太一样,我不知道要选哪一个模型才会刚刚好,在测试集上得到最好的结果,因為你选太复杂的就overfitting,选太简单的有model bias的问题,那怎麼选一个不偏不倚的,不知道 那怎麼办
 
@@ -276,7 +276,7 @@
 
 ​	但是并不建议你这麼做,為什麼不建议你这麼做呢
 
-![image-20210313213301109](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213301109.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213301109.png" alt="image-20210313213301109" style="zoom: 67%;" />
 
 ​	我们再举一个极端的例子,我们再把刚才那个极端的例子拿出来,假设现在有一群model,这一群model不知道為什麼都非常废,它们每一个model產生出来的,都是一无是处的function,我们有一到一兆个model,这一到一兆个model不知道為什麼,learn出来的function,都是一无是处的function
 
@@ -292,7 +292,7 @@
 
 ​	我们这个testing set,分成public的set跟private的set,你在看分数的时候 你只看得到public的分数，private的分数要deadline以后才知道,但假设你在挑模型的时候,你完全看你在public set上面的,也就leaderboard上的分数,来选择你的模型的话,你可能就会这个样子：你在public的leaderboard上面排前十,但是deadline一结束,你就心态就崩了这样,你就掉到三百名之外,而且我们这修课的人这麼多,你搞不好会掉到一千名之外,也说不定。
 
-![image-20210313213904472](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213904472.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213904472.png" alt="image-20210313213904472" style="zoom:67%;" />
 
 ​	
 
@@ -310,11 +310,11 @@
 
 ​	那到底要怎麼做才选择model,才是比较合理的呢,那界定的方法是这个样子的,那助教程式裡面也都帮大家做好了,你要**把Training的资料分成两半,一部分叫作Training Set,一部分是Validation Set**
 
-![image-20210313215102410](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215102410.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215102410.png" alt="image-20210313215102410" style="zoom:50%;" />
 
 ​	刚才助教程式裡面已经看到说,有90%的资料放在Training Set裡面,有10%的资料,会被拿来做Validation Set,你在Training Set上训练出来的模型,**你在Validation Set上面,去衡量它们的分数,你根据Validation Set上面的分数,去挑选结果**,再把这个结果上传到Kaggle上面,去看看你得到的public的分数,那因為你在挑分数的时候,是用Validation Set来挑你的model,所以你的public的Testing Set的分数,就可以反应你的,private Testing Set的分数,就比较不会得到说,在public上面结果很好,但是在private上面结果很差,这样子的状况
 
-![image-20210313215406332](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215406332.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215406332.png" alt="image-20210313215406332" style="zoom:50%;" />
 
 ​	当我知道说,其实你看到public的结果以后,你就会去想要调它,你看到你现在弄了一堆模型,然后用Validation Set检查一下,找了一个模型放到public set上以后,发现结果不好,你其实不太可能不根据这一个结果,去调整你的模型,但是假设这一个route做太多次,你根据你的,public Testing Set上的结果,去调整你的model太多次,你就又有可能fit在,你的public Testing Set上面,然后在private Testing Set上面,得到差的结果,不过还好反正我们有限制上传的次数,所以这个route,你也没有办法走太多次,可以避免你太过fit在,public的Testing Set上面的结果。
 
@@ -328,7 +328,7 @@
 
 ​	如果你有这个担心的话,那你可以用N-fold Cross Validation,
 
-![image-20210313215636180](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215636180.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215636180.png" alt="image-20210313215636180" style="zoom:50%;" />
 
 ​	N-fold Cross Validation就是你先**把你的训练集切成N等份**,在这个例子裡面我们切成三等份,切完以后,你拿其中**一份当作Validation Set**,**另外两份当Training Set**,然后这件事情你要**重复三次**
 
@@ -344,19 +344,19 @@
 
 那接下来也许你要问的一个问题是,上週结束的时候,不是讲到预测2/26,也就是上週五的观看人数吗,到底结果做得怎麼样
 
-![image-20210313220115627](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220115627.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220115627.png" alt="image-20210313220115627" style="zoom:50%;" />
 
 那这个就是我们要做的结果,上週比较多人选了三层的network,所以我们就把三层的network,拿来测试一下,以下是测试的结果,我们就没有再调参数了,大家决定用三层的就是下好离手了,就直接用上去了
 
-![image-20210313220138585](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220138585.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220138585.png" alt="image-20210313220138585" style="zoom:50%;" />
 
 ​	得到的结果是这个样子了,这个图上 这个横轴就是从,2021年的1月1号开始 一直往下,然后红色的线是真实的数字,蓝色的线是预测的结果,2/26在这边 这个是今年2021年,观看人数最高的一天了,那机器的预测怎样呢,哇 非常的惨 差距非常的大,差距有2.58k这麼多,感谢大家 為了让这个模型不準,上週五花了很多力气,去点了这个video,所以这一天是,今年观看人数最多的一天,那你可能开始想说,那别的模型怎麼样呢,其实我也跑了一层二层跟四层的看看,所有的模型 都会惨掉,两层跟三层的错误率都是2点多k,其实四层跟一层比较好,都是1.8k左右,但是这四个模型不约而同的,觉得2/26应该是个低点,但实际上2/26是一个公值,那模型其实会觉得它是一个低点,也不能怪它,因為根据过去的资料,礼拜五就是没有人要学机器学习,礼拜五晚上大家都出去玩了对不对,礼拜五的观看人数是最少了,但是2/26出现了反常的状况,好 那这个就不能怪模型了,那我觉得出现这种状况,应该算是另外一种错误的形式,这种错误的形式,我们这边叫作mismatch。
 
-![image-20210313220235078](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220235078.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220235078.png" alt="image-20210313220235078" style="zoom:50%;" />
 
 ​	那也有人会说,mismatch也算是一种Overfitting,这样也可以,这都只是名词定义的问题,那我这边想要表达的事情是,**mismatch它的原因跟overfitting,其实不一样**,一般的overfitting,你可以用搜集更多的资料来克服,但是**mismatch意思是说,你今天的训练集跟测试集,它们的分佈是不一样的**
 
-![image-20210313220434830](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220434830.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220434830.png" alt="image-20210313220434830" style="zoom:67%;" />
 
 ​	在训练集跟测试集,分佈是不一样的时候,你训练集再增加,其实也没有帮助了,那其实在多数的作业裡面,我们不会遇到这种mismatch的问题,我们都有把题目设计好了,所以资料跟测试集它的分佈差不多
 
@@ -364,6 +364,6 @@
 
 ​	因為2020年的资料跟2021年的资料,它们的背后的分佈其实都是不一样,所以你拿2020年的资料来训练,在2021年的作业一的资料上,你根本就预测不準,所以后来助教是用了别的方式,来分割训练集跟测试集,好 所以我们多数的作业,都不会有这种mismatch的问题,那除了作业十一。
 
-![image-20210313220457880](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220457880.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220457880.png" alt="image-20210313220457880" style="zoom:67%;" />
 
 ​	因為作业十一就是,针对mismatch的问题来设计的,作业十一也是一个影像分类的问题,这是它的训练集,看起来蛮正常的,但它测试集就是长这样子了,所以你知道这个时候,这个时候增加资料哪有什麼用呢,增加资料,你也没有办法让你的模型做得更好,所以这种问题要怎麼解决,那犹待作业十一的时候再讲,好 那你可能会问说 我怎麼知道,现在到底是不是mismatch呢,那我觉得知不知道是mismatch,那就要看你对这个资料本身的理解了,你可能要对你的训练集跟测试集,的產生方式有一些理解,你才能判断说,它是不是遇到了mismatch的状况,好 那这个就是我们作业的攻略,

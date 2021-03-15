@@ -1,0 +1,553 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>03_General Guidance</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ :root {--mermaid-font-zoom:1.4875em ;} 
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="general-guidance--overfit" class="md-header-anchor"></a><span>General Guidance : overfit</span></h1><h2><a name="framework-of-ml" class="md-header-anchor"></a><span>Framework of ML</span></h2><p><span>	</span><span>我们已经看了作业一了,其实之后好几个作业,它看起来的样子,基本上都是大同小异</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311202919509.png" referrerpolicy="no-referrer" alt="image-20210311202919509"></p><p><span>	</span><span>就是你会有一堆训练的资料,这些</span><strong><span>训练集</span></strong><span>裡面,会包含了</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.329ex" height="1.41ex" viewBox="0 -504.6 572 607.1" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E1-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E1-MJMATHI-78" x="0" y="0"></use></g></svg></span><script type="math/tex">x</script><span>跟</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.154ex" height="1.877ex" viewBox="0 -504.6 497 808.1" role="img" focusable="false" style="vertical-align: -0.705ex;"><defs><path stroke-width="0" id="E2-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E2-MJMATHI-79" x="0" y="0"></use></g></svg></span><script type="math/tex">y</script><span>的hat,</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.262ex" height="2.227ex" viewBox="0 -755.9 974.1 958.9" role="img" focusable="false" style="vertical-align: -0.472ex;"><defs><path stroke-width="0" id="E3-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E3-MJMATHI-78" x="0" y="0"></use><g transform="translate(572,0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">¹</text></g></g></svg></span><script type="math/tex">x¹</script><span> 和跟它对应的</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.068ex" height="2.344ex" viewBox="0 -755.9 890.5 1009.2" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">ŷ</text><g transform="translate(488,0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">¹</text></g></g></svg></span><script type="math/tex">ŷ¹</script><span>,</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.35ex" height="2.227ex" viewBox="0 -755.9 1011.8 958.9" role="img" focusable="false" style="vertical-align: -0.472ex;"><defs><path stroke-width="0" id="E5-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E5-MJMATHI-78" x="0" y="0"></use><g transform="translate(572,0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">²</text></g></g></svg></span><script type="math/tex">x²</script><span> 跟它对应的</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.156ex" height="2.344ex" viewBox="0 -755.9 928.2 1009.2" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">ŷ</text><g transform="translate(488,0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">²</text></g></g></svg></span><script type="math/tex">ŷ²</script><span>,一直到</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.131ex" height="2.227ex" viewBox="0 -755.9 917.5 958.9" role="img" focusable="false" style="vertical-align: -0.472ex;"><defs><path stroke-width="0" id="E7-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E7-MJMATHI-78" x="0" y="0"></use><g transform="translate(572,0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">ⁿ</text></g></g></svg></span><script type="math/tex">xⁿ</script><span> 还有它对应的</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.937ex" height="2.344ex" viewBox="0 -755.9 834 1009.2" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">ŷ</text><g transform="translate(488,0)"><text font-family="STIXGeneral, 'PingFang SC', serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">ⁿ</text></g></g></svg></span><script type="math/tex">ŷⁿ</script></p><p><span>	</span><span>测试集,</span><strong><span>测试集就是你只有x没有y</span></strong><span>,其实在之后每一个作业,看起来都是非常类似的格式</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311203322900.png" alt="image-20210311203322900" style="zoom:67%;" /></p><p>&nbsp;</p><ul><li><span>作业二,其实是做</span><strong><span>语音辨识</span></strong><span>,我们的x就是非常小的一段声音讯号,其实这个不是真正完整的语音辨识系统,它是语音辨识系统的一个阉割版,ŷ是要去预测判断,这一小段声音讯号,它对应到哪一个phoneme。你不知道phoneme是什麼没有关係,你就把它想成是音标就可以了</span></li><li><span>作业三叫做</span><strong><span>图像识别</span></strong><span>,这个时候我们的x是一张图片,ŷ是机器要判断说这张图片裡面,有什麼样的东西</span></li><li><span>作业四是</span><strong><span>语者辨识</span></strong><span>,语者辨识要做的事情是,这个x也是一段声音讯号,ŷ现在不是phoneme,ŷ是现在是哪一个人在说话,这样的系统,现在其实非常的有用,如果你打电话去银行的客服,现在都有自动的语者辨认系统,它会听说现在打电话进来的人,是不是客户本人,就少了客服人员问你身份验证的时间</span></li><li><span>作业五是做</span><strong><span>机器翻译</span></strong><span>,x就是某一个语言,比如说,这是我唯一会的一句日文,痛みを知れ,它的ŷ就是另外一句话。</span></li></ul><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311203956745.png" alt="image-20210311203956745" style="zoom: 67%;" /></p><p><span>	</span><span>训练集就要拿来训练我们的Model,训练Model的过程上週已经讲过了,训练的过程就是</span><strong><span>三个步骤</span></strong></p><ul><li><span>第一步,你要先写出一个有未知数的function,这个未知数,以后我们都用</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.089ex" height="2.11ex" viewBox="0 -806.1 469 908.7" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E17-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-3B8" x="0" y="0"></use></g></svg></span><script type="math/tex">θ</script><span>来代表,一个Model裡面所有的未知函数,所以</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.276ex" height="2.577ex" viewBox="0 -806.1 2271.6 1109.7" role="img" focusable="false" style="vertical-align: -0.705ex;"><defs><path stroke-width="0" id="E16-MJMATHI-66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path><path stroke-width="0" id="E16-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E16-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E16-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="0" id="E16-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E16-MJMATHI-66" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E16-MJMATHI-3B8" x="692" y="-218"></use><use xlink:href="#E16-MJMAIN-28" x="921" y="0"></use><use xlink:href="#E16-MJMATHI-78" x="1310" y="0"></use><use xlink:href="#E16-MJMAIN-29" x="1882" y="0"></use></g></svg></span><script type="math/tex">f_θ(x)</script><span>的意思就是说,我现在有一个function叫f(x),它裡面有一些未知的参数,这些未知的参数表示成</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.089ex" height="2.11ex" viewBox="0 -806.1 469 908.7" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E17-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-3B8" x="0" y="0"></use></g></svg></span><script type="math/tex">θ</script><span>,它的input叫做x,这个input叫做feature</span></li><li><span>第二步，你要定一个东西叫做loss,loss是一个function,这个loss的输入就是一组参数,去判断说这一组参数是好还是不好</span></li><li><span>第三步，你要解一个,Optimization的problem,你要去找一个θ,这个θ 可以让loss的值越小越好,可以让loss的值 最小的那个</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.089ex" height="2.11ex" viewBox="0 -806.1 469 908.7" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E17-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-3B8" x="0" y="0"></use></g></svg></span><script type="math/tex">θ</script><span>,我们叫做</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.143ex" height="2.227ex" viewBox="0 -856.4 922.6 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E21-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E21-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E21-MJMATHI-3B8" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E21-MJMAIN-2217" x="663" y="610"></use></g></svg></span><script type="math/tex">θ^*</script></li></ul><p><span>	</span><span>有了</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.143ex" height="2.227ex" viewBox="0 -856.4 922.6 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E21-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E21-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E21-MJMATHI-3B8" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E21-MJMAIN-2217" x="663" y="610"></use></g></svg></span><script type="math/tex">θ^*</script><span>以后,那你就把它拿来用在测试集上,也就是你把</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.143ex" height="2.227ex" viewBox="0 -856.4 922.6 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E21-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E21-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E21-MJMATHI-3B8" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E21-MJMAIN-2217" x="663" y="610"></use></g></svg></span><script type="math/tex">θ^*</script><span>带入这些未知的参数,本来</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.276ex" height="2.577ex" viewBox="0 -806.1 2271.6 1109.7" role="img" focusable="false" style="vertical-align: -0.705ex;"><defs><path stroke-width="0" id="E16-MJMATHI-66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path><path stroke-width="0" id="E16-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E16-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E16-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="0" id="E16-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E16-MJMATHI-66" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E16-MJMATHI-3B8" x="692" y="-218"></use><use xlink:href="#E16-MJMAIN-28" x="921" y="0"></use><use xlink:href="#E16-MJMATHI-78" x="1310" y="0"></use><use xlink:href="#E16-MJMAIN-29" x="1882" y="0"></use></g></svg></span><script type="math/tex">f_θ(x)</script><span>裡面有一些未知的参数,现在这个</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.089ex" height="2.11ex" viewBox="0 -806.1 469 908.7" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E17-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-3B8" x="0" y="0"></use></g></svg></span><script type="math/tex">θ</script><span> 用</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.143ex" height="2.227ex" viewBox="0 -856.4 922.6 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E21-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E21-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E21-MJMATHI-3B8" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E21-MJMAIN-2217" x="663" y="610"></use></g></svg></span><script type="math/tex">θ^*</script><span>来取代,它的输入就是你现在的测试集,输出的结果 你就把它存起来,然后上传到Kaggle就结束了。</span></p><p><span>	</span><span>接下来你就会遇到一个问题,直接执行助教的sample code,往往只能够给你simple baseline的结果而已,如果你想要做得更好,那应该要怎麼办,</span></p><h2><a name="general-guide" class="md-header-anchor"></a><span>General Guide</span></h2><p><span>	</span><span>以下就是如何让你做得更好的攻略,它适用於前期所有的作业,这个攻略是怎麼走的呢?</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205104719.png" alt="image-20210311205104719" style="zoom:67%;" /></p><p><span>	</span><span>从最上面开始走起,第一个是你今天如果你觉得,你在Kaggle上的结果不满意的话,第一件事情你要做的事情是,</span><strong><span>检查你的training data的loss</span></strong></p><p><span>	</span><span>有人说&quot;我在意的不是应该是,testing data的loss吗,因為Kaggle上面的结果,呈现的是testing data的结果&quot;</span></p><p><span>	</span><span>但是你要先检查你的training data,看看你的model在training data上面,有没有学起来,再去看testing的结果,如果你发现,你的</span><strong><span>training data的loss很大</span></strong><span>,显然它</span><strong><span>在训练集上面也没有训练好</span></strong><span>,接下来你要分析一下,在训练集上面没有学好,是什麼样的原因,这边有两个可能,第一个可能是model的bias</span></p><h3><a name="model-bias" class="md-header-anchor"></a><span>Model bias</span></h3><p><span>	</span><span>model的bias这件事情,我们在上週已经跟大家讲过了,所谓model bias的意思是说,假设你的model太过简单。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205956634.png" alt="image-20210311205956634" style="zoom:67%;" /></p><p><span>	</span><span>举例来说,我们现在写了一个有未知parameter的function,这个未知的parameter,我们可以代各种不同的数字,你代θ¹ 得到一个function </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.021ex" height="2.694ex" viewBox="0 -806.1 2592.3 1160" role="img" focusable="false" style="vertical-align: -0.822ex;"><defs><path stroke-width="0" id="E20-MJMATHI-66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path><path stroke-width="0" id="E20-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E20-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E20-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E20-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="0" id="E20-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E20-MJMATHI-66" x="0" y="0"></use><g transform="translate(490,-295)"><use transform="scale(0.707)" xlink:href="#E20-MJMATHI-3B8" x="0" y="0"></use><use transform="scale(0.5)" xlink:href="#E20-MJMAIN-31" x="663" y="610"></use></g><use xlink:href="#E20-MJMAIN-28" x="1242" y="0"></use><use xlink:href="#E20-MJMATHI-78" x="1631" y="0"></use><use xlink:href="#E20-MJMAIN-29" x="2203" y="0"></use></g></svg></span><script type="math/tex">f_{θ^1}(x)</script><span>,我们把那个function用这个,一个点来表示,θ² 得到另一个function </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.021ex" height="2.694ex" viewBox="0 -806.1 2592.3 1160" role="img" focusable="false" style="vertical-align: -0.822ex;"><defs><path stroke-width="0" id="E20-MJMATHI-66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path><path stroke-width="0" id="E20-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E20-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E20-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E20-MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="0" id="E20-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E20-MJMATHI-66" x="0" y="0"></use><g transform="translate(490,-295)"><use transform="scale(0.707)" xlink:href="#E20-MJMATHI-3B8" x="0" y="0"></use><use transform="scale(0.5)" xlink:href="#E20-MJMAIN-31" x="663" y="610"></use></g><use xlink:href="#E20-MJMAIN-28" x="1242" y="0"></use><use xlink:href="#E20-MJMATHI-78" x="1631" y="0"></use><use xlink:href="#E20-MJMAIN-29" x="2203" y="0"></use></g></svg></span><script type="math/tex">f_{θ^1}(x)</script><span>,你把所有的function集合起来,得到一个function的set.</span></p><p><span>	</span><span>但是这个function的set太小了,这个function的set裡面,没有包含任何一个function,可以让我们的loss变低,即可以让loss变低的function,不在你的model可以描述的范围内。</span></p><p><span>	</span><span>在这个情况下,就算你找出了一个θ*,它是这些蓝色的function裡面,最好的那一个,也无济於事了,那个loss还是不够低。</span></p><p><span>	</span><span>这个状况就是你想要在</span><strong><span>大海裡面捞针</span></strong><span>,这个针指的是一个loss低的function,结果</span><strong><span>针根本就不在海裡</span></strong><span>,白忙一场,你怎麼捞都捞不出针,因為针根本就不在你的,这个function set裡面,不在你的这个大海裡面,所以怎麼办？</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311212242288.png" alt="image-20210311212242288" style="zoom:67%;" /></p><p><span>	</span><span>这个时候</span><strong><span>重新设计一个model,给你的model更大的弹性</span></strong><span>,举例来说,你可以增加你输入的features,我们上週说,本来我们输入的features,只有前一天的资讯,假设我们要预测接下来的这个,观看人数的话,我们用前一天的资讯,不够多,那用56天前的资讯,那model的弹性就比较大了</span></p><p><span>	</span><span>你也可以用Deep Learning,增加更多的弹性,所以如果你觉得,你的model的弹性不够大,那你可以增加更多features,可以设一个更大的model,可以用deep learning,来增加model的弹性,这是第一个可以的解法。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311205104719.png" alt="image-20210311205104719" style="zoom:67%;" /></p><p><span>	</span><span>但是并不是training的时候,loss大就代表一定是model bias,你可能会遇到另外一个问题,这个问题是什麼,这个问题是</span><strong><span>optimization做得不好</span></strong><span>,什麼意思呢？</span></p><h3><a name="optimization-issue" class="md-header-anchor"></a><span>Optimization Issue</span></h3><p><span>	</span><span>我们知道说,我们今天用的optimization,在这门课裡面,我们其实都只会用到gradient descent,这种optimization的方法,这种optimization的方法很多的问题。</span></p><p><span>	</span><span>举例来说 我们上週也讲过说,你可能会卡在</span><mark><span>local minima</span></mark><span>的地方,你没有办法找到一个,真的可以让loss很低的参数,如果用图具象化的方式来表示,就像这个样子</span></p><p><span>	</span><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311213108040.png" alt="image-20210311213108040" style="zoom:67%;" /></p><p><span>	</span><span>蓝色部分是你的model可以表示的函式所形成的集合,你可以把θ 代入不同的数值,形成不同的function,把所有的function通通集合在一起,得到这个蓝色的set,这个蓝色的set裡面,确实包含了一些function,这些function它的loss是低的。</span></p><p><span>	</span><span>但问题是</span><strong><span>gradient descent这一个演算法,没办法帮我们找出,这个loss低的function</span></strong><span>,gradient descent是解一个optimization的problem,找到θ* 然后就结束了</span></p><p><span>	</span><span>但是这个</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.143ex" height="2.227ex" viewBox="0 -856.4 922.6 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E21-MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="0" id="E21-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E21-MJMATHI-3B8" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E21-MJMAIN-2217" x="663" y="610"></use></g></svg></span><script type="math/tex">θ^*</script><span> 它给我的loss不够低,这一个model裡面,存在著某一个function,它的loss是够低的,gradient descent,没有给我们这一个function</span></p><p><span>	</span><span>这就好像是说 我们想</span><strong><span>大海捞针,针确实在海裡,但是我们却没有办法把针捞起来</span></strong><span>,这边问题就来了</span></p><p><span>	</span><mark><span>training data的loss不够低的时候,到底是model bias,还是optimization的问题呢</span></mark></p><ul><li><span>找不到一个loss低的function,到底是因為我们的model的弹性不够,我们的海裡面没有针</span></li><li><span>还是说,我们的model的弹性已经够了,只是optimization gradient descent不给力,它没办法把针捞出来</span></li></ul><p><span>	</span><span>到底是哪一个呢,到底我们的model已经够大了,还是它不够大,怎麼判断这件事呢</span></p><h4><a name="gaining-the-insights-from-comparison" class="md-header-anchor"></a><span>Gaining the insights from comparison </span></h4><p><span>	</span><span>一个建议判断的方法,就是你可以</span><strong><span>透过比较不同的模型,来得知说,你的model现在到底够不够大</span></strong><span>,怎麼说呢</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210311214054168.png" alt="image-20210311214054168" style="zoom:67%;" /></p><p><span>	</span><span>我们这边举一个例子,这一个实验是从residual network,那篇paper裡面节录出来的,我们把paper链接：</span><a href='http://arxiv.org/abs/1512.03385' target='_blank' class='url'>http://arxiv.org/abs/1512.03385</a></p><p><span>	</span><span>这篇paper一开头就跟你讲一个故事,它说 我想测2个networks</span></p><ul><li><strong><span>一个network有20层</span></strong></li><li><strong><span>一个network有56层</span></strong></li></ul><p><span>	</span><span>我们把它们测试在测试集上,这个</span><strong><span>横轴指的是training的过程</span></strong><span>,就是你参数update的过程,随著参数的update,当然你的loss会越来越低,但是结果</span><strong><span>20层的loss比较低,56层的loss还比较高</span></strong></p><p><span>	</span><span>这个residual network是比较早期的paper,2015年的paper,如果你现在大学生的话,那个时候你都还是高中生而已,所以那个时候大家对Deep Learning,了解还没有那麼的透彻,大家对deep learning,有各种奇怪的误解,很多人看到这张图都会说,这个代表overfitting,告诉你deep learning不work,56层太深了 不work,根本就不需要那麼深</span></p><p><span>	</span><span>那个时候大家也不是每个人都觉得deep learning是好的,那时候还有很多,对deep learning的质疑,所以看到这个实验有人就会说,最深没有比较好,所以这个叫做overfitting,但是这个是overfitting吗</span></p><p><span>	</span><strong><span>这个不是overfitting</span></strong><span>,等一下会告诉你overfitting是什麼,</span><strong><span>并不是所有的结果不好,都叫做overfitting</span></strong></p><p><span>	</span><span>你要</span><strong><span>检查一下训练集上面的解释</span></strong><span>,你检查训练集的结果发现说,现在20层的network,跟56层的network比起来,在训练集上,20层的network loss其实是比较低的,56层的network loss是比较高的</span></p><p><span>	</span><strong><span>这代表56层的network,它的optimization没有做好</span></strong><span>,它的optimization不给力</span></p><p><span>	</span><span>你可能问说,你怎麼知道是56层的optimization不给力,搞不好是model bias,搞不好是56层的network,它的model弹性还不够大,它要156层才好,56层也许弹性还不够大,但是你比较56层跟20层,20层的loss都已经可以做到这样了,56层的弹性一定比20层更大对不对</span></p><p><span>	</span><span>如果今天</span><strong><span>56层的network要做到20层的network可以做到的事情</span></strong><span>,对它来说是轻而易举的</span></p><p><span>	</span><span>它</span><strong><span>只要前20层的参数,跟这个20层的network一样</span></strong><span>,剩下36层就什麼事都不做,identity copy前一层的输出就好了,56层的network一定可以做到20层的network可以做到的事情,所以20层的network已经都可以走到这麼底的loss了,56层的network,它比20层的network弹性还要更大,所以没有道理</span></p><p><span>	</span><span>所以56层的network,如果你optimization成功的话,它应该要比20层的network,可以得到更低的loss,但结果在训练集上面没有,这个不是overfitting,这个也不是model bias,因為56层network弹性是够的,这个问题是你的</span><strong><span>optimization不给力,optimization做得不够好</span></strong></p><p>&nbsp;</p><h4><a name="start-from-shallower-networks-or-other-models-which-are-easier-to-train" class="md-header-anchor"></a><span>Start from shallower networks (or other models), which are easier to train. </span></h4><p><span>	</span><span>所以刚才那个例子就告诉我们,你怎麼知道你的optimization有没有做好,这边给大家的建议是</span></p><p><span>	</span><strong><span>看到一个你从来没有做过的问题,也许你可以先跑一些比较小的,比较浅的network,或甚至用一些,不是deep learning的方法</span></strong><span>,比如说 linear model,比如说support vector machine,support vector machine不知道是什麼也没有关係,它们可能是比较容易做Optimize的,它们比较不会有optimization失败的问题</span></p><p><span>	</span><span>也就是这些model它会竭尽全力的,在它们的能力范围之内,找出一组最好的参数,它们比较不会有失败的问题,所以你可以先train一些,比较浅的model,或者是一些比较简单的model,先知道 先有个概念说,这些简单的model,到底可以得到什麼样的loss</span></p><h4><a name="if-deeper-networks-do-not-obtain-smaller-loss-on-training-data--then-there-is-optimization-issue" class="md-header-anchor"></a><span>If deeper networks do not obtain smaller loss on training data,  then there is optimization issue. </span></h4><p><span>	</span><span>接下来还缺一个深的model,如果你发现你深的model,跟浅的model比起来,深的model明明弹性比较大,但loss却没有办法比浅的model压得更低,那就代表说你的optimization有问题,你的gradient descent不给力,那你要有一些其它的方法,来把optimization这件事情做得更好</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313203557412.png" alt="image-20210313203557412" style="zoom:67%;" /></p><p><span>	</span><span>举例来说,我们上次看到的这个,观看人数预测的例子,我们说在训练集上面,2017年到2020年的资料是训练集,一层的network,它的loss是0.28k,2层就降到0.18k,3层就降到0.14k,4层就降到0.10k。</span></p><p><span>	</span><span>但是 我测5层的时候结果变成0.34k,这是什麼问题</span></p><p><span>	</span><span>我们现在loss很大，这显然不是model bias的问题,因為4层都可以做到0.10k了,5层应该可以做得更低,这个是optimization的problem,这个是optimization的时候做得不好,才造成这样子的问题。</span></p><p><span>	</span><span>那如果optimization做得不好的话,怎麼办呢,这个我们下一节课,就会告诉大家要怎麼办,你现在就知道怎麼判断,现在如果你的training的loss大,到底是model bias还是optimization,如果model bias 那就把model变大,如果是optimization失败了,那就看等一下的课程怎麼解这个问题。</span></p><p><span>	</span><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313203829786.png" alt="image-20210313203829786" style="zoom:67%;" /></p><p><span>	</span><span>假设你现在经过一番的努力,你已经可以让你的,training data的loss变小了,那接下来你就可以来看,testing data loss,如果testing data loss也小,有比这个strong baseline还要小就结束了,没什麼好做的就结束了。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313204055684.png" alt="image-20210313204055684" style="zoom:67%;" /></p><p><span>	</span><span>那但是如果你觉得还不够小呢,</span><mark><span>如果training data上面的loss小,testing data上的loss大,那你可能就是真的遇到overfitting的问题</span></mark></p><p><span>	</span><span>你要注意 是training的loss小,testing的loss大 才叫做overfitting,很多同学每次一看到结果不好,在testing上的结果不好,就说这个是overfitting,不一定是overfitting。</span></p><p><span>	</span><span>你拿一个结果来问我说,老师这个结果要怎麼做得更好的时候,我第一个问题就会问你说,你在training data上的loss,到底做得怎麼样,我发现十个同学有八个同学都说,要看training data的loss吗,我没有把training data loss记下来,你要把training data loss记下来,先确定说你的optimization没有问题,你的model够大了,然后接下来,才看看是不是testing的问题,</span><strong><span>如果是training的loss小,testing的loss大,这个有可能是overfitting</span></strong></p><h3><a name="overfitting" class="md-header-anchor"></a><span>Overfitting </span></h3><p><span>	</span><span>為什麼会有overfitting这样的状况呢,為什麼有可能training的loss小,testing的loss大呢,这边就举一个极端的例子来告诉你说,為什麼会发生这样子的状况</span></p><p><span>	</span><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313204504732.png" alt="image-20210313204504732" style="zoom:67%;" /></p><p><span>	</span><span>这是我们的训练集,假设根据这些训练集,某一个很废的,machine learning的方法,它找出了一个一无是处的function</span></p><p><span>	</span><span>这个一无是处的function说,</span><strong><span>如果今天x当做输入的时候,我们就去比对这个x,有没有出现在训练集裡面,如果x有出现在训练集裡面,就把它对应的ŷ当做输出,如果x没有出现在训练集裡面,就输出一个随机的值</span></strong></p><p><span>	</span><span>那你可以想像这个function啥事也没有干,它是一个一无是处的function,但虽然它是一个一无是处的function,它</span><strong><span>在training的data上，它的loss可是0呢</span></strong></p><p><span>	</span><span>你把training的data,通通丢进这个function裡面,它的输出跟你的训练集的level,是一模一样的,所以在training data上面,这个一无是处的function,它的loss可是0呢,可是在testing data上面,它的loss会变得很大,因為</span><strong><span>它其实什麼都没有预测</span></strong><span>,这是一个比较极端的例子,在一般的状况下,也有可能发生类似的事情。</span></p><p>&nbsp;</p><p><span>	</span><span>举例来说,假设我们输入的feature叫做x,我们输出的level叫做y,那x跟y都是一维的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205555809.png" alt="image-20210313205555809" style="zoom: 50%;" /></p><p><span>	</span><span>x跟y之间的关係,是这个二次的曲线,这个曲线我们刻意用虚线来表示,因為我们通常没有办法,直接观察到这条曲线,我们真正可以观察到的是什麼,我们真正可以观察到的,是我们的训练集,训练集 你可以想像成,就是从这条曲线上面,随机sample出来的几个点</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205653097.png" alt="image-20210313205653097" style="zoom:50%;" /></p><p><span>	</span><span>今天的模型 它的能力非常的强,它的flexibility很大,它的弹性很大的话,你只给它这三个点,它会知道说,在这三个点上面我们要让loss低,所以今天你的model,它的这个曲线会通过这三个点,但是其它没有训练集做為限制的地方,它就会有freestyle,因為它的flexibility很大,它弹性很大,所以你的model,可以变成各式各样的function,你没有给它资料做為训练,它就会有freestyle，可以產生各式各样奇怪的结果。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313205918762.png" alt="image-20210313205918762" style="zoom:50%;" /></p><p><span>	</span><span>这个时候,如果你再丢进你的testing data,你的testing data 和training的data,当然不会一模一样,它们可能是从同一个,distribution sample出来的,testing data是橙色的这些点,训练data是蓝色的这些点</span></p><p><span>	</span><span>用蓝色的这些点,找出一个function以后,你测试在橘色的这些点上,不一定会好,</span><strong><span>如果你的model它的自由度很大的话,它可以產生非常奇怪的曲线,导致训练集上的结果好,但是测试集上的loss很大</span></strong><span>,那至於更详细的背后的数学原理,為什麼这个比较有弹性的model,它就比较会,overfitting背后的数学原理,我们留待下下週</span></p><p>&nbsp;</p><p><span>	</span><span>那怎麼解决刚才那个,overfitting的问题呢,有两个可能的方向</span></p><ol start='' ><li><span>第一个方向是,也许这个方向往往是最有效的方向,是</span><strong><span>增加你的训练集</span></strong></li></ol><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210215733.png" alt="image-20210313210215733" style="zoom:67%;" /></p><p><span>	</span><span>今天假设你自己,想要做一个application,你发现有overfitting的问题,其实我觉得,最简单解决overfitting的方法,就是增加你的训练集</span></p><p><span>	</span><span>所以今天如果训练集,蓝色的点变多了,那虽然你的model它的弹性可能很大,但是因為你这边的点非常非常的多,它就可以限制住,它看起来的形状还是会很像,產生这些资料背后的二次曲线,但是你在作业裡面,你是不能够使用这一招的,因為我们并不希望大家浪费时间,来收集资料</span></p><p><span>	</span><span>那你可以做什麼呢,你可以做</span><strong><span>data augmentation</span></strong><span>，这个方法并不算是使用了额外的资料。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210406236.png" alt="image-20210313210406236" style="zoom:67%;" /></p><p><span>	</span><span>Data augmentation就是,你用一些你对於这个问题的理解,自己创造出新的资料。</span></p><p><span>	</span><span>举例来说在做影像辨识的时候,非常常做的一个招式是,假设你的训练集裡面有某一张图片,把它左右翻转,或者是把它其中一块截出来放大等等,你做左右翻转 你的资料就变成两倍,那这个就是data augmentation</span></p><p><span>	</span><span>但是你要注意一下data augmentation,不能够随便乱做,这个augment 要augment得有道理,举例来说在影像辨识裡面,你就</span><strong><span>很少看到有人把影像上下颠倒</span></strong><span>当作augmentation,因為这些图片都是合理的图片,你把一张照片左右翻转,并不会影响到裡面是什麼样的东西,但你把它颠倒 那就很奇怪了,这可能不是一个训练集裡面,可能不是真实世界会出现的影像</span></p><p><span>	</span><span>那如果你给机器看这种,奇怪的影像的话,它可能就会学到奇怪的东西,所以</span><strong><span>data augmentation,要根据你对资料的特性,对你现在要处理的问题的理解,来选择合适的,data augmentation的方式</span></strong><span>,好 那这边是增加资料的部分</span></p><p>&nbsp;</p><ol start='2' ><li><span>另外一个解法就是</span><strong><span>不要让你的模型,有那麼大的弹性</span></strong><span>,给它一些限制,</span></li></ol><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313210826241.png" alt="image-20210313210826241" style="zoom:67%;" /></p><p><span>	</span><span>举例来说 假设我们直接限制说,现在我们的model,我们somehow猜测出 知道说,x跟y背后的关係,其实就是一条二次曲线,只是我们不明确的知道这二次曲线,裡面的每一个参数长什麼样</span></p><p><span>	</span><span>那你说你怎麼会猜测出这样子的结果,你怎麼会知道说,</span><strong><span>要用多constrain的model才会好呢</span></strong><span>,那这就取决於你对这个问题的理解,因為这种model是你自己设计的,到底model要多constrain多flexible,结果才会好,那这个要问你自己,那要看这个设计出不同的模型,你就会得出不同的结果</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313211712938.png" alt="image-20210313211712938" style="zoom:67%;" /></p><p><span>	</span><span>那现在假设我们已经知道说,模型就是二次曲线,那你就会给你,你就会在选择function的时候,有很大的限制,因為二次曲线要嘛就是这样子,来来去去就是那几个形状而已,所以当我们的训练集有限的时候,因為我们来来去去,只能够选那几个function</span></p><p><span>	</span><span>所以你可能,虽然说只给了三个点,但是因為我们能选择的function有限,你可能就会正好选到,跟真正的distribution,比较接近的function,然后在测试集上得到比较好的结果。</span></p><p><span>	</span><span>所以这是第二个方法,解决overfitting的问题,你要给你的model一些限制,最好你的model正好,跟背后產生资料的过程,你的process是一样的,那你可能就会,你就有机会得到好的结果</span></p><p><span>	</span><span>有哪些方法可以给model製造限制呢,举例来说,</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313211849093.png" alt="image-20210313211849093" style="zoom:67%;" /></p><ul><li><span>给它</span><strong><span>比较少的参数</span></strong><span>,如果是deep learning的话,就给它比较少的神经元的数目,本来每层一千个神经元,改成一百个神经元之类的,或者是你可以让model共用参数,你可以让一些参数有一样的数值,那这个部分如果你没有很清楚的话,也没有关係,我们之后在讲CNN的时候,会讲到这个部分,所以这边先前情 先预告一下,就是我们之前讲的network的架构,叫做</span><mark><span>fully-connected network</span></mark><span>,那fully-connected network,其实是一个比较有弹性的架构,而</span><mark><span>CNN是一个比较有限制的架构</span></mark><span>,就说你可能会说,CNN不是比较厉害吗,大家都说做影像就是要CNN,比较厉害的model,难道它比较没有弹性吗,没错,它是一种比较没有弹性的model,它厉害的地方就是,它是针对影像的特性,来限制模型的弹性,所以你今天fully-connected的network,可以找出来的function所形成的集合,其实是比较大的,CNN这个model所找出来的function,它形成的集合其实是比较小的,其实包含在fully-connected的,network裡面的,但是就是因為CNN给了,比较大的限制,所以CNN在影像上,反而会做得比较好,那这个之后都还会再提到,</span></li><li><span>另外一个就是用</span><strong><span>比较少的features</span></strong><span>,那刚才助教已经示范过,本来给三天的资料,改成用给两天的资料,其实结果就好了一些,那这个是一个招数</span></li><li><span>还有一个招数叫做</span><strong><span>Early stopping</span></strong><span>,Early stopping,Regularization跟Dropout,都是之后课程还会讲到的东西,那这三件事情在作业一的程式裡面,这个Early stopping其实是有的,助教有写在它的code裡面,所以不知道这是什麼也没有关係,反正你直接执行sample code,裡面就有了,Regularization,助教留下了一个空格给大家填,那你不知道什麼是regularization,没有关係,反正你可以过得了middle的baseline,那如果你想做得更好,也许你可以先自己survey一下,regularization是什麼,看有没有办法自己写</span></li><li><strong><span>Dropout</span></strong><span>,这是另外一个在Deep Learning裡面,常用来限制模型的方法,那这个之后还会再提到</span></li></ul><p>&nbsp;</p><p><span>	</span><strong><span>但是我们也不要给太多的限制</span></strong><span>,為什麼不能给模型太多的限制呢</span></p><p><span>	</span><span>假设我们现在给模型更大的限制说,我们假设我们的模型,一定是Linear的Model,一定是写成y=a+bx,那你的model它能够產生的function,就一定是一条直线</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313212322570.png" alt="image-20210313212322570" style="zoom:67%;" /></p><p><span>	</span><span>今天给三个点,没有任何一条直线,可以同时通过这三个点,但是你只能找到一条直线,这条直线跟这些点比起来,它们的距离是比较近的,但是你没有办法找到任何一条直线,同时通过这三个点,这个时候你的模型的限制就太大了,你在测试集上就不会得到好的结果</span></p><p><span>	</span><span>但是 这个不是overfitting,因為你又回到了</span><strong><span>model bias</span></strong><span>的问题,所以你现在这样在这个情况下,这个投影片的case上面你结果不好,并不是因為overfitting了,而是因為你给你模型太大的限制,大到你有了model bias的问题。</span></p><p>&nbsp;</p><p><span>	</span><span>所以你就会发现说,这边</span><strong><span>產生了一个矛盾的状况</span></strong><span>,今天你让你的模型的复杂的程度,或这样让你的模型的弹性越来越大,但是什麼叫做复杂的程度,什麼叫做弹性,在今天这堂课裡面,我们其实都没有给明确的定义,只给你一个概念上的叙述,那在下下週的课程裡面,你会真的认识到,什麼叫做一个模型很复杂,什麼叫做一个模型有弹性,怎麼真的衡量一个模型的弹性,复杂的程度有多大,那今天我们先用直观的来了解</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313212632577.png" alt="image-20210313212632577" style="zoom:50%;" /></p><p><span>	</span><span>所谓比较复杂就是,</span><strong><span>它可以包含的function比较多,它的参数比较多,这个就是一个比较复杂的model</span></strong></p><p><span>	</span><span>那一个比较复杂的model,如果你看它的training的loss,你会发现说 </span><strong><span>随著model越来越复杂,Training的loss可以越来越低</span></strong><span>,但是testing的时候呢,</span><strong><span>当model越来越复杂的时候,刚开始,你的testing的loss会跟著下降,但是当复杂的程度,超过某一个程度以后,Testing的loss就会突然暴增了</span></strong></p><p><span>	</span><span>那这就是因為说,当你的model越来越复杂的时候,复杂到某一个程度,overfitting的状况就会出现,所以你在training的loss上面,可以得到比较好的结果,那在Testing的loss上面,你会得到比较大的loss,那我们当然期待说,我们可以选一个中庸的模型,不是太复杂的 也不是太简单的,刚刚好可以在训练集上,给我们最好的结果,给我们最低的loss,给我们最低的testing loss,怎麼选出这样的model呢</span></p><p><span>	</span><span>一个很直觉的 你很有可能,没有人告诉你要怎麼做的话,你可能很直觉就会这麼做的,做法就是说,这个kaggle不是立刻上传,就可以知道答案了吗</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213154441.png" alt="image-20210313213154441" style="zoom:67%;" /></p><p><span>	</span><span>所以假设我们有三个模型,它们的复杂的程度不太一样,我不知道要选哪一个模型才会刚刚好,在测试集上得到最好的结果,因為你选太复杂的就overfitting,选太简单的有model bias的问题,那怎麼选一个不偏不倚的,不知道 那怎麼办</span></p><p><span>	</span><span>把这三个模型的结果都跑出来,然后上传到kaggle上面,你及时的知道了你的分数,看看哪个分数最低,那个模型显然就是最好的模型</span></p><p><span>	</span><span>但是并不建议你这麼做,為什麼不建议你这麼做呢</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213301109.png" alt="image-20210313213301109" style="zoom: 67%;" /></p><p><span>	</span><span>我们再举一个极端的例子,我们再把刚才那个极端的例子拿出来,假设现在有一群model,这一群model不知道為什麼都非常废,它们每一个model產生出来的,都是一无是处的function,我们有一到一兆个model,这一到一兆个model不知道為什麼,learn出来的function,都是一无是处的function</span></p><p><span>	</span><span>它们会做的事情就是,</span><strong><span>训练集裡面有的资料就把它记下来,训练集没看过的,就直接output随机的结果</span></strong></p><p><span>	</span><span>那你现在有一兆个模型,那你再把这一兆个模型的结果,通通上传到kaggle上面,你就得到一兆个分数,然后看这一兆的分数裡面,哪一个结果最好,你就觉得那个模型是最好的</span></p><p><span>	</span><span>那虽然说每一个模型,它们在这个Testing data上面,这个testing data它都没有看过啊,所以它输出的结果都是随机的,但虽然在testing data上面,输出的结果都是随机的,但是</span><strong><span>你不断的随机,你总是会找到一个好的结果</span></strong><span>,所以也许编号五六七八九的那个模型,它找出来的function,正好在testing data上面,就给你一个好的结果,那你就会很高兴觉得说,这个model编号五六七八九,是个好model,这个好model得到一个好function</span></p><p><span>	</span><span>虽然它其实是随机的 但你不知道,但这个好function,在这个testing data上面,给我们好的结果,所以你就觉得说 这个结果不错,就这样 我就</span><strong><span>选这一个model,这个function,当作我们最后上传的结果,当作我最后要用在,private testing set上的结果</span></strong></p><p><span>	</span><span>但是</span><strong><span>如果你这样做,往往就会得到非常糟的结果</span></strong><span>,因為这个model毕竟是随机的,它</span><strong><span>恰好在public的testing set data上面得到一个好结果,但是它在private的testing set上,可能仍然是随机的</span></strong></p><p><span>	</span><span>我们这个testing set,分成public的set跟private的set,你在看分数的时候 你只看得到public的分数，private的分数要deadline以后才知道,但假设你在挑模型的时候,你完全看你在public set上面的,也就leaderboard上的分数,来选择你的模型的话,你可能就会这个样子：你在public的leaderboard上面排前十,但是deadline一结束,你就心态就崩了这样,你就掉到三百名之外,而且我们这修课的人这麼多,你搞不好会掉到一千名之外,也说不定。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313213904472.png" alt="image-20210313213904472" style="zoom:67%;" /></p><p><span>	</span></p><p><span>	</span><span> 而且这件事情并不是传说,并没有夸饰,每年都会有这样子的状况发生,那因為今年我们会看public,就是说我们在算分数的时候,你在public上面的结果好,还是会给你一点分数,我们不是只看private的分数而已,是public跟private的分数都看,那过去有些学期,是只看private的分数的时候,发生这种状况,你心态就会整个崩掉这样子,你就会非常非常的郁闷</span></p><p><span>	</span><strong><span>那為什麼我们要把testing的set,分成public跟private呢</span></strong><span>,為什麼我们不能,就通通都分public就好呢,為什麼要為难大家呢,為什麼要让大家疑神疑鬼,不知道自己private上的结果是什麼</span></p><p><span>	</span><span>你自己想想看,假设所有的data都是public,那我刚才说,就算是一个一无是处的Model,得到了一无是处的function,它也有可能在public的data上面,得到好的结果,如果我们今天只有public的testing set,没有private的testing set,那你就回去写一个程式,不断random產生输出就好,然后不断把random的输出,上传到kaggle,然后看你什麼时候,可以random出一个好的结果,那这个作业就结束了</span></p><p><span>	</span><span>这个显然没有意义,显然不是我们要的,而且因為如果今天 你想想看,然后这边有另外一个有趣的事情就是,你知道因為今天如果,public的testing data是公开的,你可以知道public的,testing data的结果,那你就算是一个很废的模型,產生了很废的function,也可能得到非常好的结果</span></p><p><span>	</span><span>所以讲了这麼多,只是想要告诉大家说,我们為什麼要切public的testing set,我為什麼要切private的testing set,然后你其实不要花,不要用你public的testing set,去调你的模型,因為你可能会在,private的testing set上面,得到很差的结果,那不过因為今年,你在public set上面的,好的结果也有算分数,所以怎麼办呢,為了避免你 就你可能会说,好 那我放弃private set的结果,就只拿public set的结果,然后不断地產生随机的结果,去上传到Kaggle来,然后看看说能不能够,正好随机出一个好的结果,為了避免你浪费时间做这件事情,所以有每日上传的限制,让你不会说,我拿很废的模型只產生随机的结果,不断的测试public的testing的score</span></p><h2><a name="cross-validation" class="md-header-anchor"></a><span>Cross Validation</span></h2><p><span>	</span><span>那到底要怎麼做才选择model,才是比较合理的呢,那界定的方法是这个样子的,那助教程式裡面也都帮大家做好了,你要</span><strong><span>把Training的资料分成两半,一部分叫作Training Set,一部分是Validation Set</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215102410.png" alt="image-20210313215102410" style="zoom:50%;" /></p><p><span>	</span><span>刚才助教程式裡面已经看到说,有90%的资料放在Training Set裡面,有10%的资料,会被拿来做Validation Set,你在Training Set上训练出来的模型,</span><strong><span>你在Validation Set上面,去衡量它们的分数,你根据Validation Set上面的分数,去挑选结果</span></strong><span>,再把这个结果上传到Kaggle上面,去看看你得到的public的分数,那因為你在挑分数的时候,是用Validation Set来挑你的model,所以你的public的Testing Set的分数,就可以反应你的,private Testing Set的分数,就比较不会得到说,在public上面结果很好,但是在private上面结果很差,这样子的状况</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215406332.png" alt="image-20210313215406332" style="zoom:50%;" /></p><p><span>	</span><span>当我知道说,其实你看到public的结果以后,你就会去想要调它,你看到你现在弄了一堆模型,然后用Validation Set检查一下,找了一个模型放到public set上以后,发现结果不好,你其实不太可能不根据这一个结果,去调整你的模型,但是假设这一个route做太多次,你根据你的,public Testing Set上的结果,去调整你的model太多次,你就又有可能fit在,你的public Testing Set上面,然后在private Testing Set上面,得到差的结果,不过还好反正我们有限制上传的次数,所以这个route,你也没有办法走太多次,可以避免你太过fit在,public的Testing Set上面的结果。</span></p><p>&nbsp;</p><p><span>	</span><span>那我知道说今天因為,public的Testing Set上面的结果,是大家都可以看到的,然后很多人都会,然后名字你又可以随便乱取,所以假设有一个人洗到第一名的话,他就会非常的得意,他就把自己的名字改成一些什麼,我第一次试就第一名了,或是 我其实只是个旁听,那其实他不是旁听的,那他改成说,我其实只是个旁听的,随便做就第一名了,那这个时候你就会觉得很紧张,尤其他如果是你认识的,隔壁小毛得到第一名,到处耀武扬威的时候,你就会开始有点紧张,你就会说,等一下 你不要得意,我等一下就去把你刷下来这样,那这个时候你要不要理他呢,你不要理他,根据过去的经验,就在public leaderboard上排前几名的,往往private很容易就惨掉这样子,所以在public的Testing上面,得到太好的结果,也不用高兴得太早,其实 最好的做法,就是用Validation loss,最小的直接挑就好了,就是你不要去管,你的public Testing Set的结果 这样,那我知道说在实作上,你不太可能这麼做,因為public set的结果你有看到,所以它对你的模型的选择,可能还是会有些影响的,但是你要越少去看那个,public Testing Set的结果越好</span></p><p><span>	</span><span>线上直播的同学,我复述一下刚才那个同学的问题,他的问题是说,所以我们不能去看,public Testing Set的结果吗,理想上是,理想上你就用Validation Set挑就好,然后上传以后 怎样就是怎样,有过那个strong basseline以后,就不要再去动它了,那这样子就可以避免,你overfit在Testing Set上面,好 那但是这边会有一个问题,就是怎麼分Training Set,跟Validation Set呢,那如果在助教程式裡面,就是随机分的,但是你可能会说,搞不好我这个分 分得不好啊,搞不好我分到很奇怪的Validation Set,会导致我的结果很差,</span></p><h3><a name="n-fold-cross-validation" class="md-header-anchor"></a><span>N-fold Cross Validation</span></h3><p><span>	</span><span>如果你有这个担心的话,那你可以用N-fold Cross Validation,</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313215636180.png" alt="image-20210313215636180" style="zoom:50%;" /></p><p><span>	</span><span>N-fold Cross Validation就是你先</span><strong><span>把你的训练集切成N等份</span></strong><span>,在这个例子裡面我们切成三等份,切完以后,你拿其中</span><strong><span>一份当作Validation Set</span></strong><span>,</span><strong><span>另外两份当Training Set</span></strong><span>,然后这件事情你要</span><strong><span>重复三次</span></strong></p><p><span>	</span><span>也就是说,你先第一份第二份当Train,第三份当Validation,然后第一份第三份当Train,第二份当Validation,第一份当Validation,第二份第三份当Train</span></p><p><span>	</span><span>然后接下来 你有三个模型,你不知道哪一个是好的,你就把这三个模型,在这三个setting下,在这三个Training跟Validation的,data set上面,通通跑过一次,</span><strong><span>然后把这三个模型,在这三种状况的结果都平均起来</span></strong><span>,把每一个模型在这三种状况的结果,都平均起来,再看看谁的结果最好</span></p><p><span>	</span><span>那假设现在model 1的结果最好,你用这三个fold得出来的结果是,这个model 1最好,然后你再把model 1,用在全部的Training Set上,然后训练出来的模型,再用在Testing Set上面,好 那这个是N-fold Cross Validation,好 那这个就是这门课前期的攻略,它可以带你打赢前期所有的副本</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>那接下来也许你要问的一个问题是,上週结束的时候,不是讲到预测2/26,也就是上週五的观看人数吗,到底结果做得怎麼样</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220115627.png" alt="image-20210313220115627" style="zoom:50%;" /></p><p><span>那这个就是我们要做的结果,上週比较多人选了三层的network,所以我们就把三层的network,拿来测试一下,以下是测试的结果,我们就没有再调参数了,大家决定用三层的就是下好离手了,就直接用上去了</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220138585.png" alt="image-20210313220138585" style="zoom:50%;" /></p><p><span>	</span><span>得到的结果是这个样子了,这个图上 这个横轴就是从,2021年的1月1号开始 一直往下,然后红色的线是真实的数字,蓝色的线是预测的结果,2/26在这边 这个是今年2021年,观看人数最高的一天了,那机器的预测怎样呢,哇 非常的惨 差距非常的大,差距有2.58k这麼多,感谢大家 為了让这个模型不準,上週五花了很多力气,去点了这个video,所以这一天是,今年观看人数最多的一天,那你可能开始想说,那别的模型怎麼样呢,其实我也跑了一层二层跟四层的看看,所有的模型 都会惨掉,两层跟三层的错误率都是2点多k,其实四层跟一层比较好,都是1.8k左右,但是这四个模型不约而同的,觉得2/26应该是个低点,但实际上2/26是一个公值,那模型其实会觉得它是一个低点,也不能怪它,因為根据过去的资料,礼拜五就是没有人要学机器学习,礼拜五晚上大家都出去玩了对不对,礼拜五的观看人数是最少了,但是2/26出现了反常的状况,好 那这个就不能怪模型了,那我觉得出现这种状况,应该算是另外一种错误的形式,这种错误的形式,我们这边叫作mismatch。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220235078.png" alt="image-20210313220235078" style="zoom:50%;" /></p><p><span>	</span><span>那也有人会说,mismatch也算是一种Overfitting,这样也可以,这都只是名词定义的问题,那我这边想要表达的事情是,</span><strong><span>mismatch它的原因跟overfitting,其实不一样</span></strong><span>,一般的overfitting,你可以用搜集更多的资料来克服,但是</span><strong><span>mismatch意思是说,你今天的训练集跟测试集,它们的分佈是不一样的</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220434830.png" alt="image-20210313220434830" style="zoom:67%;" /></p><p><span>	</span><span>在训练集跟测试集,分佈是不一样的时候,你训练集再增加,其实也没有帮助了,那其实在多数的作业裡面,我们不会遇到这种mismatch的问题,我们都有把题目设计好了,所以资料跟测试集它的分佈差不多</span></p><p><span>	</span><span>举例来说 以刚才作业一的,Covid19為例的话,假设我们今天资料在,分训练集跟测试集的时候,我们说</span><strong><span>2020年的资料是训练集,2021年的资料是测试集</span></strong><span>,那mismatch的问题可能就很严重了,这个我们其实有试过了 试了一下,如果今天用2020年当训练集,2021年当测试集,你就怎麼做都是惨了 就做不起来,训练什麼模型都会惨掉</span></p><p><span>	</span><span>因為2020年的资料跟2021年的资料,它们的背后的分佈其实都是不一样,所以你拿2020年的资料来训练,在2021年的作业一的资料上,你根本就预测不準,所以后来助教是用了别的方式,来分割训练集跟测试集,好 所以我们多数的作业,都不会有这种mismatch的问题,那除了作业十一。</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210313220457880.png" alt="image-20210313220457880" style="zoom:67%;" /></p><p><span>	</span><span>因為作业十一就是,针对mismatch的问题来设计的,作业十一也是一个影像分类的问题,这是它的训练集,看起来蛮正常的,但它测试集就是长这样子了,所以你知道这个时候,这个时候增加资料哪有什麼用呢,增加资料,你也没有办法让你的模型做得更好,所以这种问题要怎麼解决,那犹待作业十一的时候再讲,好 那你可能会问说 我怎麼知道,现在到底是不是mismatch呢,那我觉得知不知道是mismatch,那就要看你对这个资料本身的理解了,你可能要对你的训练集跟测试集,的產生方式有一些理解,你才能判断说,它是不是遇到了mismatch的状况,好 那这个就是我们作业的攻略,</span></p></div>
+</body>
+</html>

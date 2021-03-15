@@ -6,7 +6,7 @@
 
 ​	Linear 的 Model,也许太过简单了,我们可以想像说 x1 跟 y,也许它中间有比较复杂的关係,**对 Linear 的 Model 来说,x1 跟 y 的关係就是一条直线**,随著 x1 越来越高,y 就应该越来越大,你可以设定不同的 w,改变这条线的斜率,你可以设定不同的 b,改变这一条蓝色的直线,跟 y 轴的交叉点,但是无论你怎麼改 w 跟 b,它永远都是一条直线,永远都是 x1 越大,y 就越大,前一天观看的人数越多,隔天的观看人数就越多
 
-![image-20210304105220371](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210304105220371.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210304105220371.png" alt="image-20210304105220371" style="zoom:67%;" />
 
 ​	**但也许现实并不是这个样子**
 
@@ -18,11 +18,11 @@
 
 ​	所以我们需要写一个更复杂的,更有弹性的,有未知参数的 Function,
 
-![image-20210304110501797](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210304110501797.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210304110501797.png" alt="image-20210304110501797" style="zoom:50%;" />
 
 ​	我们可以观察一下红色的这一条曲线,它可以看作是**一个常数,再加上一群蓝色的这样子的 Function**,.
 
-![image-20210305105846439](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305105846439.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305105846439.png" alt="image-20210305105846439" style="zoom:50%;" />
 
 ​	这个蓝色的 Function,它的特性是
 
@@ -36,7 +36,7 @@
 
 ​	==那怎麼加上这个蓝色的 Function 以后,变成红色的这一条线?==
 
-![image-20210305112252045](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305112252045.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305112252045.png" alt="image-20210305112252045" style="zoom: 50%;" />
 
 ​	**蓝线“1”Function** 斜坡的**起点**,设在**红色 Function** 的**起始**的地方,然后第二个,**斜坡的终点**设在第一个转角处,你刻意让这边这个蓝色 Function 的斜坡,跟这个红色 Function 的斜坡,它们的**斜率是一样**的,这个时候如果你把 0 加上 1,你就可以得到红色曲线 
 
@@ -46,11 +46,11 @@
 
 ​	所以**红色这个线,可以看作是一个常数,再加上一堆蓝色的 Function**
 
-![image-20210305125221397](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305125221397.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305125221397.png" alt="image-20210305125221397" style="zoom:50%;" />
 
 ​	你现在这个 Curves 啊,它是有很多线段所组成的,它是有很多锯齿状的线段所组成的,这个叫做 **Piecewise Linear 的 Curves**,那你会发现说这些 Piecewise Linear 的 Curves,你有办法用常数项,加一大堆的蓝色 Function 组合出来,只是他们用的蓝色 Function 不见得一样,你要有很多不一样的蓝色 Function,加上一个常数以后,你就可以组出这些 Piecewise Linear 的 Curves。那如果你今天 Piecewise Linear 的 Curves 越复杂,也就是这个转折的点越多啊,那你需要的这个蓝色的 Function 就越多
 
-![image-20210305125421864](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305125421864.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305125421864.png" alt="image-20210305125421864" style="zoom: 67%;" />
 
 ​	讲到这边有人可能会说,那也许我们今天要考虑的 x 跟 y 的关係**不是 Piecewise Linear 的 Curves** ,也许它是这样子的曲线,那就算是这样的曲线,也无所谓,我们可以在这样的曲线上面,先取一些点,再把这些点点起来,变成一个 Piecewise Linear 的 Curves,而这个 Piecewise Linear 的 Curves 跟原来的曲线,它会非常接近,如果你今天点取的够多,或你点取的位置适当的话,这个 Piecewise Linear 的 Curves,就可以逼近这一个,连续的这一个曲线,就可以逼近这一个不是 Piecewise Linear,它是有角度的 有弧度的这一条曲线。
 
@@ -60,7 +60,7 @@
 
 ​	所以今天,假设我们的 **x 跟 y 的关係,它也许非常地复杂**,那也没关係,我们就想办法写一个带有未知数的 Function,这个带有未知数的 Function 它表示的,就是一堆蓝色的 Function,加上一个 Constant,那我们接下来要问的问题就是,这一个蓝色 Function,它的式子应该要怎麼把它写出来呢？
 
-![image-20210305125845178](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305125845178.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305125845178.png" alt="image-20210305125845178" style="zoom:67%;" />
 
 ​	也许你要直接写出它 没有那麼容易,但是你可以用一条曲线来理解它,用一个 Sigmoid 的 Function,来逼近这一个蓝色的 Function,那 Sigmoid Function,它的式子长的是这个样子的,
 $$
@@ -81,13 +81,13 @@ y=c*sigmoid(b+wx_1 )
 $$
 ​	就是 y 等於 c 倍的 Sigmoid,然后这个括号裡面放$b+wx_1$,然后这个 $b+wx_1$,实际上做的事情,就是把它放在 Exponential 的指数下,前面加一个负号,然后 1+Exponential 的$-(b+wx_1)$ 放在分母的地方,然后前面乘上 c,就等於 y
 
-![image-20210305131705629](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305131705629.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305131705629.png" alt="image-20210305131705629" style="zoom:67%;" />
 
 ​	所以我们可以用这个 Sigmoid Function,去逼近一个蓝色的 Function,那其实这个蓝色的 Function,比较常见的名字就叫做,Hard 的 Sigmoid 啦,只是我本来是想说一开始,我们是先介绍蓝色的 Function,才介绍 Sigmoid,所以一开始说它叫做 Hard Sigmoid,有一点奇怪,所以我们先告诉你说,有一个 Sigmoid Function,它可以逼近这个蓝色的 Function,那这个蓝色的 Function,其实通常就叫做 Hard 的 Sigmoid
 
 ​	那我们今天我们需要各式各样不同的,蓝色的 Function,还记得吗,我们要**组出各种不同的曲线,那我们就需要各式各样合适的蓝色的 Function**,而这个合适的蓝色的 Function 怎麼製造出来呢
 
-![image-20210305132035492](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305132035492.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305132035492.png" alt="image-20210305132035492" style="zoom:50%;" />
 $$
 y=c \frac{1}{1+e^{-(b+wx_1)}}
 $$
@@ -99,7 +99,7 @@ $$
 
 ​	所以你只要有**不同的 w 不同的 b 不同的 c,你就可以製造出不同的 ==Sigmoid Function==**,把**不同的 Sigmoid Function 叠起来以后,你就可以去逼近各种不同的,Piecewise Linear 的 Function**,然后 Piecewise Linear 的 Function,可以拿来**近似各种不同的 Continuous 的 Function**
 
-![image-20210305134454023](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305134454023.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305134454023.png" alt="image-20210305134454023" style="zoom:50%;" />
 
 ​	所以假设我们要把红色的这条线,它的函数写出来的话,那可能长什麼样子呢?
 
@@ -113,13 +113,13 @@ $$
 
 ​	所以我们今天就写出了一个这样子的 Function,如果我们假设裡面的 b 跟 w 跟 c,它是未知的,它是我们未知的参数,那我们就可以设定不同的 b 跟 w 跟 c,设定不同的 b 跟 w 跟 c,我们就可以製造不同的蓝色的 Function,製造不同的蓝色的 Function 叠起来以后,就可以製造出不同的红色的 Curves,製造出不同的红色的 Curves,就可以製造出不同的 Piecewise Linear 的 Curves,就可以去逼近,各式各样不同的 Continuous 的 Function
 
-![image-20210305135651731](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305135651731.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305135651731.png" alt="image-20210305135651731" style="zoom:50%;" />
 
 ​	所以我们其实有办法写出一个,这个非常有弹性的,有未知参数的 Function,它长这个样子就是 Summation 一堆 Sigmoid,但它们有不同的 c 不同的 b 不同的 w,好 那所以本来我们是 Linear 的 Model,y 等於 b+w 乘上 x1,它有非常大的限制,这个限制叫做 Model 的 Bias,那我们要**如何减少 Model 的 Bias** 呢
 
 ​	我们可以写一个更有弹性的,有未知参数的 Function,它叫做  $y=b + \sum_i {c_isigmoid(b_i+w_ix_1 )}$  本来这边是 $b+wx_1$,这边变成$b_i+w_ix_1$,然后我们有很多不同的 bi,有很多不同的 wi,它们都通过 Sigmoid 都乘上 ci,把它统统加起来再加 b 等於 y,我们只要带入不同的 c 不同的 b 不同的 w,我们就可以变出各式各样,就可以组合出各式各样不同的 Function
 
-![image-20210305135850892](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305135850892.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305135850892.png" alt="image-20210305135850892" style="zoom:50%;" />
 
 ​	那我们刚才其实已经进化到,不是只用一个 Feature,即$X_1$,我们可以**用多个 Feature**
 
@@ -152,7 +152,7 @@ $$
 
 ​	那这边呢,这个 1 2 3 就代表我们有三个 Sigmoid Function,那我们先来看一下,这个**括号裡面**做的事情是什麼
 
-![image-20210305143317386](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305143317386.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305143317386.png" alt="image-20210305143317386" style="zoom:50%;" />
 
 ​	每一个 Sigmoid 都有一个括号,第一个 Sigmoid i 等於 1 的 Case ,就是把
 
@@ -167,7 +167,7 @@ $$
 
 ​	这个得到的式子就是这个样子,所以这边我们**用 $w_{ij}$ ,来代表在第 i 个 Sigmoid 裡面,乘给第 j 个 Feature 的 Weight**,第一个 Feature 它就是 w11,第二个 Features 就是乘 w12,第三个 Feature 都是乘 w13,所以三个 Features1 2 3,这个 w 的第二个下标就是 123,w 的第一个下标代表是,现在在考虑的是第一个 Sigmoid Function,那我们有三个 Sigmoid Function,
 
-![image-20210305144019248](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305144019248.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305144019248.png" alt="image-20210305144019248" style="zoom:50%;" />
 
 ​	第二个 Sigmoid Function,它在括号裡面做的事情就是把 x1 乘上 w21,把 x2 x2 乘上 w22,把 x3 x3 乘上 w23,统统加起来再加 b2
 
@@ -175,47 +175,47 @@ $$
 
 ​	我们现在為了**简化**起见,我们把括弧裡面的数字,用一个比较简单的符号来表示,所以这一串东西我们当作 r1,这一串东西我们当作 r2,这一串东西我们叫它 r3.
 
-![image-20210305144614449](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305144614449.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305144614449.png" alt="image-20210305144614449" style="zoom:67%;" />
 
 ​	这个 x1 x2 跟 x3 和 r1 r2 r3,中间的关係是什麼呢,你可以用矩阵跟向量相乘的方法,写一个比较简单的 简洁的写法.我们刚才已经知道说 r1 r2 r3,也就是括弧裡面算完的结果啊,三个 Sigmoid 括弧裡面算完的结果,r1 r2 r3 跟输入的三个 Feature x1 x2 x3,它们中间的关係就是这样,把 x1 x2 x3 乘上不同的 Weight,加上不同的 Bias,也就是不同的 b 会得到不同的 r.
 
-![image-20210305144734507](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305144734507.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305144734507.png" alt="image-20210305144734507" style="zoom:67%;" />
 
 ​	如果你熟悉线性代数的话,简化成矩阵跟向量的相乘,把 x1 x2 x3 拼在一起变成一个向量,把这边所有的 w 统统放在一起变成一个矩阵,把 b1 b2 b3 拼起来变成一个向量,把 r1 r2 r3 拼起来变成一个向量,那这是三个式子,你就可以简写成,有一个向量叫做 x,这个 x 乘 1个矩阵叫做 w,这个 w 裡面有 9 个数值就是这边的 9 个 w,就是这边的 9 个 Weight,x 先乘上 w 以后再加上 b 就得到 r 这个向量,那**这边做的事情跟上边做的事情是一模一样**的,没有半毛钱的不同,只是表示的方式不一样而已,
 
-![image-20210305145226366](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305145226366.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305145226366.png" alt="image-20210305145226366" style="zoom: 67%;" />
 
 ​	那把它改成线性代数比较常用的表示方式,x 乘上矩阵 w 再加上向量 b,会得到一个向量叫做 r
 
 
 
-![image-20210305145835613](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305145835613.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305145835613.png" alt="image-20210305145835613" style="zoom:67%;" />
 
 
 
 ​	在这个括号裡面做的事情就是这麼一回事,把 x 乘上 w 加上 b 等於 r,r 呢就是这边的 r1 r2 r3,这是 r1 r2 r3,好 那接下来这个 r1 r2 r3 哪,就要分别通过 Sigmoid Function,好 分别通过 Sigmoid Function,因為我们实际上做的值就是,做的事情就是把 r1 取一个负号,再乘 再做 Exponential 再加 1,然后把它放到分母的地方,1 除以 1+Exponential 负 r1 等於 a1,然后同样的方法由 r2 去得到 a2,把 r3 透过 Sigmoid Function 得到 a3,所以这边这个蓝色的虚线框框裡面做的事情,就是从 x1 x2 x3 得到了 a1 a2 a3,
 
-![image-20210305150100917](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305150100917.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305150100917.png" alt="image-20210305150100917" style="zoom:67%;" />
 
 ​	接下来呢,我们这边呢有一个简洁的表示方法,是我们用 r 通过一个,叫做这个 Sigmoid 的 Function,我们用这个东西,我们这边呢用这个符号呢,来代表通过这个 Sigmoid 的 Function,然后呢 所以我们得到了 a 这个向量,就把 r1 r2 r3 分别通过 Sigmoid Function,但我们直接用这个符号来表示它,然后得到 a1 a2 a3
 
-​	![image-20210305150004077](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305150004077.png)
+​	<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305150004077.png" alt="image-20210305150004077" style="zoom:67%;" />
 
 ​	接下来我们这个 Sigmoid 的输出,还要乘上 ci 然后还要再加上 b,如果你要用向量来表示的话,a1 a2 a3 拼起来叫这个向量 a,c1 c2 c3 拼起来叫一个向量 c,那我们可以把这个 c 呢,作 **Transpose**,好 那 a 呢 乘上 c 的 Transpose 再加上 b,好再加上 b 我们就得到了 y
 
-![image-20210305163408354](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305163408354.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305163408354.png" alt="image-20210305163408354" style="zoom:67%;" />
 
 ​	它整体而言做的事情就是 x 输入是 x,我们的 Feature 是 x 这个向量,x 乘上矩阵 w 加上向量 b 得到向量 r,再把向量 r 透过 Sigmoid Function得 到向量 a,再把向量 a 跟乘上 c 的 Transpose 加上 b 就得到 y。
 
 ​	所以这是上面这件事情,如果你想要用**线性代数**的方法来表示它,用向量矩阵相乘方法来表示它,欸 就长得一副这个样子,那这边的这个 r 就是这边的 r,这边的 a 就这边的 a,所以我们可以把这一串东西,放到这个括号裡面,再把这个 a 呢 放到这裡来,所以把相同的东西併起来以后,整体而言就是长这个样子,上面这一串东西,我们觉得比较这个,比较有弹性的这个 Function,如果你要线性代数来表示它的话,就是下面这个式子啦
 
-![image-20210305163500058](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305163500058.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305163500058.png" alt="image-20210305163500058" style="zoom:67%;" />
 
 ​	x 乘上 w 再加上 b 通过 Sigmoid Function,乘上 c 的 Transpose 加 b 就得到 y
 
 ​	接下来，怎麼把这些未知的参数找出来之前,我们先再稍微**重新定义一下我们的符号**,
 
-![image-20210305163746820](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305163746820.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305163746820.png" alt="image-20210305163746820" style="zoom:67%;" />
 
 ​	这边的这个 ==x 是 Feature==,这边的 $W$ $b$ $c$ 跟 $b$,这边有两个 $b$ 啊,但是**这两个 $b$ 是不一样**的,**绿色**这一个是一个**向量**,**灰色**这个是一个**数值**,显示它们是不一样的东西
 
@@ -235,11 +235,11 @@ $$
 
 ## Back to ML_Step 2 :define loss from training data
 
-![image-20210305205139367](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305205139367.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305205139367.png" alt="image-20210305205139367" style="zoom:50%;" />
 
 ​	那接下来进入第二步了,我们要定 Loss,有了新的这个 Model 以后,我们 Loss 没有什麼不同,定义的方法是一样的,只是我们的符号改了一下,之前是 L ( w 跟 b ),因為 w 跟 b 是未知的,那我们现在接下来的未知的参数很多了,你再把它一个一个列出来,太累了,所以我们直接**用 θ 来统设所有的参数**,所以我们现在的 Loss Function 就变成 $L( θ )$
 
-![image-20210305212017162](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305212017162.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305212017162.png" alt="image-20210305212017162" style="zoom:50%;" />
 
 ​	这个 Loss Function 要问的就是,这个 θ 如果它是某一组数值的话,会有多不好或有多好,那计算的方法,**跟刚才只有两个参数的时候,其实是一模一样的**
 
@@ -252,7 +252,7 @@ $$
 
 ​	接下来下一步就是 Optimization,Optimization跟前面讲的没有什麼不同 还是一样的,所以就算我们换了一个新的模型,这个 Optimization 的步骤.
 
-![image-20210305212810760](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305212810760.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305212810760.png" alt="image-20210305212810760" style="zoom:50%;" />
 
 ​	我们现在的 **θ 它是一个很长的向量**,我们把它表示成 θ1 θ2 θ3 等等等,我们现在就是要==**找一组 θ,这个 θ 可以让我们的 Loss 越小越好**==,可以让 Loss 最小的那一组 θ,我们叫做 θ 的 Start  $θ^*$
 
@@ -266,15 +266,13 @@ $$
 $$
 θ^1 ← θ^0-ηg
 $$
-![image-20210305214435531](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305214435531.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305214435531.png" alt="image-20210305214435531" style="zoom:67%;" />
 
 ​	θ0 减掉 θ0 这个向量,减掉 η 乘上 g,g 也是一个向量会得到 θ1,那假设你这边参数有 1000 个,那 θ0 就是 1000 个数值,1000 微的向量,g 是1000 微的向量,θ1 也是 1000 微的向量
 
 ​	那整个操作就是这样了,就是由 θ0 算 Gradient,根据 Gradient 去把 θ0 更新成 θ1,然后呢再算一次 Gradient,然后呢根据 Gradient 把 θ1 再更新成 θ2,再算一次 Gradient 把 θ2 更新成 θ3,以此类推直到你不想做,或者是你算出来的这个 Gradient,是 0 向量 是 Zero Vector,导致你没有办法再更新参数為止,不过在实作上你几乎不太可能,作出 Gradient 是 0 向量的结果,通常你会停下来就是你不想做了.
 
-![image-20210305215312576](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305215312576.png)
-
-![image-20210305215349614](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305215349614.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305215349614.png" alt="image-20210305215349614" style="zoom: 50%;" />
 
 ​	但是实作上,那这边是一个实作的 Detail 的 Issue,实际上我们在做 Gradient的时候,我们会这麼做
 
@@ -284,7 +282,7 @@ $$
 
 ​	那**本来我们是把所有的 Data 拿出来算一个 Loss**,那现在我们不这麼做,我们**只拿一个 Batch 裡面的 Data出来算一个 Loss**,我们这边把它叫 L1,那跟这个 L 呢以示区别,因為你把全部的资料拿出来算 Loss,跟只拿一个 Batch 拿出来,的资料拿出来算 Loss,它不会一样嘛,所以这边用 L1 来表示它
 
-![image-20210305215914525](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305215914525.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305215914525.png" alt="image-20210305215914525" style="zoom:50%;" />
 
 ​	但是你可以想像说假设这个 B 够大,也许 L 跟 L1 会很接近 也说不定,所以实作上的时候,每次我们会先选一个 Batch,用这个 Batch 来算 L,**根据这个 L1 来算 Gradient,用这个 Gradient 来更新参数**,接下来再选下一个 Batch 算出 L2,根据 L2 算出 Gradient,然后再更新参数,再取下一个 Batch 算出 L3,根据 L3 算出 Gradient,再用 L3 算出来的 Gradient 来更新参数
 
@@ -296,7 +294,7 @@ $$
 
 ​	那至於為什麼要分一个一个 Batch,那这个我们下週再讲,但是為了让大家更清楚认识,Update 跟 Epoch 的差别,这边就举一个例子
 
-​	![image-20210305220118548](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305220118548.png)
+​	<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305220118548.png" alt="image-20210305220118548" style="zoom: 67%;" />
 
 ​	假设我们有 10000 笔 Data,也就是**大 N 等於 10000**,假设我们的 **Batch 的大小是设 10**,也就大 B 等於10
 
@@ -314,7 +312,7 @@ $$
 
 ​	你确实可以不一定要换成 Soft 的 Sigmoid,有其他的做法,举例来说这个 Hard 的 Sigmoid,我刚才说它的函式有点难写出来,其实也没有那麼难写出来,它可以看作是**两个 Rectified Linear Unit 的加总**,所谓 Rectified Linear Unit 它就是长这个样
 
-![image-20210305220759937](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305220759937.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305220759937.png" alt="image-20210305220759937" style="zoom: 67%;" />
 
 ​	它有一个水平的线,走到某个地方有一个转折的点,然后变成一个斜坡,那这种 Function 它的式子,写成 
 $$
@@ -324,7 +322,7 @@ $$
 
 ​	那总之这一条线,可以写成$c* max(0, b + wx_1)$,每条不同的 w 不同的 b 不同的 c,你就可以挪动它的位置,你就可以改变这条线的斜率,那这种线呢在机器学习裡面,我们叫做 **Rectified Linear Unit**,它的缩写叫做 ==ReLU==,名字念起来蛮有趣的,它真的就唸ReLU
 
-![image-20210305221723518](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305221723518.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305221723518.png" alt="image-20210305221723518" style="zoom:67%;" />
 
 ​	那你把两个 ReLU 叠起来,就可以变成 Hard 的 Sigmoid,你想要用 ReLU 的话,就把 Sigmoid 的地方,换成$ max(0, b_i + w_i{_j}x_j)$.
 
@@ -336,7 +334,7 @@ $$
 
 ​	接下来就真的做了这个实验,这个都是真实的数据.
 
-​	![image-20210305222316873](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305222316873.png)
+​	<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305222316873.png" alt="image-20210305222316873" style="zoom:50%;" />
 
 - 如果是 Linear 的 Model,我们现在考虑 56 天,训练资料上面的 Loss 是 0.32k,没看过的资料 2021 年资料是 0.46k
 - 如果用 10 个 ReLU,好像没有进步太多,这边跟用 Linear 是差不多的,所以看起来 10 个 ReLU 不太够
@@ -349,7 +347,7 @@ $$
 
 ​	接下来还可以做什麼呢,我们还可以继续改我们的模型,
 
-![image-20210305222735833](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305222735833.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305222735833.png" alt="image-20210305222735833" style="zoom:50%;" />
 
 ​	举例来说,刚才我们说从 x 到 a 做的事情,是把 x 乘上 w 加 b,再通过 Sigmoid Function,不过我们现在已经知道说,不一定要通过 Sigmoid Function,通过 ReLU 也可以,然后得到 a。
 
@@ -359,7 +357,7 @@ $$
 
 ​	那就是接下来就真的做了实验了,我们就是每次都加 100 个 ReLU,那我们就是 Imput Features,就是 56 天前的资料
 
-![image-20210305223132264](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305223132264.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305223132264.png" alt="image-20210305223132264" style="zoom:50%;" />
 
 - 如果是只做一次 只做一次,就那个乘上 w 再加 b,再通过 ReLU 或 Sigmoid,这件事只做一次的话,这是我们刚才看到的结果
 - 两次，这个 Loss 降低很多,0.28k 降到 0.18k,没看过的资料上也好了一些
@@ -369,7 +367,7 @@ $$
 
 ​	那这个是那个真实的实验结果啦,就我们来看一下,今天有做通过三次 ReLU 的时候,做出来的结果怎麼样
 
-![image-20210305223342800](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305223342800.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305223342800.png" alt="image-20210305223342800" style="zoom: 67%;" />
 
 ​	**横轴就是时间,纵轴是观看的人次** 是千人,**红色的线代表的是真实的数据**,**蓝色的线是预测出来的数据**
 
@@ -385,7 +383,7 @@ $$
 
 ​	到目前為止,我们讲了很多各式各样的模型,那我们现在还缺了一个东西,缺一个好名字,你知道这个外表啊是很重要的,一个死臭酸宅穿上西装以后就潮了起来,或者是隻鞋半缕的,说他是汉左将军宜城亭侯中山靖王之后,也就潮了起来 ,所以我们的模型也需要一个好名字,所以它叫做什麼名字呢,这些 Sigmoid 或 ReLU 啊,它们叫做 Neuron,我们这边有很多的 Neuron,很多的 Neuron 就叫做 Neural Network,Neuron 就是神经元,人脑中就是有很多神经元,很多神经元串起来就是一个神经网路,跟你的脑是一样的,接下来你就可以到处骗麻瓜说,看到没有 这个模型就是在模拟人们脑 知道吗,这个就是在模拟人脑,这个就是人工智慧,然后麻瓜就会吓得把钱掏出来
 
-![image-20210305223838837](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305223838837.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305223838837.png" alt="image-20210305223838837" style="zoom:50%;" />
 
 ​	但是啊 这个把戏在 80 90 年代的时候,已经玩过了这样,Neural Network 不是什麼新的技术,80 90 年代就已经用过了,当时已经把这个技术的名字搞到臭掉了,Neural Network 因為之前吹捧得太过浮夸,所以后来大家对 Neural Network 这个名字,都非常地感冒,它就像是个脏话一样,写在 Paper 上面都註定会被,就会註定害你的 Paper 被拒绝,	所以后来為了要重振 Neural Network 的雄风,所以怎麼办呢,需要新的名字,怎麼样新的名字呢,这边有很多的 Neural,每一排 Neural 我们就叫它一个 Layer,它们叫 Hidden Layer,有很多的 Hidden Layer 就叫做 Deep,这整套技术就叫做 ==Deep Learning==,好 我们就把 Deep Learning 讲完了,就是这麼回事。
 
@@ -393,7 +391,7 @@ $$
 
 ​	就是这样来的,好 所以人们就开始,把类神经网路越叠越多 越叠越深,12 年的时候有一个 AlexNet,它有 8 层 它的错误率是 16.4%,两年之后 VGG 19层,错误率在影像辨识上进步到 7.3 %,这个都是在影像辨识上一个,这个基準的资料库上面的结果,后来 GoogleNet 有错误率降到 6.7%,有 22 层,但这些都不算是什麼
 
-![image-20210305224148870](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305224148870.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305224148870.png" alt="image-20210305224148870" style="zoom:50%;" />
 
 ​	Residual Net 有 152 层啊,它比 101 还要高啊,但是这个 Residual Net 啊,其实要训练这麼深的 Network 是有诀窍的,这个我们之后再讲。
 
@@ -405,7 +403,7 @@ $$
 
 ​	那有人就说,那**怎麼不变得更深呢**,刚才只做到 3 层,应该要做得更深嘛,现在 Network 都是叠几百层的啊,没几百层都不好意思说,你在叫做 Deep Learning  所以要做更深,
 
-![image-20210305224552091](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305224552091.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305224552091.png" alt="image-20210305224552091" style="zoom:50%;" />
 
 ​	所以确实做得更深 做 4 层,4 层在训练资料上,它的 Loss 是 0.1k,在没有看过 2021 年的资料上,是如何呢 是 0.44k,惨掉了。在训练资料上,3 层比 4 层差,4 层比 3 层好,但是在没看过的资料上,4 层比较差,3 层比较好,在有看过的资料上,在训练资料上,跟没看过的资料上,它的结果是不一致的,这种训练资料跟测试,这种训练资料跟没看过的资料,它的结果是不一致的状况,这个状况叫做 ==Overfitting==,
 
@@ -415,7 +413,7 @@ $$
 
 ​	但是做到目前為止,我们都还没有真的发挥这个模型的力量,你知道我们要发挥这个模型的力量,和 2021 的资料到 2 月 14 号之前的资料,我们也都已经手上有了
 
-![image-20210305224852593](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305224852593.png)
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305224852593.png" alt="image-20210305224852593" style="zoom:50%;" />
 
 ​	所以我们要真正做的事情是什麼,我们要做的事情就是预测未知的资料,但是如果我们要预测未知的资料,我们应该选 3 层的 Network,还是 4 层的 Network 呢,举例来说 今天是 2 月 26 号,今天的观看人数我们还不知道,如果我们要用一个 Neural Network,用我们已经训练出来的 Neural Network,去预测今天的观看人数,
 
@@ -423,6 +421,6 @@ $$
 
 ​	那你可能以為这门课就到这边结束了,其实不是 我们真的来预测一下,2 月 26 号应该要有的观看次数是多少,但是因為其实 YouTube 的统计,它没有那麼及时,所以它现在只统计到 2 月 24 号,没关係 我们先计算一下 2 月 25 号的,观看人数是多少,这个 3 层的 Network 告诉我说,2 月 25 号这个频道的总观看人次,应该是 5250 人,那我们先假设 2 月 25 号是对的,但实际上我还不知道 2 月 25 号对不对,因為 YouTube 后台统计的数据还没有出来啊,但我们先假设这一天都是对的,然后再给我们的模型去预测 2 月 26 号的数字,得到的结果是 3.96k 有 3960 次,那它為什麼这边特别低,因為模型知道说,这个礼拜五观看的人数,就是比较少啊,所以它预测特别低,听起来也是合理的
 
-​	![image-20210305225246824](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305225246824.png)
+​	<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210305225246824.png" alt="image-20210305225246824" style="zoom:67%;" />
 
-​	好 那今天其实就讲了深度学习,那今天讲的不是一般的介绍方式,如果你想要听一般的介绍方式,过去的课程影片也是有的,我就把连结附在这边,然后深度学习的训练,会用到一个东西叫 Backpropagation,其实它就是比较有效率,算 Gradients 的方法,跟我们今天讲的东西没有什麼不同,但如果你真的很想知道,Backpropagation 是什麼的话,影片连结也附在这边,好 今天上课就上到这边,谢谢大家 谢谢
+​	好 那今天其实就讲了深度学习,那今天讲的不是一般的介绍方式,如果你想要听一般的介绍方式,过去的课程影片也是有的,我就把连结附在这边,然后深度学习的训练,会用到一个东西叫 Backpropagation,其实它就是比较有效率,算 Gradients 的方法,跟我们今天讲的东西没有什麼不同,但如果你真的很想知道,Backpropagation 是什麼的话,影片连结也附在这边.
