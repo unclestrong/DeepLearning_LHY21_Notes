@@ -9,3 +9,5 @@
 [04_Local Minimum And Saddle Point](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/04_Local%20Minimum%20And%20Saddle%20Point.html)
 
 [05_Batch and Momentum](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/05_Batch%20and%20Momentum.html)
+
+[06_Adaptive Learning Rate](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/06_Adaptive%20Learning%20Rate.html)
