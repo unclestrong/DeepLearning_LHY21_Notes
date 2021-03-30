@@ -14,5 +14,5 @@
 
 [07_Classification](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/07_Classification.html)
 
-[08_CNN](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/08_CNN.html)
+[08_CNN](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/07_Classification.html)
 
