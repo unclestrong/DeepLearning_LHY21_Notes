@@ -16,4 +16,4 @@
 
 [08_CNN](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/08_CNN.html)
 
-[09_Self-Attention P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/09_Self-Attention%20P1.html)
+[09_Self-Attention P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/09_Self-attention_P1.html)
