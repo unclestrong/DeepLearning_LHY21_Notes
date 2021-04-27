@@ -12,10 +12,13 @@
 
 [06_Adaptive Learning Rate](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/06_Adaptive%20Learning%20Rate.html)
 
-[07_Classification](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/07_Classification.html)
+[07_Batch Normalization](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/07_Batch%20Normalization.html)
 
-[08_CNN](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/08_CNN.html)
+[08_Classification](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/08_Classification.html)
 
-[09_Self-Attention P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/09_Self-attention_P1.html)
+[09_CNN](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/09_CNN.html)
 
-[10_Self-Attention P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/10_Self-attention_P2.html)
+[10_Self-Attention P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/10_Self-attention_P1.html)
+
+[11_Self-Attention P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/11_Self-attention_P2.html)
+
