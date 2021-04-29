@@ -22,3 +22,5 @@
 
 [11_Self-Attention P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/11_Self-attention_P2.html)
 
+[12_Transformer P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/12_Transformer P1.html)
+
