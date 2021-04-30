@@ -52,17 +52,17 @@ Transformer就是一个,==Sequence-to-sequence==的model,他的缩写,我们会�
 
 如果你做语音辨识,你给机器一段台语,然后它可能输出是母汤,你根本就不知道,这段话在说什麼。
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210429102344921.png" alt="image-20210429102344921" style="zoom:67%;" />
+<img src="https://raw.githubusercontent.com/unclestrong/DeepLearning_LHY21_Notes/master/Notes_pic/image-20210429102344921.png" alt="image-20210429102344921" style="zoom:67%;" />
 
 所以我们期待说机器也许可以做语音的翻译,对它讲一句台语,它直接输出的是同样意思的,中文的句子,那这样一般人就可以看懂
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210429102425315.png" alt="image-20210429102425315" style="zoom: 67%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210429102425315.png?raw=true" alt="image-20210429102425315" style="zoom: 67%;" />
 
 我们可以训练一个类神经网路,这个类神经网路听某一种语言,的声音讯号,输出是另外一种语言的文字。
 
 今天你要训练一个neural network,你就需要有input跟output的配合,你需要有台语的声音讯号,跟中文文字的对应关係,那这样的资料是比较容易收集的。比如说YouTube上面,有很多的乡土剧
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210429102635671.png" alt="image-20210429102635671" style="zoom: 67%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210429102635671.png?raw=true" alt="image-20210429102635671" style="zoom: 67%;" />
 
 乡土剧就是,台语语音 中文字幕,所以你只要它的台语语音载下来,中文字幕载下来,你就有台语声音讯号,跟中文之间的对应关係,你就可以硬train一个模型,然后叫机器直接做台语的语音辨识,输入台语 输出中文
 
@@ -74,7 +74,7 @@ Transformer就是一个,==Sequence-to-sequence==的model,他的缩写,我们会�
 - 乡土剧的字幕,不一定跟声音有对起来,就不要管它这样子
 - 台语还有一些,比如说台罗拼音,台语也是有类似音标这种东西,也许我们可以先辨识成音标,当作一个中介,然后在从音标转成中文,也没有这样做 
 
-![image-20210429103037724](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210429103037724.png)
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210429103037724.png?raw=true" alt="image-20210429103037724" style="zoom:67%;" />
 
 直接训练一个模型,输入是声音讯号,输出直接就是中文的文字,这种没有想太多 直接资料倒进去,就训练一个模型的行為,就叫作==硬train一发==
 
