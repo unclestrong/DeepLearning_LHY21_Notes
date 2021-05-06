@@ -24,3 +24,5 @@
 
 [12_Transformer P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/12_Transformer_P1.html)
 
+[13_Transformer P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/13_Transformer_P2.html)
+
