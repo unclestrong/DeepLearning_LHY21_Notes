@@ -1,0 +1,608 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; zoom: 90%; }
+#math-inline-preview-content { zoom: 1.1; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ :root {--mermaid-font-zoom:1.4875em ;} 
+</style><title>15_GAN_P2</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='ganp2theory-behind-gan'><span>GAN_P2_Theory behind GAN</span></h1><p><span>P1是用了一堆比喻说明GAN 的操作是怎麼进行的</span></p><p><span>接下来,我们告诉你说实际上,為什麼这个 </span><strong><span>Generator 跟 Discriminator 的互动</span></strong><span>,可以让我们的 </span><strong><span>Generator產生像是真正的人脸的图片</span></strong><span>,那这背后的互动在做的,到底是什麼样的事情</span></p><p><span>那我们先来弄清楚,我们今天的</span><strong><span>训练的目标</span></strong><span>到底是什麼</span></p><p><img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210516185456967.png" alt="image-20210516185456967" style="zoom: 50%;" /></p><p><span>我们在训练 Network 的时候,你就是要</span></p><ul><li><span>定一个 Loss Function</span></li><li><span>定完以后用 Gradient Descent 去调你的参数</span></li><li><span>去 </span><strong><span>Minimize</span></strong><span> 那个 Loss Function 就结束了</span></li></ul><p><span>在这个 Generation 的问题裡面,我们要 </span><strong><span>Minimize,或者是 Maximize 什麼样的东西</span></strong><span>,我们要把这些事弄清楚,才能够做接下来的事情</span></p><p><span>我们想要 </span><strong><span>Minimize</span></strong><span> 的东西是这个样子的，我们有一个 Generator</span></p><ul><li><span>给它一大堆的 Vector,给它从 Normal Distribution Sample 出来的东西</span></li><li><span>丢进这个 Generator 以后,会產生一个比较复杂的 Distribution,这个复杂 Distribution,我们叫它 </span><mark><span>PG</span></mark></li><li><span>然后 我们有一堆的 Data,这个是真正的 Data,真正的 Data 也形成了另外一个 Distribution,叫做 </span><mark><span>Pdata</span></mark><span>,我们期待 </span><strong><span>PG 跟 Pdata 越接近越好</span></strong></li></ul><h2 id='our-objective'><span>Our objective</span></h2><p><span>如果你一下子没有办法想像,这个 PG 、Pdata 是怎麼一回事的话,那我们用</span><strong><span>一维的状况</span></strong><span>来跟大家说明</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210516190051672.png" alt="image-20210516190051672" style="zoom:50%;" /></p><p><span>我们假设 </span></p><ul><li><span>Generator 的 Input 是一个一维的向量</span></li><li><span>Generator 的 Output 也是一维的向量</span></li><li><span>我们真正的 Data 也是一维的向量</span></li></ul><p><span>那我们的 Normal Distribution 就长这个样子</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210516190248797.png" alt="image-20210516190248797" style="zoom:67%;" /></p><p><span>那丢到 Generator 以后,假设你输入 5 个点,那边这每一个点,它的位置会改变,那你就產生一个新的 Distribution,那可能本来大家都集中在中间,通过这个 Generator,通过一个 Network 裡面很复杂,不知道做了什麼事情以后,这些点就分成两边,所以你的 Distribution 就变成这个样子</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210516190313959.png" alt="image-20210516190313959" style="zoom:67%;" /></p><p><span>而 </span><strong><span>Pdata</span></strong><span> 是指真正的资料的分布,真正资料分布可能长这个样子</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210516190332060.png" alt="image-20210516190332060" style="zoom:67%;" /></p><p><span>它分两面的状况是更极端的,左边的东西比较多,右边的东西比较少,那你期待左边这个分布跟右边这个分布,越接近越好,如果写成式子的话</span></p><p><span>你可以写成这个样子</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210516190555803.png" alt="image-20210516190555803" style="zoom:50%;" /></p><p><span>Div Of PG 跟 Pdata,它指的意思就是 PG 跟 Pdata,这两个 Distribution 之间的 </span><mark><span>Divergence</span></mark><span>(散度)</span></p><p><span>Divergence 这边指的意思就是,这两个你可以想成是,这</span><strong><span>两个 Distribution 之间的某种距离</span></strong></p><ul><li><span>如果这个 </span><strong><span>Divergence 越大</span></strong><span>,就代表这</span><strong><span>两个 Distribution 越不像</span></strong></li><li><strong><span>Divergence 越小</span></strong><span>,就代表这两个 </span><strong><span>Distribution 越相近</span></strong></li></ul><p><span>Divergence 这就是衡量,两个的 Distribution 相似度的一个 Measure</span></p><p>&nbsp;</p><p><span>我们现在的目标,是要去</span><strong><span>找一个 Generator</span></strong><span>,找一个 Generator找个操作,实际上做的事情是找一个 </span><strong><span>Generator 裡面的参数</span></strong><span>, Generator 也是一个 Network,裡面有一大堆的 Weight 跟 Bias,它可以让我们產生出来的 PG 跟 Pdata,之间的 Divergence 越小越好,我要找的就是这样子的 Generator</span></p><p><span>这边把它写作 </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.879ex" height="2.11ex" viewBox="0 -806.1 1239.6 908.7" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E3-MJMATHI-47" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path><path stroke-width="0" id="E3-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E3-MJMATHI-47" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E3-MJMAIN-2217" x="1111" y="513"></use></g></svg></span><script type="math/tex">G^*</script><span>,所以我们这边要做的事情,</span><strong><span>跟一般 Train Network 其实非常地像</span></strong><span>,我们第一堂课就告诉你说,我们定义了 Loss Function,找一组参数 Minimize Loss Function</span></p><p><span>在 Generation 这个问题裡面,我们现在其实也定义了我们的 </span><strong><span>Loss Function</span></strong><span>,它就是 PG 跟 Pdata 的 </span><strong><span>Divergence</span></strong><span>,就是它们两个之间的距离,</span><strong><span>它们两个越近,那就代表这个產生出来的 PG 跟 Pdata 越像</span></strong><span>,所以 PG 跟 Pdata,我们希望它们越相像越好</span></p><p><span>但是我们这边遇到一个</span><strong><span>困难的问题</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517095401804.png" alt="image-20210517095401804" style="zoom:67%;" /></p><p><span>这个 Loss,我们是可以算的,但是这个 Divergence 是要怎麼样算？那你可能知道一些 Divergence 的式子,比如说 KL Divergence,比如说 JS Divergence,这些 Divergence 用在这种 Continues 的,Distribution 上面,你要做一个很复杂的,在实作上你</span><strong><span>几乎不知道要怎麼算的积分,那我们根本就无法把这个 Divergence 算出来</span></strong></p><p><span>我们算不出这个 Divergence,我们又要如何去找一个 G,去 Minimize 这个 Divergence ,这个就是 GAN 所遇到的问题,这就是我们在 Train 这一种,Generator 的时候会遇到的问题</span></p><p><span>而 </span><strong><mark><span>GAN</span></mark><span>是一个很神奇的做法,它</span><mark><span>可以突破,我们不知道怎麼计算 Divergence 的限制</span></mark></strong></p><h2 id='sampling-is-good-enough-'><span>Sampling is good enough ……</span></h2><p><span>所以我现在</span><strong><span>遇到的问题</span></strong><span>就是,</span><strong><span>不知道怎麼计算 Divergence</span></strong><span>,而 GAN 告诉我们就是,你</span><strong><span>不需要知道 PG 跟 Pdata它们实际上的 Formulation 长什麼样子</span></strong><span>，只要能</span><strong><span>从 PG 和 Pdata这两个 Distributions Sample 东西出来,就有办法算 Divergence</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517101337058.png" alt="image-20210517101337058" style="zoom:67%;" /></p><p><span>怎麼从真正的 Data 裡面,Sample 出东西来，怎麼从 Generator 裡面,產生一些东西出来？</span></p><ul><li><span>把你的图库拿出来,从图库裡面随机產生,随机 Sample 一些图片出来,你就得到 </span><strong><span>Pdata</span></strong></li></ul><ul><li><span>那你就把你的 Generator,输入这个 Normal 的,从 </span><mark><span>Normal Distribution</span></mark><span> Sample 出来的 Vector,丢到 Generator 裡面（我们刚才说过,你这边的拿来 Sample 那个 Distribution,要是你有办法 Sample 的,所以我们选 Normal Distribution式子我们是知道的,是有办法 Sample 的) 我们从 Normal Distribution 裡面,Sample 一堆 Vector 出来丢给 Generator,让 Generator 產生一堆图片出来,那这些图片就是从 </span><strong><span>PG</span></strong><span>  Sample 出来的结果</span></li></ul><p><span>所以我们有办法从 PG 做 Sample,我们有办法从 Pdata 做 Sample</span></p><h2 id='discriminator'><span>Discriminator</span></h2><p><span>接下来,GAN 这一整个系列的 Work,就是要告诉你说,怎麼在</span><strong><span>只有做 Sample 的前提之下</span></strong><span>,我根本</span><strong><span>不知道 PG 跟 Pdata,实际上完整的 Formulation 长什麼样子</span></strong><span>,居然就估测出了 Divergence</span></p><p><span>那这个就是要</span><strong><span>靠 </span><mark><span>Discriminator</span></mark><span> 的力量</span></strong></p><p>&nbsp;</p><p><span>那我们刚才讲过说 Discriminator是怎麼训练出来的</span></p><ul><li><span>我们有一大堆的 Real Data,这个 Real Data 就是从 Pdata Sample 出来的结果</span></li><li><span>我们有一大堆 Generative 的 Data,Generative 的 Data,就可以看作是从 PG Sample 出来的结果</span></li></ul><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517105747587.png" alt="image-20210517105747587" style="zoom:67%;" /></p><p><span>根据 Real 的 Data 跟 Generative 的 Data,我会去训练一个 Discriminator,它的训练的目标是</span></p><ul><li><span>看到 </span><strong><span>Real Data</span></strong><span>,就给它比较</span><strong><span>高的分数</span></strong></li><li><span>看到这个 </span><strong><span>Generative 的 Data</span></strong><span>,就给它比较</span><strong><span>低的分数</span></strong></li></ul><p>&nbsp;</p><p><span>Discriminator 训练的目标,就是要</span><strong><span>分辨好的图跟不好的图</span></strong><span>,分辨真的图跟生成的图,所以</span><strong><span>看到真的图</span></strong><span>给它</span><strong><span>高分</span></strong><span>,</span><strong><span>看到生成的图</span></strong><span>给它</span><strong><span>低分</span></strong></p><p><span>实际以上的过程,你也可以把它写成式子,把它当做是一个 </span><strong><span>Optimization 的问题</span></strong><span>,这个 Optimization 的问题是这样子的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517110317766.png" alt="image-20210517110317766" style="zoom:67%;" /></p><p><span>这个 Discriminator 可以去 </span><strong><span>Maximize</span></strong><span>某一个 Function,我们这边叫做 </span><mark><span>Objective Function</span></mark><span>（我们要 </span><strong><span>Maximize</span></strong><span> 的东西,我们会叫 </span><strong><span>Objective Function</span></strong><span>,如果 </span><strong><span>Minimize</span></strong><span> 我们就叫它 </span><strong><span>Loss Function</span></strong><span>）</span></p><p><span>我们现在要</span><strong><span>找一个 D</span></strong><span>,它可以 Maximize 这个 Objective Function,这个 Objective Function 长这个样子</span></p><ul><li><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="16.623ex" height="2.694ex" viewBox="0 -806.1 7157.2 1160" role="img" focusable="false" style="vertical-align: -0.822ex;"><defs><path stroke-width="0" id="E70-MJMATHI-45" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path><path stroke-width="0" id="E70-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E70-MJMAIN-223C" d="M55 166Q55 241 101 304T222 367Q260 367 296 349T362 304T421 252T484 208T554 189Q616 189 655 236T694 338Q694 350 698 358T708 367Q722 367 722 334Q722 260 677 197T562 134H554Q517 134 481 152T414 196T355 248T292 293T223 311Q179 311 145 286Q109 257 96 218T80 156T69 133Q55 133 55 166Z"></path><path stroke-width="0" id="E70-MJMATHI-50" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path stroke-width="0" id="E70-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E70-MJMATHI-61" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path stroke-width="0" id="E70-MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path stroke-width="0" id="E70-MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path><path stroke-width="0" id="E70-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E70-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path stroke-width="0" id="E70-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="0" id="E70-MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="0" id="E70-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E70-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E70-MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E70-MJMATHI-45" x="0" y="0"></use><g transform="translate(738,-150)"><use transform="scale(0.707)" xlink:href="#E70-MJMATHI-79" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E70-MJMAIN-223C" x="496" y="0"></use><g transform="translate(901,0)"><use transform="scale(0.707)" xlink:href="#E70-MJMATHI-50" x="0" y="0"></use><g transform="translate(453,-107)"><use transform="scale(0.5)" xlink:href="#E70-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.5)" xlink:href="#E70-MJMATHI-61" x="523" y="0"></use><use transform="scale(0.5)" xlink:href="#E70-MJMATHI-74" x="1052" y="0"></use><use transform="scale(0.5)" xlink:href="#E70-MJMATHI-61" x="1413" y="0"></use></g></g></g><use xlink:href="#E70-MJMAIN-5B" x="3235" y="0"></use><use xlink:href="#E70-MJMATHI-6C" x="3513" y="0"></use><use xlink:href="#E70-MJMATHI-6F" x="3811" y="0"></use><use xlink:href="#E70-MJMATHI-67" x="4296" y="0"></use><use xlink:href="#E70-MJMATHI-44" x="4776" y="0"></use><use xlink:href="#E70-MJMAIN-28" x="5604" y="0"></use><use xlink:href="#E70-MJMATHI-79" x="5993" y="0"></use><use xlink:href="#E70-MJMAIN-29" x="6490" y="0"></use><use xlink:href="#E70-MJMAIN-5D" x="6879" y="0"></use></g></svg></span><script type="math/tex">E_{y\sim P_{data}}[logD(y)]</script><span> 我们有一堆 Y,它是从 Pdata 裡面 Sample 出来的,也就是它们是真正的 Image,而我们把这个真正的 Image 丢到 D 裡面,得到一个分数再取</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.818ex" height="2.577ex" viewBox="0 -806.1 3366 1109.7" role="img" focusable="false" style="vertical-align: -0.705ex;"><defs><path stroke-width="0" id="E88-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E88-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path stroke-width="0" id="E88-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="0" id="E88-MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="0" id="E88-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E88-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E88-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E88-MJMATHI-6C" x="0" y="0"></use><use xlink:href="#E88-MJMATHI-6F" x="298" y="0"></use><use xlink:href="#E88-MJMATHI-67" x="783" y="0"></use><use xlink:href="#E88-MJMATHI-44" x="1263" y="0"></use><use xlink:href="#E88-MJMAIN-28" x="2091" y="0"></use><use xlink:href="#E88-MJMATHI-79" x="2480" y="0"></use><use xlink:href="#E88-MJMAIN-29" x="2977" y="0"></use></g></svg></span><script type="math/tex">logD(y)</script></li></ul><ul><li><p><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="21.088ex" height="2.694ex" viewBox="0 -806.1 9079.7 1160" role="img" focusable="false" style="vertical-align: -0.822ex;"><defs><path stroke-width="0" id="E85-MJMATHI-45" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path><path stroke-width="0" id="E85-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E85-MJMAIN-223C" d="M55 166Q55 241 101 304T222 367Q260 367 296 349T362 304T421 252T484 208T554 189Q616 189 655 236T694 338Q694 350 698 358T708 367Q722 367 722 334Q722 260 677 197T562 134H554Q517 134 481 152T414 196T355 248T292 293T223 311Q179 311 145 286Q109 257 96 218T80 156T69 133Q55 133 55 166Z"></path><path stroke-width="0" id="E85-MJMATHI-50" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path stroke-width="0" id="E85-MJMATHI-47" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q492 659 471 656T418 643T357 615T294 567T236 496T189 394T158 260Q156 242 156 221Q156 173 170 136T206 79T256 45T308 28T353 24Q407 24 452 47T514 106Q517 114 529 161T541 214Q541 222 528 224T468 227H431Q425 233 425 235T427 254Q431 267 437 273H454Q494 271 594 271Q634 271 659 271T695 272T707 272Q721 272 721 263Q721 261 719 249Q714 230 709 228Q706 227 694 227Q674 227 653 224Q646 221 643 215T629 164Q620 131 614 108Q589 6 586 3Q584 1 581 1Q571 1 553 21T530 52Q530 53 528 52T522 47Q448 -22 322 -22Q201 -22 126 55T50 252Z"></path><path stroke-width="0" id="E85-MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path><path stroke-width="0" id="E85-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E85-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path stroke-width="0" id="E85-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="0" id="E85-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E85-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E85-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="0" id="E85-MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="0" id="E85-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E85-MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E85-MJMATHI-45" x="0" y="0"></use><g transform="translate(738,-150)"><use transform="scale(0.707)" xlink:href="#E85-MJMATHI-79" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E85-MJMAIN-223C" x="496" y="0"></use><g transform="translate(901,0)"><use transform="scale(0.707)" xlink:href="#E85-MJMATHI-50" x="0" y="0"></use><use transform="scale(0.5)" xlink:href="#E85-MJMATHI-47" x="907" y="-218"></use></g></g><use xlink:href="#E85-MJMAIN-5B" x="2657" y="0"></use><use xlink:href="#E85-MJMATHI-6C" x="2935" y="0"></use><use xlink:href="#E85-MJMATHI-6F" x="3233" y="0"></use><use xlink:href="#E85-MJMATHI-67" x="3718" y="0"></use><use xlink:href="#E85-MJMAIN-28" x="4198" y="0"></use><use xlink:href="#E85-MJMAIN-31" x="4587" y="0"></use><use xlink:href="#E85-MJMAIN-2212" x="5309" y="0"></use><use xlink:href="#E85-MJMATHI-44" x="6309" y="0"></use><use xlink:href="#E85-MJMAIN-28" x="7137" y="0"></use><use xlink:href="#E85-MJMATHI-79" x="7526" y="0"></use><use xlink:href="#E85-MJMAIN-29" x="8023" y="0"></use><use xlink:href="#E85-MJMAIN-29" x="8412" y="0"></use><use xlink:href="#E85-MJMAIN-5D" x="8801" y="0"></use></g></svg></span><script type="math/tex">E_{y\sim P_G}[log(1-D(y))]</script><span> 那另外一方面,我们有一堆 Y,它是从 PG 从 Generato r 所產生出来的,把这些图片也丢到 Discriminator 裡面,得到一个分数,再取 </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="13.625ex" height="2.577ex" viewBox="0 -806.1 5866.4 1109.7" role="img" focusable="false" style="vertical-align: -0.705ex;"><defs><path stroke-width="0" id="E104-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E104-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path stroke-width="0" id="E104-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="0" id="E104-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E104-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E104-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="0" id="E104-MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="0" id="E104-MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E104-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E104-MJMATHI-6C" x="0" y="0"></use><use xlink:href="#E104-MJMATHI-6F" x="298" y="0"></use><use xlink:href="#E104-MJMATHI-67" x="783" y="0"></use><use xlink:href="#E104-MJMAIN-28" x="1263" y="0"></use><use xlink:href="#E104-MJMAIN-31" x="1652" y="0"></use><use xlink:href="#E104-MJMAIN-2212" x="2374" y="0"></use><use xlink:href="#E104-MJMATHI-44" x="3374" y="0"></use><use xlink:href="#E104-MJMAIN-28" x="4202" y="0"></use><use xlink:href="#E104-MJMATHI-79" x="4591" y="0"></use><use xlink:href="#E104-MJMAIN-29" x="5088" y="0"></use><use xlink:href="#E104-MJMAIN-29" x="5477" y="0"></use></g></svg></span><script type="math/tex">log(1 - D (y))</script></p><p>&nbsp;</p></li></ul><p><span>我们希望这个 </span><strong><span>Objective Function V越大越好</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517112608814.png" alt="image-20210517112608814" style="zoom:67%;" /></p><ul><li><span>意味著我们希望这边的 D (Y) 越大越好,我们希望 Y 如果是从 </span><strong><span>Pdata Sample 出来的</span></strong><span>,它就要</span><strong><span>越大越好</span></strong></li><li><span>我们希望说如果 Y 是从,这个 </span><strong><span>PG Sample 出来的</span></strong><span>,它就要</span><strong><span>越小越好</span></strong></li></ul><p>&nbsp;</p><p><span>让 D (Y) 越大越好,也就是让Discriminator Output 的值越小越好</span></p><p><span>你可能觉得没事突然写出这个式子有点奇怪,但你</span><strong><span>不一定要把这个 Objective Function,写成这个样子</span></strong><span>,它完全可以有其他的写法,那最早年之所以写成这个样子,是有一个很明确的理由,是為了要把 </span><strong><span>Discriminator跟 Binary Classification</span></strong><span>,跟二元的分类</span><strong><span>扯上关係</span></strong></p><p><img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210517142125949.png" alt="image-20210517142125949" style="zoom:67%;" /></p><p><span>事实上这个 Objective Function,它就是 </span><strong><span>Cross Entropy 乘一个负号</span></strong><span>,我们知道我们在训练一个 Classifier 的时候,我们就是要 Minimize Cross Entropy,所以当我们</span><strong><span>Maximize Cross Entropy 乘一个负号</span></strong><span>的时候,其实等同於 </span><strong><span>Minimize Cross Entropy</span></strong><span>,也就是等同於是在</span><strong><span>训练一个 Classifier</span></strong></p><p><span>那这个 Discriminator,其实可以当做是一个 Classifier,它做的事情就是把蓝色这些点,从 Pdata Sample 出来的真实的 Image,当作 Class 1,把从 PG Sample出来的这些假的 Image,当作 Class 2</span></p><p><span>有两个 Class 的 Data,训练一个 Binary 的 Classifier,训练完就等同於是,解了这一个 Optimization 的问题</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517143713952.png" alt="image-20210517143713952" style="zoom:50%;" /></p><p><span>那这边最神奇的地方是这一个式子,这个</span><strong><span>红框框裡面的数值,它跟 JS Divergence 有关</span></strong></p><p><span>那事实上有趣的事情是,我觉得最原始的 GAN 的 Paper,它的发想可能真的是从 Binary Classifier 来的,一开始是把 Discriminator,写成 Binary 的 Classifier,然后有了这样的 Objective Function,然后再经过一番推导以后,这个 Objective Function,它的 Maximum,就是你找到一个 D,可以让这个 Objective Function,它的值最大的时候,这个最大的值跟 JS Divergence 是有关的。它们没有完全一模一样,所以显然一开始,并不是针对 JS Divergence 设计的,而是经过一番推导以后,发现它们是非常有关联的,那至於实际上的推导过程,你可以参见原始 Ian J. Goodfellow 写的文章,那其实裡面的推导过程,我觉得写得算是蛮清楚的</span></p><p><span>所以真正神奇的地方就是,这一个 </span><strong><span>Objective Function 的最大值,它跟 Divergence 是有关的</span></strong><span>,所以我们刚才说,我们不知道怎麼算 Divergence没关係,Train 你的 Discriminator,Train 完以后,看看它的 Objective Function 可以到多大,那个值就跟 Divergence 有关</span></p><p>&nbsp;</p><p><span>这边我们并没有把证明拿出来跟大家讲了,但是我们还是可以从</span><strong><span>直观上</span></strong><span>来理解一下,為什麼这个 </span><strong><span>Objective Function 的值,会跟 Divergence 有关</span></strong></p><p><span>你可以想想看,假设 PG 跟 Pdata,它的 </span><strong><span>Divergence 很小</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517145950583.png" alt="image-20210517145950583" style="zoom: 50%;" /></p><ul><li><p><span>也就 </span><strong><span>PG 跟 Pdata 很像</span></strong><span>,它们差距没有很大,它们很像 PG 跟 Pdata Sample 出来的,蓝色的星星跟红色的星星,它们是</span><strong><span>混在一起的</span></strong></p><p><span>这个时候Discriminator 就是在 Train 一个,Binary 的 Classifier,对 Discriminator 来说,既然这两堆资料是混在一起的,那就</span><strong><span>很难分开</span></strong><span>,这个问题很难,所以你在解这个 Optimization Problem 的时候,你就没有办法让这个 Objective 的值非常地大</span></p><p><span>所以这个 Objective 这个 V 的,Maximum 的值就比较小,所以小的 Divergence,对应到小的这个 Objective Function 的Maximum 的值</span></p><p><span>所以不是 Objective Function 的值本身,是 Objective Function 在穷举地找 Discriminator 要可以得到的最大的值,</span></p></li><li><p><span>如果今天,你的</span><strong><span>两组 Data 很不像</span></strong><span>,它们的 Divergence 很大,那对 Discriminator 而言,就可以轻易地把它分开</span></p><p><span>当 Discriminator 可以轻易把它分开的时候,这个 Objective Function 就可以冲得很大,那所以当你有大的 Divergence 的时候,这个 Objective Function 的 Maximum 的值,就可以很大</span></p></li></ul><p><span>详细的证明请参见 GAN 原始的 Paper,裡面在做了一些假设,比如说 Discriminator 的 Capacity 是无穷大,等等的假设以后,可以做出这个 Maximum 的值,跟 JS Divergence 一些相关的这个推导</span></p><p>&nbsp;</p><p><span>所以我们说我们本来的目标是要找一个 Generator,去 Minimize PG 跟 Pdata 的 Divergence</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517150917682.png" alt="image-20210517150917682" style="zoom: 50%;" /></p><p><span>但我们卡在</span><strong><span>不知道怎麼计算 Divergence</span></strong><span>,那我们现在要知道,我们只要训练一个 Discriminator,训练完以后,这个 Objective Function 的最大值,就是这个 Divergence,就跟这个 Divergence 有关</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517151012214.png" alt="image-20210517151012214" style="zoom: 50%;" /></p><p><span>那我们何不就把红框框裡面这一项,跟 Divergence 做替换,我们何不就把 Divergence,替换成红框框裡面这一项,所以我们就有了这样一个 Objective Function</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517151036974.png" alt="image-20210517151036974" style="zoom: 50%;" /></p><p><span>这个 Objective Function 乍看之下有点复杂,它</span><strong><span>有一个 Minimum</span></strong><span>,</span><strong><span>又有一个 Maximum</span></strong><span>,所以你不小心就会脑筋转不过来</span></p><ul><li><span>我们是要找一个 </span><strong><span>Generator</span></strong><span>,去 Minimize 红色框框裡面这件事</span></li><li><span>但是红框框裡面这件事,又是另外一个 Optimization Problem,它是在</span><strong><span>给定 Generator</span></strong><span> 的情况下,去找一个 Discriminator,这个 </span><strong><span>Discriminator,可以让 V 这个 Objective Function 越大越好</span></strong></li></ul><p>&nbsp;</p><p><span>然后我们要找一个 G,让红框框裡面的值最小,这个 G 就是我们要的 Generator,而刚才我们讲的这个 Generator 跟 Discriminator,互动 互相欺骗这个过程,其实就是想解这一个有 Minimize,又有 Maximize 这个 Min Max,Min Max 的问题,就是透过下面这一个,我们刚才讲的 GAN 的 Argument 来解的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517152330770.png" alt="image-20210517152330770" style="zoom:50%;" /></p><p><span>那至於实际上,為什麼下面这个 Argument 可以解这个问题,你也可以参见原始 GAN 的 Paper</span></p><p>&nbsp;</p><p><span>那讲到这边,也许你就会问说,</span><strong><span>為什麼是 JS Divergence,而且还不是真的 JS Divergence</span></strong><span>,是跟 JS Divergence 相关而已,</span><strong><span>怎麼不用真正的 JS Divergence,或不用别的,比如说 KL Divergence</span></strong></p><p><span>你完全可以这麼做,你只要改了那个 Objective Function,你就可以量各式各样的 Divergence,那至於怎麼样设计 Objective Function,得到不同的 Divergence,那有一篇叫做 F GAN 的 Paper 裡面,有非常详细的证明</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517152805378.png" alt="image-20210517152805378" style="zoom: 50%;" /></p><p><span>它有很多的 Table 告诉你说,不同的 Divergence,要怎麼设计它的 Objective Function,你设计什麼样的 Objective Function,去找它的 Maximum Value,就会变成什麼样的 Divergence,在这篇文章裡</span><a href='https://arxiv.org/abs/1606.00709' target='_blank' class='url'>https://arxiv.org/abs/1606.00709</a><span>面都有详细的记载,这一开始有人会觉得说,GAN 之所以没有很好 Train,也许是因為,就是我们没有在真的,这个 Minimize JS Divergence</span></p><p><span>但是有了这个 F GAN 这个 Paper以后,它就告诉你说,我们有办法 Minimize JS Divergence,但</span><strong><span>就算你真的可以 Minimize JS Divergence,结果也还是没有很好</span></strong><span>,GAN 还是没有很好 Train</span></p><p><span>所以俗话就说,No Pain No Gan </span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517153016705.png" referrerpolicy="no-referrer" alt="image-20210517153016705"></p><p>&nbsp;</p><p><span>所以接下来我们就要讲一些,GAN 训练的小技巧</span></p><h2 id='tips-for-gan'><span>Tips for GAN</span></h2><p><span>其实它 GAN 训练的小技巧非常非常多,我们只挑一个最知名的来讲,这个最知名的就是很多人都听过,就是很多人都听过的 </span><mark><span>WGAN</span></mark></p><p><span>在讲 WGAN 之前,我们先讲 </span><strong><span>JS Divergence 有什麼样的问题</span></strong><span>，在最早的 GAN 说,我们要 Minimize 的是 JS Divergence,那选择 JS Divergence 的时候,会有什麼问题</span></p><h3 id='js-divergence-is-not-suitable'><span>JS divergence is not suitable</span></h3><p><span>在想 JS Divergence 的问题之前,我们先看一下 </span><strong><span>PG 跟 Pdata 有什麼样的特性</span></strong></p><p><span>那 PG 跟 Pdata 有一个非常关键的特性是,</span><strong><span>PG 跟 Pdata 它们重叠的部分往往非常少</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517160024282.png" referrerpolicy="no-referrer" alt="image-20210517160024282"></p><p><span>这边有两个理由</span></p><ul><li><p><span>第一个理由是来自於 Data 本身的特性</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517160108669.png" alt="image-20210517160108669" style="zoom: 67%;" /></p><p><span>PG 跟 Pdata,它们都是要產生图片的,那图片其实是高维空间裡面的一个低维的 Manifold(</span><strong><span>流形</span></strong><span>（英语：Manifolds）是可以局部</span><a href='https://zh.wikipedia.org/wiki/欧几里得空间'><span>欧几里得空间</span></a><span>化的一个</span><a href='https://zh.wikipedia.org/wiki/拓扑空间'><span>拓扑空间</span></a><span>，是欧几里得空间中的曲线、曲面等概念的推广),怎麼知道图片是高维空间,裡面低维的 Manifold </span></p><p><span>我们可以想想看,你在高维空间裡面,随便 Sample 一个点,它通常都没有办法构成一个,二次元人物的头像,所以二次元人物的头像它的分布,在高维的空间中,其实是非常狭窄的,所以二次元头像的分布,这个图片的分布,其实是高维空间中的低维的 Manifold</span></p><p><span>或者是如果是以二维空间来想的话,那图片的分布,可能就是</span><strong><span>二维空间的一条线</span></strong><span>,二维空间中多数的点都不是图片,就高维空间中随便 Sample 一个点,都不是图片,只有非常小的范围,Sample 出来它会是图片,所以从这个角度来看,从资料本身的特性来看,PG 跟 Pdata,它们都是 Low Dimensional 的 Manifold,用二维空间来讲,PG 跟 Pdata 都是二维空间中的两条直线,而二维空间中的两条直线,除非它刚好重合,不然</span><strong><span>它们相交的范围,几乎是可以忽略的</span></strong><span>,这是第一个理由,那也许有人说, 这个 也许图片根本就不是什麼Low Dimensional 的 Manifold,那会不会第一个理由就不成立了</span></p></li></ul><ul><li><p><span>第二个理由是,我们是从来都不知道 PG 跟 Pdata 长什麼样子,我们对 PG 跟 Pdata,它的分布的理解,其实来自於 Sample</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517162310091.png" alt="image-20210517162310091" style="zoom: 67%;" /></p><p><span>所以也许 PG 跟 Pdata,它们是有</span><strong><span>非常大的 Overlap 的范围</span></strong><span>,但是我们实际上,在了解这个 PG 跟 Pdata,在计算它们的 Divergence 的时候,我们是从  Pdata 裡面 Sample 一些点出来,从 PG 裡面 Sample 一些点出来</span></p><p><span>如果你 </span><strong><span>Sample 的点不够多,你 Sample 的点不够密</span></strong><span>,那就算是这两个 Divergence 实际上,这两个 Distribution 实际上有重叠,但是假设你 Sample 的点不够多,对 Discriminator 来说,它也是没有重叠的</span></p><p><span>就是这个蓝色的分布跟红色的分布,明明是有重叠的,但如果你从蓝色分布 Sample 一些点,红色分布 Sample 一些点,这些点你又 </span><strong><span>Sample 得不够多</span></strong><span>,你完全就可以画一条楚河汉界,把红色的点跟蓝色的点完全地分开来,然后说红色的点,它的分布就是在这个楚河汉界的右边,蓝色的点就在左边,它们完全是</span><strong><span>没有任何冲突</span></strong></p><p><span>所以以上给你两个理由,试图说服你说 PG 跟 Pdata 这两个分布,它们</span><strong><span>重叠的范围是非常小的</span></strong></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><p><span>而几乎没有重叠这件事情,对於 JS Divergence 会造成什麼问题？</span></p><p><span>JS Divergence 有个特性,是</span><strong><span>两个没有重叠的分布,JS Divergence 算出来,就永远都是 Log2</span></strong><span>,不管这两个分布长什麼样,所以两个分布只要没有重叠,算出来就一定是 Log2</span></p><p><span>所以举例来说</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517163258620.png" alt="image-20210517163258620" style="zoom:50%;" /></p><p><span>假设这是你的 Pdata,这是你的 PG,它们都,假设它们都是一条直线,然后中间有很长的距离,你算它们的 JS Divergence,是 Log2</span></p><p><span>假设你的 PG 跟 Pdata 其实蛮接近的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517163345742.png" alt="image-20210517163345742" style="zoom:50%;" /></p><p><span>那中间的间隔其实是比较小的,算出来结果还是 Log2</span></p><p><span>除非你的 PG 跟 Pdata 有重合</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517163540710.png" alt="image-20210517163540710" style="zoom:50%;" /></p><p><span>不然这个 PG 跟 Pdata 只要它们是两条直线,它们这两条直线没有相交,那算出来就是 Log2,算出来这个 Case,算出来是 Log2,这个 Case 算出来也是 Log2</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517163615303.png" alt="image-20210517163615303" style="zoom:50%;" /></p><p><span>那但是明明中间这个 Case,中间这个 Generator就比左边这个 Generator 好,明明蓝色的线就跟红色的线比较近,但是从 JS Divergence 上面,看不出这样子的现象</span></p><p><span>那既然从 JS Divergence 上,看不出这样的现象,你在 Training 的时候,你根本就没有办法把这样子的 Generator,Update 参数变成这样子的 Generator,因為对你的 Loss 来说,对你的目标来说,这两个 Generator 是一样好,或者是一样糟</span></p><p><span>那以上是从比较理论的方向来说明,如果我们从更直观的实际操作的角度来说明,你会发现,当你是</span><strong><span>用 JS Divergence</span></strong><span> 的时候,你就假设你今天在 Train 一个,Binary 的 Classifier,去分辨 Real 的 Image,跟 Generated Image,你会发现</span><strong><span>实际上你通常 Train 完以后,正确率几乎都是 100%</span></strong></p><p><span>因為你 </span><strong><span>Sample 的图片根本就没几张</span></strong><span>,对你的 Discriminator 来说,你 Sample 256 张 Real 的图片,256 张 Fake 的图片,它直接用硬背的,都可以把这两组图片分开,知道说谁是 Real 谁是 Fake,所以实际上,如果你有自己 Train 过 GAN 的话你会发现,如果你用 Binary 的 Classifier Train 下去,你会发现,你几乎每次 Train 完你的 Classifier 以后,也就你 Train 完你的 Discriminator 以后,正确率都是 100%</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517163937858.png" alt="image-20210517163937858" style="zoom:50%;" /></p><p><span>我们本来会期待说,这个 Discriminator 的 Loss,也许代表了某些事情,这个 Binary Classifier Loss,也许代表某些事情,这个 </span><strong><span>Loss 越来越大,代表问题越来越难</span></strong><span>,代表我们的 </span><strong><span>Generated Data,跟 Real 的 Data 越来越接近</span></strong></p><p><span>但实际上,你在实际操作的时候你</span><strong><span>根本观察不到这个现象</span></strong><span>,这个 Binary Classifier </span><strong><span>训练完的 Loss根本没有什麼意义</span></strong><span>,因為它总是可以让它的正确率变到 100%,两组 Image 都是 Sample 出来的,它硬背都可以得到 100% 的正确率,你根本就没有办法看出你的 Generator,有没有越来越好</span></p><p><span>所以过去,尤其是在还没有 WGAN 这样的技术,在我们还用 Binary Classifier,当作 Discriminator 的时候,Train GAN 真的就很像巫术 黑魔法,你根本就不知道你 Train 的时候,有没有越来越好,所以怎麼办,那时候做法就是,你每次 Update 几次 Generator 以后,你就要把你的图片 Print 出来看,然后你就要一边那个吃饭,一边看那个图片生成的结果,然后跑一跑就发现 哇 坏掉了,然后咔掉重做这样子</span></p><p><span>所以以前你根本就没有,不像我们在 Train 一般的 Network 的时候,你有个 Loss Function,然后那个 Loss 随著训练的过程,会慢慢慢慢变小,那你就会看说 Loss 慢慢变小,你就放心知道说你的 Network 有在 Train,但会不会 Overfitting 是另外一件事,至少还在它在 Training Data 上有越来越好</span></p><p><span>但是对 GAN 而言,本来我们期待 Classifier 的 Loss,可以提供一些资讯,但是当你的 Classifier 是一个,简单 一般的 Binary Classifier 的时候,它训练的结果你就没有任何资讯,你每次训练出来正确率都是 100%,你根本不知道你的 Generator,有没有越来越好,变成你只能够用人眼看,用人眼守在电脑前面看,发现结果不好 咔掉,重新用一组 Hyperparameter,重新调一下 Network,加工重做,所以过去训练 GAN 是有点辛苦的</span></p><p><span>那既然是 JS Divergence 的问题,於是有人就想说,那会不会</span><strong><span>换一个,衡量两个 Distribution 的相似程度的方式,换一种 Divergence,就可以解决这个问题了,於是就有了这个  Wasserstein</span></strong><span>,或使用 </span><mark><span>Wasserstein Distance</span></mark><span> 的想法</span></p><h3 id='wasserstein-distance'><span>Wasserstein Distance</span></h3><p><span>Wasserstein Distance 的想法是这个样子,假设你有两个 Distribution,一个 Distribution 我们叫它 P,另外一个 Distribution 我们叫它 Q</span></p><p><span>Wasserstein Distance 它计算的方法,就是想像你在开一台推土机</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517165125486.png" alt="image-20210517165125486" style="zoom:50%;" /></p><p><span>推土机的英文叫做 Earth Mover,想像你在开一台推土机,那你把 P 想成是一堆土,把 Q 想成是你要把土堆放的目的地,那这个推土机</span><strong><span>把 P 这边的土,挪到 Q 所移动的平均距离</span></strong><span>,就是 </span><strong><span>Wasserstein Distance</span></strong></p><p><span>在这个例子裡面,我们假设 P 都集中在这个点,Q 都集中在这个点,对推土机而言,假设它要把 P 这边的土挪到 Q 这边,那它要平均走的距离,就是 D</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517165248639.png" alt="image-20210517165248639" style="zoom:50%;" /></p><p><span>所以在这个例子裡面,假设 P 集中在一个点,Q 集中在一个点,这两个点之间的距离是 D 的话,那 P 跟 Q 的 Wasserstein Distance,就是 D</span></p><p><span>那因為在讲这个,Wasserstein Distance 的时候,你要想像有一个 Earth Mover,有一个推土机在推土,所以其实 Wasserstein Distance,又叫 </span><mark><span>Earth Mover Distance</span></mark></p><p><span>但是如果是</span><strong><span>更复杂的 Distribution</span></strong><span>,你要算 </span><strong><span>Wasserstein Distance,就有点困难</span></strong><span>了</span></p><p>&nbsp;</p><p><span>假设这是你的 P,假设这是你的 Q</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517203203579.png" alt="image-20210517203203579" style="zoom: 50%;" /></p><p><span>假设你开了一个推土机,想要把 P 把它重新塑造一下形状,让 P 的形状跟 Q 比较接近一点,那有什麼样的做法,你会发现说,你可能的 Moving Plans,</span><strong><span>把 P重新塑造成 Q</span></strong><span> 的</span><strong><span>方法有无穷多种</span></strong></p><p><span>你可以说我把这边的土搬到这裡来,我把这边的土搬到这裡来,把 P 变成 Q</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517203324961.png" alt="image-20210517203324961" style="zoom:50%;" /></p><p><span>但你也可以捨近求远说,我把这裡的土搬到这裡来,把这裡的土搬到这裡来,捨近求远,一样还是可以把 P 变成 Q</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517203350798.png" alt="image-20210517203350798" style="zoom:50%;" /></p><p><span>所以当我们考虑,比较复杂的 Distribution 的时候,把 Q 把 P 变成 Q 的方法,是有非常非常多不同的方法,你有各式各样不同的 Moiving Plan,用</span><strong><span>不同的 Moving Plan</span></strong><span>,你</span><strong><span>推土机平均走的距离就不一样</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517203441636.png" alt="image-20210517203441636" style="zoom:50%;" /></p><p><span>在左边这个例子裡面,推土机平均走的距离比较少,在右边这个例子裡面因為捨近求远,推土机平均走的距离比较大</span></p><p><span>為了让 Wasserstein Distance 只有一个值,所以这边 Wasserstein Distance 的定义是,</span><strong><span>穷举所有的 Moving Plans</span></strong><span>,然后看哪一个推土的方法,哪一个 Moving 的计划,可以让平均的距离最小,那个</span><strong><span>最小的值,才是 Wasserstein Distance</span></strong></p><p><span>所以其实要计算 Wasserstein Distance,是挺麻烦的,光只是要计算一个 Distance,居然还要解一个 Optimization 的问题,</span><strong><span>解出这个 Optimization 的问题,才能算 Wasserstein Distance</span></strong></p><p>&nbsp;</p><p><span>我们先不讲,怎麼计算 Wasserstein Distance 这件事,我们先来讲假设我们</span><strong><span>能够计算Wasserstein Distance 的话</span></strong><span>,它可以带给我们什麼样的</span><strong><span>好处</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517210354183.png" alt="image-20210517210354183" style="zoom:50%;" /></p><p><span>那假设 PG 跟 Pdata 它们的距离是 </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.261ex" height="2.344ex" viewBox="0 -755.9 973.6 1009.2" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E112-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E112-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E112-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E112-MJMAIN-30" x="735" y="-213"></use></g></svg></span><script type="math/tex">d_0</script><span>,在左边这个例子裡面,Wasserstein Distance 算出来就是 </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.261ex" height="2.344ex" viewBox="0 -755.9 973.6 1009.2" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E112-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E112-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E112-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E112-MJMAIN-30" x="735" y="-213"></use></g></svg></span><script type="math/tex">d_0</script></p><p><span>在中间这个例子裡面,PG 跟 Pdata 它们之间的距离是 </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.261ex" height="2.227ex" viewBox="0 -755.9 973.6 958.9" role="img" focusable="false" style="vertical-align: -0.472ex;"><defs><path stroke-width="0" id="E111-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E111-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E111-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E111-MJMAIN-31" x="735" y="-213"></use></g></svg></span><script type="math/tex">d_1</script><span>,那 Wasserstein Distance 算出来的距离,就是 </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.261ex" height="2.227ex" viewBox="0 -755.9 973.6 958.9" role="img" focusable="false" style="vertical-align: -0.472ex;"><defs><path stroke-width="0" id="E111-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E111-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E111-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E111-MJMAIN-31" x="735" y="-213"></use></g></svg></span><script type="math/tex">d_1</script></p><p><span>假设 </span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.261ex" height="2.227ex" viewBox="0 -755.9 973.6 958.9" role="img" focusable="false" style="vertical-align: -0.472ex;"><defs><path stroke-width="0" id="E111-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E111-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E111-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E111-MJMAIN-31" x="735" y="-213"></use></g></svg></span><script type="math/tex">d_1</script><span> 比较小,</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.261ex" height="2.344ex" viewBox="0 -755.9 973.6 1009.2" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E112-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E112-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E112-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E112-MJMAIN-30" x="735" y="-213"></use></g></svg></span><script type="math/tex">d_0</script><span> 比较大,那算 Wasserstein Distance 的时候,这个 Case 的 Wasserstein Distance 就比较小,这个 Case 的 Wasserstein Distance 就比较大,所以我们就可以知道说,</span><strong><span>由左向右的时候,Wasserstein Distance 是越来越小的</span></strong></p><p><span>所以如果你观察,Wasserstein Distance 的话会知道说,从左到右我们的 Generator 越来越进步,但是如果你观察 Discriminator,你会发现你观察不到任何东西,对 Discriminator 而言,这边每一个 Case 算出来的 JS Divergence,都是一样,都是一样好或一样差,但是如果换成 Wasserstein Distance,由左向右的时候我们会知道说,我们的 Discriminator 做,我们的 Generator 做得越来越好</span></p><p><span>所以我们</span><strong><span>换一个计算 Divergence 的方式</span></strong><span>,我们就可以解决 JS Divergence,有可能带来的问题</span></p><p>&nbsp;</p><p><span>这又让我想到一个演化的例子,这是眼睛的生成</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517211703473.png" alt="image-20210517211703473" style="zoom:50%;" /></p><p><span>右边这个是人类的眼睛,人类的眼睛是非常地复杂的,那有一些生物它有非常原始的眼睛,比如说有一些细胞具备有感光的能力,这可以看做是最原始的眼睛,但是这些最原始的眼睛,怎麼变成最复杂的眼睛,这对人类来说其实觉得非常难想像</span></p><p><span>左边这个图像构造这麼简单,只是一些感光的细胞在皮肤上,经过突变產生一些感光的细胞,听起来像是一个合理的,但是天择突变,怎麼可能產生这麼复杂的器官,怎麼產生眼睛这麼精巧的器官</span></p><p><span>那如果你直接觉得说,从这个地方就可以一步跳到这个地方,那根本不可能发生,但是</span><strong><span>中间其实是有很多连续的步骤</span></strong><span>,从感光细胞到眼睛,中间其实是有连续的步骤的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517212626500.png" alt="image-20210517212626500" style="zoom:50%;" /></p><p><span>举例来说,感光的细胞可能会,出现在一个比较凹陷的地方,皮肤凹陷下去,这样感光细胞可以接受来自不同方向的光源,然后后来觉得说,乾脆把凹陷的地方盖起来,后来觉得盖起来的地方裡面,可以放一些液体,然后最后就变成了人的眼睛</span></p><p><span>而从最左边跳到最右边这一步,非常大,但是这边每一小步,都可以让一个生命存活的机率变大,都可以让生命繁衍下去的机率变高</span></p><p><span>既然这边每一个步骤,都可以让生命繁衍的机率变高,那生命就可以从左边一直演化到右边,最终產生复杂的器官</span></p><p><span>而我觉得对於当你使用 WGAN,当你使用这个 Wasserstein Distance,来衡量你的 Divergence 的时候,其实就製造了类似的效果,本来 PG0 跟 Pdata 非常地遥远,你要它一步从这裡跑到这裡,一步从这裡跑到这裡,让这个 PG0 跟 Pdata,直接 Align 在一起,是不可能的,可能非常地困难</span></p><p><span>对 JS Divergence 而言,它需要做到直接从这一步跳到这一步,它的 JS Divergence 的 Loss 才会有差异,但是对 </span><strong><span>W Distance</span></strong><span> 而言,你只要</span><strong><span>每次有稍微把 PG 往 Pdata 挪近一点</span></strong><span>,W Distance 就会有变化,W Distance 有变化,你才有办法 Train 你的 Generator,去 Minimize W Distance,所以这就是為什麼,当我们从 JS Divergence,换成 Wasserstein Distance 的时候,可以带来的好处</span></p><h3 id='wgan'><span>WGAN</span></h3><p><span>WGAN 实际上就是用,当你用 Wasserstein Distance,来取代 JS Divergence 的时候,这个 GAN 就叫做 WGAN</span></p><p><span>接下来你会遇到的问题就是,</span><strong><span>Wasserstein Distance 是要怎麼算</span></strong><span>,Pdata 跟 PG,它的 Wasserstein Distance 要怎麼计算,Wasserstein Distance,是一个非常复杂的东西,我光要算个 Wasserstein Distance,还要解一个 Optimization 的问题,实际上要怎麼计算</span></p><p><span>那这边就</span><strong><span>不讲过程,直接告诉结果</span></strong><span>,解下面这个 Opimilazion 的 Problem,解出来以后你得到的值,就是 Wasserstein Distance</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517213324131.png" alt="image-20210517213324131" style="zoom:67%;" /></p><p><span>我们就观察一下这个式子,这个式子裡面有说</span></p><ul><li><span>y 如果是从 Pdata 来的,那我们要计算它的 D(y) 的</span><strong><span>期望值</span></strong></li><li><span>y 如果是从 PG 来的,我们计算它的 D(y) 的</span><strong><span>期望值</span></strong><span>,但是</span><strong><span>前面乘上一个负号</span></strong></li></ul><p><span>所以如果你要 Maximum,这个 Objective Function,你会达成这样的效果，</span></p><ul><li><span>如果 y是从 </span><strong><span>Pdata</span></strong><span> Sample 出来的,D(y),就 Discriminator 的 Output 要</span><strong><span>越大越好</span></strong></li><li><span>如果 X 是从 </span><strong><span>PG</span></strong><span>,从 Generator Sample 出来的,那 D(y),也就 Discriminator 的 Output,应该要</span><strong><span>越小越好</span></strong></li></ul><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517213552789.png" alt="image-20210517213552789" style="zoom:67%;" /></p><p><span>但是这边</span><strong><span>还有另外一个限制</span></strong><span>,它不是光大括号裡面的值变大就好,还有一个限制是,</span><strong><span>D 不能够是一个随便的 Function</span></strong><span>,D必须要是一个 1-Lipschitz 的 Function</span></p><p><span>1-Lipschitz 是什麼东西,如果你不知道是什麼的话,也没有关係</span></p><p><span>我们这边你就想成,</span><strong><span>D 必须要是一个足够平滑的 Function</span></strong><span>,它不可以是变动很剧烈的 Function,它必须要是一个足够平滑的 Function</span></p><p><span>那為什麼足够平滑这件事情是非常重要的,我们可以从直观来理解它,假设这个是真正的资料的分布,这是 Generated 的资料的分布</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517214301455.png" alt="image-20210517214301455" style="zoom:50%;" /></p><p><span>如果我们没有这个限制,只看大括号裡面的值的话,大括号裡面的目标,是要这些真正的值,它的 D(y) 越大越好,那要让 Generated 的值,它的 D(y) 越小越好</span></p><p><span>如果你没有做任何限制,只单纯要这边的值越大越好,这边的值越小越好,在蓝色的点跟绿色的点,也就是真正的 Image,跟 Generated 的 Image,没有任何重叠的情况下,你的 Discriminator 会做什麼,它会给 Real 的 Image </span><strong><span>无限大的正值</span></strong><span>,给 Generated 的 Image </span><strong><span>无限大的负值</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517214207569.png" alt="image-20210517214207569" style="zoom:50%;" /></p><p><span>所以你这个 Training 根本就没有办法收敛,而且你会发现说,只要这两堆 Data 没有重叠,</span><strong><span>你算出来的值都是无限大</span></strong><span>,你算出来的这个 Maximum 值都是无限大,这显然不是我们要的,这不就跟 JS Divergence 的问题一模一样吗</span></p><p><span>其实你要加上这个限制以后,你这个 Maximum 的值,才会是 Wasserstein Distance,才是做 WGAN</span></p><p><span>為什麼加上这个限制,就可以解决刚才的问题？</span></p><p><span>因為这个限制是要求 </span><strong><span>Discriminator,不可以太变化剧烈</span></strong><span>,它必须要够听话,那今天如果你,要求你的 Discriminator 够平滑的时候,假设 Real Data 跟 Generated Data,它们距离比较近,那你就没有办法让 Real 的 Data 值非常大,然后 Generated 的值非常小,因為如果你让 Real 的值非常大,Generated 的值非常小,它们中间的差距很大,那这一个 Discriminator 变化就很剧烈,它就不平滑了,它就不是 1-Lipschitz</span></p><p><span>那為了要是 1-Lipschitz,这边的值没办法很大,这边的值没办法很小,让 Discrimination 必须足够,只觉得发现说,如果 Real 跟generated 的 Data 差距离很远,那它们的值就可以差很多,这边算出来的值就会比较大,你的 Wasserstein Distance 就比较大</span></p><p><span>如果 Real 跟 Generated 很近,就算它们没有重合,</span><strong><span>因為有了这一个限制</span></strong><span>,有了这一个写在 Max 下面的,1-Lipschitz Function 的限制,那你就发现说,它们其实</span><strong><span>不会真的都跑到无限大</span></strong><span>,它们的距离,因為有 1-Lipschitz Function 的限制,所以 Real Data 的值跟 Generated Data 的值,就</span><strong><span>没有办法差很多</span></strong><span>,那你算出来的 Wasserstein Distance,就会比较小</span></p><p>&nbsp;</p><p><span>接下来的问题就是,</span><strong><span>怎麼做到这个限制</span></strong></p><p><span>怎麼确保 Discriminator,一定符合 1-Lipschitz Function 的限制,最早刚提出 WGAN 的时候,其实没有什麼好想法,只知道写出了这个式子,那要怎麼真的解这个式子,有点困难,所以最早的一篇 WGAN 的 Paper,最早使用 Wasserstein 的那一篇 Paper,它说了它做了一个比较 Rough,比较粗糙的处理的方法</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517215328682.png" alt="image-20210517215328682" style="zoom:67%;" /></p><p><span>它是说我就 Train Network,那 Train Network 的时候,如果我 Training 的那个</span><strong><span>参数</span></strong><span>,我就要求它放得</span><strong><span>在 C 跟 -C</span></strong><span> 之间,如果超过 C,用 Gradient Descent Update 以后</span><strong><span>超过 C,就设為 C</span></strong><span>,Gradient Descent Update 以后</span><strong><span>小於 -C,就直接设為 -C</span></strong></p><p><span>其实这个方法,</span><strong><span>并不一定真的能够让 Discriminator,变成 1-Lipschitz Function</span></strong><span>,那你可以想像说这个方法,也许真的可以让我们的 Discriminator,比较平滑,但它并没有真的去解这个,Optimization 的 Problem,它并没有真的让 Discriminator,符合这个限制</span></p><p><span>所以接下来就有其它的想法,有一个想法叫做 Gradient Penalty</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517215451843.png" alt="image-20210517215451843" style="zoom: 67%;" /></p><p><span>Gradient Penalty 是出自,Improved WGAN 这篇 Paper</span><a href='https://arxiv.org/abs/1704.00028' target='_blank' class='url'>https://arxiv.org/abs/1704.00028</a><span>,那 Improve WGAN 这边paper 是说</span></p><p><span>假设这个是你的 Real Data 的分布,这个是你的这个 Fake Data 的分布,那我在 Real Data 这边取一个 Sample,Fake Data 这边取一个 Sample,两点连线中间再取一个 Sample,我要求这个点它的 Gradient 要接近,那你可能觉得说这个,不知道 不知道在说些什麼这样,这件事情的关係,跟这个限制的关係,到底是什麼,那就详见 Improved WGAN 的 Paper</span></p><p><span>那其实我觉得你现在,也不一定要真的非常较真说,这件事情 Gradient Penalty,跟这个限制之间的关係,因為其实有更多其它的方法,真的可以去解这个问题</span></p><p><span>那其实后来 Improved WGAN 之后,还有什麼 Improved 的 Improved WGAN,真的有这篇 Paper,它就是把这个限制再稍微改一改</span></p><p><span>有另外一篇 Paper 就叫,Improved The Improved WGAN,那今天其实你有一个方法,真的把 D 限制,让它是 1-Lipschitz Function,这个叫做 Spectral Normalization</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210517215543937.png" alt="image-20210517215543937" style="zoom:67%;" /></p><p><span>那我就把它的论文</span><a href='https://arxiv.org/abs/1802.05957' target='_blank' class='url'>https://arxiv.org/abs/1802.05957</a><span>放在这边给大家参考,那如果你要 Train 真的非常好的 GAN,你可能会需要用到 Spectral Normalizaion</span></p></div></div>
+</body>
+</html>
