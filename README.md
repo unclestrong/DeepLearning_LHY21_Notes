@@ -26,5 +26,7 @@
 
 [13_Transformer P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/13_Transformer_P2.html)
 
-[14_GAN_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/14_GAN_P1.html)
+[14_GAN P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/14_GAN_P1.html)
+
+[15_GAN P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/15_GAN_P2.html)
 
