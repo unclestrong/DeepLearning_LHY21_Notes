@@ -30,3 +30,5 @@
 
 [15_GAN P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/15_GAN_P2.html)
 
+[16_GAN P3](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/16_GAN_P3.html)
+
