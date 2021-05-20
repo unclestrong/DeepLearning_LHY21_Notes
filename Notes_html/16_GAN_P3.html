@@ -1,0 +1,608 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; zoom: 90%; }
+#math-inline-preview-content { zoom: 1.1; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ :root {--mermaid-font-zoom:1.4875em ;} 
+</style><title>16_GAN_P3</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='ganp3'><span>GAN_P3</span></h1><p><span>虽然说已经有 WGAN,但其实并不代表说,GAN 就一定特别好 Train,GAN 仍然是以,很难把它 Train 起来而闻名的,那為什麼 GAN 很难被 Train 起来？</span></p><p><span>它有一个本质上困难的地方</span></p><ul><li><span>Discriminator 做的事情,是要分辨真的图片跟產生出来的,也就是假的图片的差异</span></li><li><span>而 Generator 在做的事情,它是要去產生假的图片,骗过 Discriminator</span></li></ul><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210518204247459.png" alt="image-20210518204247459" style="zoom:50%;" /></p><p><span>而事实上这两个 Network,这个 Generator 跟 Discriminator,它们是</span><strong><span>互相砥砺,才能互相成长的</span></strong><span>,只要</span><strong><span>其中一者,发生什麼问题停止训练,另外一者就会跟著停下训练</span></strong><span>,就会跟著变差</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210518204830233.png" alt="image-20210518204830233" style="zoom:50%;" /></p><ul><li><span>假设你在 Train Discriminator 的时候,一下子没有 Train 好</span></li><li><span>你的 Discriminator 没有办法分辨,真的跟產生出来的图片的差异</span></li><li><span>那 Generator,它就失去了可以进步的目标,Generator 就没有办法再进步了</span></li><li><span>如果 Generator 没有办法再进步,它没有办法再產生更真实的图片,那 Discriminator 就没有办法再跟著进步了</span></li></ul><p><span>但是到目前為止,大家已经 Train 过了很多次的 Network,</span><strong><span>我们没有办法保证 Train 下去,它的 Loss 就一定会下降</span></strong><span>，你要让 Network Train 起来,往往你需要</span><strong><span>调一下 Hyperparameter</span></strong><span>,才有可能把它 Train 起来</span></p><p><span>那今天这个 Discriminator 跟 Generator,它们互动的过程是自动的,因為我们不会在中间,每一次 Train Discriminator 的时候,你都换 Hyperparameter</span></p><p><span>所以只能祈祷每次 Train Discriminator 的时候,它的 Loss 都是有下降的,那</span><strong><span>如果有一次没有下降,那整个 Training,很有可能就会变就会惨掉</span></strong><span>,整个 Discriminator 跟 Generator,彼此砥礪的这个过程,就可能会停下来</span></p><p><span>所以今天 Generator 跟 Discriminator,在 Train 的时候,它们必须要棋逢敌手,就任何一个人放弃了这一场比赛,另外一个人也就玩不下去了</span></p><p><span>因此 GAN 本质上它的 Training,仍然不是一件容易的事情,当然它是一个非常重要的技术,所以虽然它是一个前瞻的技术</span></p><p>&nbsp;</p><p><span>一些相关的,跟 Train GAN 的诀窍有关的文献,还有链接列在这边,其实就给大家自己参考</span></p><ul><li><a href='https://github.com/soumith/ganhacks'><span>Tips from Soumith</span></a></li><li><a href='https://arxiv.org/abs/1511.06434'><span>Tips in DCGAN: Guideline for network architecture design for image generation</span></a><span> </span></li><li><a href='https://arxiv.org/abs/1606.03498'><span>Improved techniques for training GANs</span></a></li><li><a href='https://arxiv.org/abs/1809.11096'><span>Tips from BigGAN</span></a></li></ul><h2 id='gan-for-sequence-generation'><strong><span>GAN for Sequence Generation</span></strong></h2><p><span>Train GAN 最难的其实是要拿 GAN 来生成文字</span></p><p><span>如果你要生成一段文字,那你可能会有一个,Sequence To Sequence 的 Model,你有一个 Decoder</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519084856823.png" alt="image-20210519084856823" style="zoom:50%;" /></p><p><span>那这个 Decoder 会產生一段文字,那我们现在这个,</span><strong><span>Sequence To Sequence 的 Model就是我们的 Generator</span></strong><span>,这个在过去,在讲 Transformer 的时候,这是一个 Decoder,那它现在,在 GAN 裡面,它就扮演了 Generator 的角色,负责產生我们要它產生的东西,比如说一 段文字</span></p><p><span>那你说这个会跟原来的 GAN,在影像上的 GAN 有什麼不同？就最 High Level 来看,</span><strong><span>就演算法来看</span></strong><span>,可能没</span><strong><span>有太大的不同</span></strong><span>,因為接下来,你就是训练一个 Discriminator</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519085552298.png" alt="image-20210519085552298" style="zoom:50%;" /></p><p><span>Discriminator 把这段文字读进去,去判断说这段文字是真正的文字,还是机器產生出来的文字,而 Decoder 就是想办法去骗过 Discriminator,Generator 就是想办法去骗过 Discriminator</span></p><p><span>你去</span><strong><span>调整</span></strong><span>你的这个 </span><strong><span>Generator</span></strong><span> 的</span><strong><span>参数</span></strong><span>,想办法让 Discriminator 觉得,Generator產生出来的东西是真正的</span></p><p><span>但是真正的的难点在於,你如果要用 </span><strong><span>Gradient Descent,去 Train 你的 Decoder</span></strong><span>,去让 Discriminator Output 分数越大越好,你会发现你</span><strong><span>做不到</span></strong></p><p><span>大家知道,在用Gradient Descent方法中计算微分的时候,所谓的 Gradient,所谓的</span><strong><span>微分</span></strong><span>,其实就是</span><strong><span>某一个参数</span></strong><span>,它有</span><strong><span>变化的时候</span></strong><span>,</span><strong><span>对你的目标造成了多大的影响</span></strong></p><p><span>我们现在来想想看,假设我们改变了 Decoder 的参数,也就是 Generator 的参数,有一点小小的变化的时候,到底对 Discriminator 的输出,有什麼样的影响</span></p><p><span>如果</span><strong><span>Decoder 的参数</span></strong><span>有一点</span><strong><span>小小的变化</span></strong><span>，那它现在</span><strong><span>输出的这个 Distribution</span></strong><span>,也会有</span><strong><span>小小的变化</span></strong><span>,那因為这个变化很小,所以它</span><strong><span>不会影响最大</span></strong><span>的那一个 </span><strong><span>Token</span></strong><span> </span></p><p><mark><span>Token</span></mark><span>,可能会觉得有点抽象,那如果你要想得更具体一点,Token 就是你现在在处理这个问题,处理產生这个 Sequence 的单位,那 Token ,是人定的了</span></p><ul><li><span>假设我们今天,在產生一个中文的句子的时候,我们是每次產生一个 Character,一个方块字,那方块字就是我们的 Token</span></li><li><span>那假设你在处理英文的时候,你每次產生一个英文的字母,那字母就是你的 Token</span></li><li><span>假设你一次,是產生一个英文的词,英文的词和词之间,是以空白分开的,那就是词就是你的 Token</span></li></ul><p><span>所以 Token 的定义,是你自己决定的,看你要拿什麼样的东西,当做你產生一个句子的单位</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519100200047.png" alt="image-20210519100200047" style="zoom:50%;" /></p><p><span>那今天,这个 </span><strong><span>Distribution 只有小小的变化</span></strong><span>,在取 Max 的时候,在找分数最大那个 Token 的时候,你会发现,分数最大的那个 Token是没有改变的,你 Distribution 只有小小的变化,所以分数最大的那个 Token 是同一个,那对 Discriminator 来说,它</span><strong><span>输出的分数是一模一样的</span></strong><span>,这样输出的分数就没有改变</span></p><p><span>所以你根本就没有办法算微分,你根本就</span><strong><span>没有办法做 Gradient Descent</span></strong></p><p><span>有同学可能会说,欸 这个 这边不是 Max,是因為 Max 造成不能做 Gradient Descent 吗,那那个 CNN 裡面不是有那个 Max Pooling 吗,那怎麼还可以做 Gradient Descent？这个问题就留给你自己深思一下,為什麼在这个地方,有 Max 不能做 Gradient Descent,而在CNN有 Max Pooling,却可以做 Gradient Descent</span></p><p><span>但是就算是不能做 Gradient Descent,你也不用害怕,记不记得我们上週有讲说,遇到不能用 Gradient Descent Train 的问题,就当做 </span><mark><span>Reinforcement Learning</span></mark><span> 的问题,硬做一下就结束了,所以你确实可以用 Reinforcement Learning,来 Train 你的 Generator,在你要產生一个 Sequence 的时候,你可以用 Reinforcement Learning,来 Train 你的 Generator</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519101008705.png" alt="image-20210519101008705" style="zoom:50%;" /></p><p><span>但Reinforcement Learning 是以难 Train 而闻名,GAN 也是以难 Train 而闻名,这样的东西加在一起,就大炸裂这样 Train 不起来,非常非常地难训练</span></p><p><span>所以要用 GAN 產生一段文字,过去一直被认為,是一个非常大的难题,所以有很长一段时间,没有人可以成功地把 Generator 训练起来產生文字,通常你需要先做 </span><mark><span>Pretrain</span></mark><span>,那 Pretrain 这件事情,其实我们等一下马上就会提到,如果你现在还不知道  Pretrain 是什麼的话,也没有关係,总之过去你没有办法用正常的方法,让 GAN 產生一段文字</span></p><p><span>直到有一篇 Paper 叫做 ScrachGAN</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519101508084.png" alt="image-20210519101508084" style="zoom:50%;" /></p><p><span>它的 Title 就开宗明义跟你炫耀说,它可以 Train Language GANs Form Scrach,Form Scrach 就是</span><strong><span>不用 Pretrain</span></strong><span> 的意思</span></p><p><span>它可以直接</span><strong><span>从随机的初始化参数开始</span></strong><span>Train 它的 Generator,然后让 Generator 可以產生文字,它最</span><strong><span>关键的就是爆调 Hyperparameter,跟一大堆的 Tips</span></strong></p><p><span>比如说,这个横轴是它们的 Major,这个叫做 </span><strong><span>FED</span></strong><span>,那这个是用在文字上的,我们今天就不讲,这不重要,总之这个值</span><strong><span>越低越好</span></strong></p><ul><li><span>一开始要有一个叫做 SeqGAN-Step 的技术,没这个完全 Train 不起来</span></li><li><span>然后接下来有一个很大的 Batch Size,通常就是上千,没有那个,你自己在家没办法这麼做的</span></li><li><span>Discriminator 加 Regularization,Embedding 要 Pretrain</span></li><li><span>改一下 Reinforcement Learning 的 Argument</span></li><li><span>最后就有 ScratchGAN,就可以从真的把 GAN Train起来,然后让它来產生 Sequence</span></li></ul><p><span>那今天有关 GAN 的部分,我们只是讲了一个大概,那如果你想要学最完整的内容,我在这边留下一个连结给大家参考,</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519102154787.png" alt="image-20210519102154787" style="zoom:50%;" /></p><p><span>那其实有关 Generative 的 Model,不是只有 GAN 而已，还有其他的,比如说 VAE,比如说 FLOW-Based Model,那我在这边也列了两个影片的连结,给大家参考</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519102224924.png" alt="image-20210519102224924" style="zoom:50%;" /></p><p><span>强调一下就是,这边的影片连结并</span><strong><span>不是一定要看过这些影片连结,才能够学习接下来的内容</span></strong><span>,因為机器学习可以讲的东西实在太多了,所以如果,假设你没有太多的时间,那你唯一真正需要听的,上课讲的内容是 Self Content,它本身是 Consistent 的,你只要每一堂课都有听,你接下来的内容,你应该都可以依序听下去,应该都可以听懂</span></p><p><span>然后在上课中,会放一些影片的连结,这个就等於是额外分出去的分支,如果你真的很有兴趣的话,可以进行深入的研究</span></p><p><span>那為什麼我们不再讲更多东西,因為在上课的设计,</span><strong><span>这个课程的内容,是以真正能够对你有帮助,以实务為导向的</span></strong><span>,就假设你想要 Train 一个 Generator,你想让机器可以產生东西,你有很多方法,你可以用 GAN,你可以 VAE,可以用 FLOW-Bases Model</span></p><p><span>我们这边就选择告诉你 GAN,所以以后,你如果有人叫你,Train 一个 Generative Model,你有办法去 Train 它,那你如果想要深入研究,你可以在研究 VAE 跟 FLOW-Bases Model,那有人可能会问说,為什麼选择 GAN,為什麼不是选择其他的 Model 一个最直接的理由是,</span><strong><span>GAN 的 Performance 是比较好</span></strong><span>的</span></p><p><span>如果你要產生非常好的图片的话,你还是今天要用 GAN,通常 VAE 或 FLOW-Bases Model,它们產生的结果,都是跟 GAN 有非常大的一段差距,它们通常都是 Plan 说,我经过了一番努力,暴调了一堆参,爆弄了一堆 Tips,最后可以跟 GAN 差不多而已,所以 GAN 通常,它產生出来的结果还是比较好的</span></p><p><span>那你可能会说,GAN 比较难 Train,这个比较 Train 吧,VAE 或 FLOW 会不会比较好 Train？</span></p><p><span>如果你真的有实做 </span><strong><span>VAE 或 FLOW 的话,它们没有比较好 Train</span></strong><span> 老实说,你可能会觉得说,从它的式子上看起来,GAN 很神祕,有一个 Discriminator Generator,它们要互动,然后像 FLOW-Bases Model VAE,它们都比较像是,直接 Train 一个一般的模型,它们有一个很明确的 Objective</span></p><p><span>但你实际上 Train 起来发现说,它们也没有那麼容易成功地被训练起来,它们的 Objective 裡面有很多项,它们的 Loss 裡面有很多项,然后把每一项都平衡,才能够有好的结果,但要达成平衡也非常地困难,跟 GAN,我觉得 Train 的难度是不遑多让,所以我们这边就选择 GAN ,作為我们课堂上介绍的,生成式的 Generative 的 Model,那至於其他 Model,你可以再多多,如果你有兴趣,你可以再自己涉猎</span></p><p>&nbsp;</p><p><span>也许有同学会想说,為什麼我们要特别用一些,提出一些新的做法,来做 Generative 这件事？</span></p><p><span>如果我们今天的目标就是,输入一个 Gaussian 的 Random 的 Variable,输入一个 Gaussian,从 Gaussian 的这个 Random Variable,Sample 出来的 Vector,把它变成一张图片,那我们能不能够用,</span><mark><span>Supervised Learning</span></mark><span> 的方法来做？</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519105119057.png" alt="image-20210519105119057" style="zoom:50%;" /></p><p><span>也就说我有一堆图片,我把这些图片拿出来,每一个图片都去配一个 Vector,都去配一个,从 Gaussian Distribution,Sample 出来的 Vector，接下来就当做 Supervised Learning 的方法,硬做就结束了,</span></p><p><span>这张图片就是对到这个 Vector,Train 一个 </span><strong><span>Network</span></strong><span>,</span><strong><span>输入一个 Vector</span></strong><span>,</span><strong><span>输出</span></strong><span>就是它</span><strong><span>对应的图片</span></strong><span>,把对应的图片当做你训练的目标,训练下去</span></p><p><span>真的有这样子的生成式的模型,那难的点是说,如果这边,纯粹放随机的向量,Train 起来结果会很差,你可能根本连 Train 都 Train 不起来,所以怎麼办,你需要有一些</span><strong><span>特殊的方法</span></strong><span>,我在这边一样放两篇论文的连结</span></p><p><span>Generative Latent Optimization (GLO), </span><a href='https://arxiv.org/abs/1707.05776' target='_blank' class='url'>https://arxiv.org/abs/1707.05776</a></p><p><span>Gradient Origin Networks, </span><a href='https://arxiv.org/abs/2007.02798' target='_blank' class='url'>https://arxiv.org/abs/2007.02798</a></p><h2 id='evaluation-of-generation'><span>Evaluation of Generation</span></h2><p><span>我们现在產生出来的 Generator,它好或者是不好,那要</span><strong><span>评估一个 Generator 的好坏,并没有那麼容易</span></strong><span>,那最直觉的做法,也许是</span><strong><span>找人来看</span></strong><span>,你要知道,今天这个 Generator 產生出来的图片,到底像不像动画的人物,那就找人直接来看,也许就结束了</span></p><p><span>其实很长一段时间,尤其是人们刚开始研究,Generative 这样的技术的时候,很长一段时间没有好的 measure,那时候要评估 Generator 的好坏,都是人眼看,然后</span><strong><span>直接用吹的</span></strong><span>这样</span></p><p><span>就说在 Paper 最后就放几张图说,你看这个,我觉得应该是比文献上,目前结果都还要好,太棒了,这应该是state of the art,然后就结束了这样子,所以发现比较早年的 GAN 的 Paper,它没有数字,整篇 Paper 裡面没有 Accuracy,它就是放几张图片告诉你说,这个应该是比过去的文章都好,然后就结束了</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519162153046.png" alt="image-20210519162153046" style="zoom:50%;" /></p><p><span>完全</span><strong><span>用人来看</span></strong><span>显然有</span><strong><span>很多的问题</span></strong><span>,比如说</span><strong><span>不客观</span></strong><span>,</span><strong><span>不稳定</span></strong><span>等等诸多的问题,所以有没有比较客观,而且自动的方法,来想办法量一个 Generator 的好坏,如果针对特定的一些任务,是有办法设计一些方法的,</span></p><p><span>如果是</span><strong><span>一般的 Case</span></strong><span> ,如果我们不侷限在我们的作业,跟一般的 Case,我随便训练了一个 Generator,它不一定是產生动画人物的,因為它產生别的,它专门產生猫,专门產生狗,专门產生斑马等等</span></p><p><span>那有一个方法,是一样跑一个影像的分类系统,</span><strong><span>把你的 GAN 產生出来的图片,丢到一个的影像的分类系统裡面</span></strong><span>,看它產生什麼样的结果</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519162401379.png" alt="image-20210519162401379" style="zoom: 67%;" /></p><p><span>影像分类系统输入是一张图片,我们这边叫做 y,输出,是一个机率分布,我们这边叫它 P ( c│y ),P ( c│y ) 是一个机率的分布</span></p><p><span>然后接下来我们就看说,这个机率的</span><strong><span>分布如果越集中</span></strong><span>,就代表说现在產生的</span><strong><span>图片可能越好</span></strong><span>,虽然我们不知道这边產生的图片,裡面有什麼东西,不知道它是猫还是狗还是斑马,我们不知道它是什麼,但是如果丢到了一个影像分类系统以后,它输出来的结果,它输出来的这个分布非常集中,代表影像分类系统,它非常肯定,它现在看到什麼样的东西</span></p><p><span>它非常肯定它看到了狗,它非常肯定它看到了斑马,然后代表说,你產生出来的图片,也许是比较接近真实的图片,所以影像辨识系统才辨识得出来</span></p><p><span>如果你</span><strong><span>產生出来的图片是一个四不像</span></strong><span>,根本看不出是什麼动物,那影像辨识系统就会非常地困惑,它產生出来的这个</span><strong><span>机率分布</span></strong><span>,就会非常地</span><strong><span>平坦</span></strong><span>,非常地</span><strong><span>平均分布</span></strong><span>,那如果是平均分布的话,那就代表说你的 GAN,產生出来的图片,可能是比较奇怪的,所以影像辨识系统才会辨识不出来</span></p><p><span>所以这个是靠影像辨识系统,来判断你產生出来的图片好坏,这是一个可能的做法</span></p><h3 id='diversity---mode-collapse'><span>Diversity - Mode Collapse</span></h3><p><span>但是光用这个评估的方法会被一个,叫做 </span><mark><span>Mode Collapse</span></mark><span> 的问题骗过去,Mode Collapse 是说,你在 Train GAN 的时候,你有时候 Train 著 Train 著,就会遇到一个状况是</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519163709319.png" alt="image-20210519163709319" style="zoom:50%;" /></p><ul><li><span>假设这些</span><strong><span>蓝色</span></strong><span>的星星,是</span><strong><span>真正</span></strong><span>的资料的分布</span></li><li><strong><span>红色</span></strong><span>的星星是你的 </span><strong><span>GAN</span></strong><span>,你的 Generative 的 Model,它的分布</span></li></ul><p><span>你会发现说 Generative Model,它</span><strong><span>输出来的图片来来去去,就是那几张</span></strong><span>,可能单一张拿出来,你觉得好像还做得不错,但让它多產生几张就露出马脚</span></p><p><span>那以下是一个 Mode Collapse 的例子啦,就是我们在这个上週有看到说,我就 Train 了一个 Generator,让它產生二次元的人物,那 Train 著 Train 著 Train 到最后,我就发现变成这样的一个状况,这一张脸越来越多</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519200500489.png" referrerpolicy="no-referrer" alt="image-20210519200500489"></p><p><span>越来越多,而且它还有不同的髮色,这个髮色比较偏红,这个髮色比较偏黄,越来越多,最后就通通都是这张脸,那这就是一种 Mode Collapse 的现象</span></p><p><span>那為什麼会有 Mode Collapse,这种现象发生,就直觉上你还是比较容易理解,你可以想成说,这个地方就是 Discriminator 的一个盲点,当 Generator 学会產生这种图片以后,它 Discr,它就永远都可以骗过 Discriminator,Discriminator 没办法看出说,这样子的图片是假的,那这是一个 Discriminator 的盲点,Generator 抓到这个盲点就硬打一发,就发生 Mode Collapse 的状况</span></p><p><span>那可是到底要</span><strong><span>怎麼避免Mode Collapse</span></strong><span> 的状况,我认為今天</span><strong><span>其实还没有一个非常好的解答</span></strong><span>,举例来说,我们在上週给大家看到了,BGAN 的结果,就是会產生网球狗那个结果,那是 Google 做的,它也爆收了参数,但就算是它爆收了参数,它发现最终,它仍然没有办法真的避免,Mode Collapse 的状况,就 BGAN Train 到最后,还是 Mode Collapse</span></p><p><span>BGAN 那边 Paper 怎麼解决这个问题,其实很简单,Model 在 Generator 在训练的时候,一路上都会把checkpoint 存下来,</span><strong><span>在 Mode Collapse 之前,把 Training 停下来</span></strong><span>,然后就把之前的 Model 拿出来用,就结束了这样,所以就算是强如 Google 爆收参数,现在</span><strong><span>还是没有办法彻底解决,Mode Collapse 的问题</span></strong></p><h3 id='diversity---mode-dropping'><span>Diversity - Mode Dropping</span></h3><p><span>但是有另外一种更难被侦测到的问题,叫做 Mode Dropping,Mode Dropping 的意思是说,你的真实的资料分布可能是这个样子,但是你的產生出来的资料,只有真实资料的一部分,单纯看產生出来的资料,你可能会觉得还不错,而且分布,它的这个多样性也够</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519202343343.png" alt="image-20210519202343343" style="zoom:50%;" /></p><p><span>但你不知道说真实的资料,它的</span><strong><span>多样性的分布,其实是更大</span></strong><span>的,我这边举一个例子,好 那这边,是一个真实的例子,就有个同学,他 Train 了这个人脸生成的 GAN,那它在某一个 Iteration 的时候,它的 Generator 產生出这些人脸</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519202412365.png" alt="image-20210519202412365" style="zoom:50%;" /></p><p><span>你会觉得说,没有问题,而且人脸的多样性也够,有男有女,有向左看,有向右看,各式各样的人脸都有,好 这个是第 T 个 Iteration 的时候 Generator,你也不觉得,它的多样性有问题,但如果你再看下一个 Iteration,Generator 產生出来的图片是这样子的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519202438228.png" alt="image-20210519202438228" style="zoom:50%;" /></p><p><span>它的</span><strong><span>肤色有问题</span></strong><span>,所以它之前,你看有男有女没有问题,但是它肤色偏白,这边肤色偏黄,你没弄好人家都觉得,你的 Generator 有种族歧视</span></p><p><span>所以在这种 Mode Dropping 的问题是,</span><strong><span>不太容易被侦测出来的</span></strong><span>,事实上今天到底,今天这些非常好的 GAN,BGAN,Progress GAN,BGAN,Progress GAN,可以產生非常真实人脸这些 GAN,到底有没有 Mode Dropping 的问题,可能还是有的</span></p><p><span>如果你看多了,GAN 產生出来的人脸,你会发现说,虽然非常真实,但好像来来去去,就是那麼几张脸而已,它有一个非常独特的特徵是,你看多了以后就觉得,这个脸好像是被生成出来的,所以今天也许 </span><strong><span>Mode Dropping 的问题,都还没有获得本质上的解决</span></strong></p><p><span>但是我们会需要去量说,现在我们的 Generator,它產生出来的图片,到底多样性够不够</span></p><p>&nbsp;</p><p><span>过去有一个做法,一样是</span><strong><span>藉助我们的 Image Classifier</span></strong><span>,你就把一堆图片,就很像你的 Generator 產生 1000 张图片,把这 1000 张图片裡,都丢到 Image Classify 裡面,</span><strong><span>看它被判断成哪一个 Class</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519204240918.png" alt="image-20210519204240918" style="zoom: 67%;" /></p><p><span>每张图片,都会给我们一个 Distribution,你</span><strong><span>把所有的 Distribution 平均起来</span></strong><span>,接下来看看平均的 Distribution 长什麼样子</span></p><p><span>如果平均的 </span><strong><span>Distribution 非常集中</span></strong><span>,就代表现在</span><strong><span>多样性不够</span></strong><span>,如果什麼图片丢进去,你的影像分类系统都说,是看到 Class 2,看到裡面有 Class 2 这样的东西,那代表说,每一张图片也许都蛮像的,你的多样性是不够的</span></p><p><span>那如果另外一个 Case,不同张图片丢进去,不同张,你的 Generator 產生出来的图片,丢到 Image Classifier 的时候,它產生出来的</span><strong><span>输出的分布</span></strong><span>,都</span><strong><span>非常地不同</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210519204329223.png" alt="image-20210519204329223" style="zoom:67%;" /></p><p><span>你平均完以后发现,</span><strong><span>平均完</span></strong><span>后的结果是</span><strong><span>非常平坦</span></strong><span>的,那这个时候代表什麼,这个时候代表说,也许你的</span><strong><span>多样性是足够的</span></strong><span>,那你会发现说在评估的标準上</span></p><p><span>当我们用这个 Image 的 Classifier,来做评估的时候,</span><strong><span>Diversity 跟 Quality 好像是有点互斥</span></strong><span>的,因為我们刚才在讲 Quality 的时候,我们说</span><strong><span>越集中代表 Quality 越高</span></strong><span>,但是 </span><strong><span>Diversity 分布越平均,代表 Diversity 越大</span></strong></p><p><span>强调一下这个 Quality 跟 Diversity,它们评估的</span><strong><span>范围不一样</span></strong></p><ul><li><span>Quality 是只看</span><strong><span>一张图片</span></strong><span>,一张图片丢到 Classifier 的时候,分布有没有非常地集中</span></li><li><span>而 Diversity 看的是</span><strong><span>一堆图片</span></strong><span>,它分布的平均,一堆图片你的 Image Classifier ，如果输出的平均越平均的话,就代表说现在的 Diversity 越大</span></li></ul><p><span>那过去有一个非常常被使用的分数,叫做 </span><mark><span>Inception Score</span></mark><span>,那它的缩写 是 IS,所谓 Inception Score,顾名思义就是这边用的这个 基于CNN的Inception模型来做的,所以叫 Inception Score</span></p><p><span>用 Inception Network 量一下 Quality,如果 Quality 高,那个 Diversity 又大,那 Inception Score 就会比较大</span></p><h3 id='fréchet-inception-distance-fid'><span>Fréchet Inception Distance (FID)</span></h3><p><span>在我们的作业中,会採取另外一个 Evaluation 的 Measure,叫 </span><mark><span>Fréchet Inception Distance</span></mark><span>,它的缩写叫做 FID,这个东西是什麼,你先把你產生出来的二次元的人物,丢到 Inception Net 裡面</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520090525578.png" alt="image-20210520090525578" style="zoom:67%;" /></p><p><span>把这个二次元人物一路丢到最后,让那个 Inception Network 输出它的类别,那你得到的可能就是人脸,那每一张二次元的人物看起来都是人脸,那我们</span><strong><span>不要拿那个类别</span></strong></p><p><span>我们拿</span><strong><span>进入 Softmax 之前的 Hidden Layer 的输出</span></strong><span>,进入 Softmax 之前,你的 Network 会產生一个向量,那可能是长度是上千维的一个向量,把那个向量拿出来,代表这张图片</span></p><p><span>那如果我们拿出来的是一个向量,而不是最后的类别,那虽然最后分类的类别可能是一样的,但是在决定最后的类别之前,这个向量就算都是人脸,可能还是不一样的,可能会随著肤色 髮型,这个向量还是会有所改变的,所以我们就不取最后的类别,只取这个 Inception Network 中间的,其实是最后一层的这个 Hidden Layer 的输出,来代表一张图片</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520155520911.png" alt="image-20210520155520911" style="zoom:50%;" /></p><p><span>所有</span><strong><span>红色的点</span></strong><span>,代表你把</span><strong><span>真正的图片</span></strong><span>,丢到 Inception Network 以后,拿出来的向量,那这个向量其实非常高维度,是上千维的，我们就把它假设,我们可以把它画在二维的平面上,</span></p><p><strong><span>蓝色的点</span></strong><span>是你自己的 GAN,你自己的 Generator,</span><strong><span>產生出来的图片</span></strong><span>,它丢到 Inception Network 以后,进入 Softmax 之前的向量,把它画出来,假设是长这个样子</span></p><p><span>接下来,假设真实的图片跟產生出来的图片它们都是 Gaussians 的 Distribution,然后去</span><strong><span>计算这两个 Gaussians Distribution 之间的</span><mark><span>Fréchet  Distance</span></mark></strong><span>,就结束了</span></p><p><span>那至於 Fréchet 的 Distance 是什麼,你有兴趣再自己看一下文献,反正在作业裡面,我们的 Judge Systerm 会帮大家算好</span></p><p><span>因為它是一个 Distance,所以这个值就是越小越好,</span><strong><span>距离越小,代表这两组图片越接近</span></strong><span>,那当然就是產生出来的品质越高</span></p><p><span>但这边你一定心裡还是有很多问号</span></p><ul><li><p><span>第一个问号就是,当做 Gaussians Distribution 没问题吗,这个应该不是 Gaussians Distribution吧？</span></p><p><span>会有问题！</span></p></li><li><p><span>然后另外一个问题就是,如果你要準确的得到你的 Network 它的分布,那你可能需要產生大量的 Sample 才能做到,那这需要一点运算量,那这个也是要做 FID 不可避免的问题</span></p><p><span>所以其实我们在作业裡面,我们不会只看,我们也不会只看 FID,只看 FID,其实结果会怪怪的,怪怪的 因為你,你假设你的这个输出的分布一定是 Gaussians ,那它实际上不是 Gaussians,硬假设它是 Gaussians,没有怪怪的吗,会怪怪的,所以我们是同时看 FID,跟动画人物人脸的这个,侦测出来的人脸的数目,这两个指标,我会同时看这两个指标,那这样可以得到比较合理而精确的结果</span></p></li></ul><p><span>FID 算是今天比较常用的一种 Measure,那有一篇 Paper 叫做,Are GANs Created Equal,A Large Scale Study</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520160214095.png" alt="image-20210520160214095" style="zoom:67%;" /></p><p><span>那你可以想见说这个也是 Google 做的啦,那就是爆做了各式各样不同的 GAN,有,那个时候它就列举了好多不同的,各式各样的 GAN,那每一个 GAN,当然它的这个训练的这个 Objective,训练的那个 Loss 有点不太一样,我这边就不细讲,各式各样的 GAN,每一种 GAN,它都用不同的 Random Seed,去跑过很多次以后,看看结果怎麼样</span></p><p><span>上面这个图,就是在四个不同的资料库上面得到的结果</span></p><p><span>横轴这边代表的是不同的 GAN,那这边的值FID,是越小越好</span></p><p><span>你会发现说,这边每一个方法,它都不是只得到一个数值,它都</span><strong><span>得到一个分布</span></strong><span>,為什麼它得到是一个分布,因為你要用那个</span><strong><span>不同的 Random Seed</span></strong><span> 去跑,每次跑出来的结果都不太一样,那这边混了一个不是 GAN 的做法,混了一个 VAE 在这裡</span></p><p><span>那你会发现说,如果比较这些 GAN 的方法跟 VAE 的方法,</span><strong><span>VAE 的方法显然是比较稳定的</span></strong><span>,不同的 Random Seed,看起来差距还是比较小的,那 GAN 的方法,不同 Random Seed 差距是很大的,那你又可以很明显地看出,VAE 跟 GAN,它的这个好的程度,不在同一个量级上,</span><strong><span>GAN可以產生远比 VAE 更好的结果</span></strong></p><p><span>不过你会发现说</span><strong><span>不同的 GAN好像结果差不多</span></strong><span>,所以这边就,那抬头就是 Are GANs Created Equal,然后看起来所有的 GAN 都差不多,</span></p><p><span>如果你仔细看那篇文章的话,在做实验的时候,所有</span><strong><span>这些不同的 GAN 用的 Network 架构都是同一个</span></strong><span>,它只是爆收了那个,Random Seed 跟 Learning Rate 而已,所以 Network 架构还是同一个</span></p><p><span>所以我们</span><strong><span>不知道是不是有某些 Network 架构,特别 Favor 某些种类的 GAN</span></strong><span>,或者是某些种类的 GAN,会不会在不同的 Network 架构上,表现得比较比较稳定,比如说如果你看 WGAN 的话,WGAN 最原始的 Paper,它标榜的其实是它 Network 架构胡乱设计,它胡乱兜个什麼 100 层的 Generator,就很没有必要弄一个 100 层的 Generator,它也 Train 得起来,所以也许 WGAN 是在不同的 Generator,不同的 Network 架构的时候比较稳定,那你试不同的 Random Seed,可能没有特别稳定等等之类的,不知道,这篇 Paper 并没有给我们这方面的答案</span></p><h3 id='we-dont-want-memory-gan'><span>We don’t want memory GAN.</span></h3><p><span>那其实刚才那些 Measure 也完全,也并没有完全解决 GAN 的Evaluation 的问题</span></p><p><span>你想想看以下的状况,假设这是你的真实资料</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520161613933.png" alt="image-20210520161613933" style="zoom:67%;" /></p><p><span>你不知道怎麼回事,训练了一个 Generator,它產生出来的 Data,跟你的真实资料一模一样</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520161634054.png" alt="image-20210520161634054" style="zoom:67%;" /></p><p><span>所以如果你不知道真实资料长什麼样子,你光看这个 Generator 的输出,你会觉得太棒了,它做得很棒,那 FID 算出来,一定是非常小的</span></p><p><span>但问题是这个是你要的吗,如果它產生出来的图片都跟资料库裡面的,训练资料的一模一样,训练资料就在你手上,直接从训练资料裡面,Sample 一些 Image 出来不是更好,干嘛要 Train Generator</span></p><p><span>我们 </span><strong><span>Train Generator 其实是希望它產生,新的图片</span></strong><span>,</span><strong><span>训练资料裡面没有的人脸</span></strong><span>,如果训练资料裡面有一模一样的人脸,直接用训练资料裡面的人脸就好了,何必用 GAN ,所以有时候你的 GAN 產生出来的结果很好,也许你在作业裡面,FID 算出来也很低,然后人脸辨识系统也给你很高的分数,但是它不一定是一个好的 GAN</span></p><p><span>你可能会说,那我们就把,我们 </span><strong><span>Generator 產生出来的图片</span></strong><span>,跟</span><strong><span>真实资料</span></strong><span>比个</span><strong><span>相似度</span></strong><span>吧,看看是不是一样嘛,如果很多张都一样就代表说,Generator 只是把那个训练资料背起来而已,它没有很厉害</span></p><p><span>但是那如果我问另外一个问题,假设你的 Generator 学到的是,把所有训练资料裡面的图片都</span><strong><span>左右反转</span></strong><span>,那它也是什麼事都没有做</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520161812155.png" alt="image-20210520161812155" style="zoom:67%;" /></p><p><span>假设它学到就是,把训练资料裡面所有的图片都左右翻转,那你会觉得,嗯 它看起来很棒,它实际上也是什麼事都没有做,但问题是你比相似度的时候,又比不出来,所以 </span><strong><span>GAN 的 Evaluation是非常地困难的</span></strong><span>,还甚至 光要如何评估,一个 Generator 做得好不好这件事情,都是一个可以研究的题目</span></p><p><span>如果你真的很有兴趣的话,这边放了一篇相关的文章啦</span><a href='https://arxiv.org/abs/1802.03446' target='_blank' class='url'>https://arxiv.org/abs/1802.03446</a><span>,裡面就列举了二十几种,GAN Generator 的评估的方式</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520162110307.png" alt="image-20210520162110307" style="zoom:50%;" /></p><h2 id='conditional-generation'><span>Conditional Generation</span></h2><p><span>什麼是 Conditional 的 Generation？</span></p><p><span>刚才我们讲的那个 Generator,到目前為止我们讲的 Generator,它输入都是一个随机的分布而已,那这个不见得非常有用</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520162512685.png" alt="image-20210520162512685" style="zoom:50%;" /></p><p><span>我们现在想要更进一步的是,我们可以操控 Generator 的输出,我们给它一个 Condition x,让它根据 x 跟 z 来產生 y,那这样的 Conditional Generation</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520162536362.png" alt="image-20210520162536362" style="zoom:50%;" /></p><p><span>有什麼样的应用,比如说你可以做文字对图片的生成</span></p><p>&nbsp;</p><p><span>那如果你要做文字对图片的生成,它其实是一个 Supervised Learning 的问题,你需要一些 Label 的 Data,你需要去蒐集一些图片,蒐集一些人脸,然后这些人脸都要有文字的描述,告诉我们说,这个是红眼睛,这个是黑头髮,这个是黄头髮,这个是有黑眼圈等等,告诉我们这样子,我们要这样的 Label 的资料,才能够训练这种 Conditional 的 Generation</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520163201947.png" alt="image-20210520163201947" style="zoom:50%;" /></p><p><span>所以在 Text To Image 这样的任务裡面,我们的 </span><strong><span>x 就是一段文字</span></strong><span>,那你可能问说,一段文字怎麼输入给 Generator ,那就要问你自己了,你要怎麼做都可以</span></p><p><strong><span>以前会用 RNN 把它读过去</span></strong><span>,然后得到一个向量,再丢到 Generator,今</span><strong><span>天也许你可以把它丢到一个 Transformer 的 Encoder 裡面</span></strong><span>去,把 Encoder Output 这些向量通通平均起来,丢到 Generator 裡面去,怎麼样都可以 反正,你用什麼方法都可以,只要能够让 Generator 读一段文字就行</span></p><p><span>那你期待说你输入 Red Eyes,然后,机器就可以画一个红眼睛的角色,但每次画出来的角色都不一样,那这个画出来什麼样的角色,取决於什麼,取决於你 Sample 到什麼样的 z,Sample 到不一样的 z,画出来的角色就不同,但是通通都是红眼睛的,这个就是 Text To Image 想要做的事情</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520164306908.png" alt="image-20210520164306908" style="zoom:50%;" /></p><p><span>这学期虽然没有,但过去有这个作业,就是输入红头髮,这个是之前助教做的结果,输入红头髮,输入绿眼睛,那產生的结果就是这个样子,產生各式各样红头髮 绿眼睛的角色,输入蓝头髮 红眼睛,就產生各式各样蓝头髮 红眼睛的角色,你发现,那个有时候机器也是会犯错的啦,比如说这边有一个异色瞳,虽然说要画红眼睛,但它觉得画一隻红色的眼睛就可以矇混过去,另外一隻眼睛仍然是蓝色的</span></p><p>&nbsp;</p><p><span>我们现在的 Generator 有两个输入,一个是从 Normal Distribution,Sample 出来的 z,另外一个是 x,也就是一段文字</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520164524821.png" alt="image-20210520164524821" style="zoom:50%;" /></p><p><span>那我们的 Generator 会產生一张图片 y,那我们需要一个 Discriminator,那如果按照我们过去所学过的东西,Discriminator,它就是吃一张图片 y 当作输入,输出一个数值,这个数值代表输入的图片,多像真实的图片</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520164627449.png" alt="image-20210520164627449" style="zoom:50%;" /></p><p><span>是真实的,还是生成的,那怎麼训练这个 Discriminator ,你就说如果看到真实的图片,你就输出 1,如果看到生成的图片,就输出 0,你就可以训练 Discriminator,然后 Discriminator 跟 Generator 反覆训练</span></p><p><span>也许你就可以去把 Generator 训练出来,但这样的方法,没办法真的解 Conditional GAN 的问题,為什麼,因為如果我们只有 Train 这个 Discriminator,这个 </span><strong><span>Discriminator 只会看 y 当做输入</span></strong><span>的话,那 Generator 会学到的是,它会產生可以骗过 Discriminator 的,非常清晰的图片</span></p><p><span>它会產生清晰的图片,但是</span><strong><span>跟输入完全没有任何关係</span></strong><span>,因為对 Generator 来说,它只要產生清晰的图片,就可以骗过 Discriminator 了,它何必要去管 Input 文字叙述是什麼</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520164728663.png" alt="image-20210520164728663" style="zoom:50%;" /></p><p><span>你的 Discriminator 又不看文字的叙述,所以它根本就不需要管文字的叙述,你不管输入什麼文字,就无视这个 x,反正就是產生一个图片,可以骗过 Discriminator 就结束了,但这</span><strong><span>显然不是我们要的</span></strong></p><p>&nbsp;</p><p><span>所以在 Conditional GAN 裡面,你要做有点不一样的设计,你的 </span><strong><span>Discriminator 不是只吃图片 y</span></strong><span>,它</span><strong><span>还要吃 Condition x</span></strong></p><p><span>所以你的 Discriminator,它有 y 作為输入,有 x 作為输入,然后產生一个数值,那这个数值不只是看 y 好不好,光图片好,没有用,</span><strong><span>光图片好,Discriminator 还是不会给高分</span></strong></p><p><span>Discriminator 给高分的时候,</span><strong><span>一方面图片要好</span></strong><span>,另外一方面,这个</span><strong><span>图片跟文字的叙述必须要是相配</span></strong><span>的,Discriminator 才会给高分</span></p><p><span>那怎麼样训练这样的 Discriminator ？</span></p><p><span>那你需要文字跟影像成对的资料,所以 Conditional GAN,一般的训练,是需要这个 </span><strong><span>Pair 的 Data</span></strong><span> 的,是需要有标註的资料的,是需要成对资料的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520165915486.png" alt="image-20210520165915486" style="zoom:50%;" /></p><p><span>有这些成对资料,那你就告诉你的 Discriminator 说,看到这些真正的成对的资料,就给它一分,看到 Red Eyes,但是搭配,可能 Red Eyes 跟机器產生出来的图片,那就是给 0 分,然后训练下去,就可以產生,就可以做到 Conditional GAN,</span></p><p><span>那其实在实作上,光是这样子,拿这样子的 Positive Sample,还有 Negative Sample,来训练这样的 Discriminator,其实你得到的结果往往不够好,光是告诉 Discriminator 说,这样子的状况是好的,这样子的状况是不好的,这样是不够的</span></p><p><span>你还需要加上一种不好的状况是,</span><strong><span>已经產生好的图片,但是文字叙述配不上的状况</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520170103383.png" alt="image-20210520170103383" style="zoom:50%;" /></p><p><span>所以你通常会把你的训练资料拿出来,然后故意把文字跟图片乱配,故意配一些错的,然后告诉你的 Discriminator 说,看到这种状况,你也要说是不好的,用这样子的资料,你才有办法把 Discriminator 训练好,然后 Generator 跟 Discriminator,反覆的训练,你最后才会得到好的结果,这个就是 Conditional GAN</span></p><p>&nbsp;</p><p><span> 在目前的例子裡面都是,看一段文字產生图片,那 Conditional GAN 的应用,不只看一段文字產生图片啦,也可以</span><strong><span>看一张图片,產生图片</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520174440793.png" alt="image-20210520174440793" style="zoom:50%;" /></p><p><span>那看一张图片產生图片,也有很多的应用,比如说</span></p><ul><li><span>给它房屋的设计图,然后让你的 Generator 直接把房屋產生出来</span></li><li><span>给它黑白的图片,然后让它把顏色著上</span></li><li><span>给它这个素描的图,让它把它变成实景 实物</span></li><li><span>那给它这个白天的图片,让它变成晚上的图片</span></li><li><span>有时候你会给它,比如说起雾的图片,让它变成没有雾的图片,把雾去掉</span></li></ul><p><span>所以 Conditional GAN,除了输入文字 產生影像以外,也可以输入影像 產生影像,那像这样子的应用,叫做 </span><mark><span>Image  Translation</span></mark><span>,那有人又叫做 </span><mark><span>Pix2pix</span></mark><span>,这个 Pix 就是 Pixel,就是像素的缩写啦,所以叫做 Pix2pix</span></p><p>&nbsp;</p><p><strong><span>实现以上效果跟刚才讲的从文字產生影像,没有什麼不同</span></strong><span>,现在只是从影像產生影像,把文字的部分用影像取代掉而已,那当然同样的做法,同样要產生这样的 Generator,產生一张图片,输入一张图片 產生一张图片,你当然可以用 Supervised Learning的方法</span></p><p><span>在文献上你会发现说,如果你用 Supervised Learning 的方法,你得不到非常好的结果,通常你用 Supervised Learning 的方法,训练一个图片生图片的 Generator,你產生出来的结果可能是这个样子</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520175205445.png" alt="image-20210520175205445" style="zoom:50%;" /></p><p><span>就是这是你的 Generator 的输入,那这个是你 Generator 的输出,那你会发现说它</span><strong><span>非常地模糊</span></strong><span>,為什麼它非常地模糊,你可以直觉想成说,因為</span><strong><span>同样的输入,可能对应到不一样的输出</span></strong><span>,就好像我们在讲 GAN 刚开始的,开场的时候讲的那个例子,今天在同一个转角,那个小精灵可能左转,也可能右转,最后学到的,就是同时左转跟右转</span></p><p><span>那对於 Image To Image 的 Case,也是一样的,输入一张图片,输出有不同的可能,机器学到的,Generator 学到的,就是把不同的可能平均起来,结果变成一个模糊的结果</span></p><p><span>所以这个时候我们需要用 GAN 来 Train,你</span><strong><span>需要加一个 Discriminator</span></strong><span>,Discriminator 它是输入一张图片,还有输入 Condition,然后它会同时看这个图片跟这个 Condition,有没有匹配,来决定它的输出,那这个是文献上用 GAN 的输出,从右上角这篇 Paper 截取出来的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520175325173.png" alt="image-20210520175325173" style="zoom:50%;" /></p><p><span>那你会发现说,如果单纯用 GAN 的话,它有一个小问题,所以它產生出来的图片,比较真实,但是它的问题是它的</span><strong><span>创造力,想像力过度丰富</span></strong><span>,它会產生一些输入没有的东西,没有叫它输入的东西,举例来说,这是一个房子,左上角明明没有其他东西,这边它却在屋顶上,加了一个不知道是烟囱还是窗户的东西</span></p><p><span>那文献上如果你要做到最好,往往就是 GAN 跟 Supervised Learning,同时使用</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520175417768.png" alt="image-20210520175417768" style="zoom:67%;" /></p><p><span>那同时使用,往往可以给你最好的结果,那所谓同时使用的意思就是,Generator 在训练的时候,一方面它要去骗过 Discriminator,这是它的一个目标,但同时它又想要產生一张图片,跟标準答案越像越好,它同时去做这两件事,那往往產生出来的结果是最好的</span></p><p>&nbsp;</p><p><span>Conditional GAN 还有很多应用啦,这边给大家看一个莫名其妙的应用,就是给 GAN ,听一段声音,然后它產生一个对应的图片啦</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520175711405.png" alt="image-20210520175711405" style="zoom:50%;" /></p><p><span>比如说给它听一段狗叫声,看它能不能够画出一隻狗啦,好 那我刚才讲说 Conditional GAN 需要这个,Label 的资料,需要成对的资料</span></p><p><span>那这个声音跟影像成对的资料,其实并没有那麼难蒐集,因為你可以爬到大量的影片,那影片裡面有影像 有画面,也有声音讯号,那你就知道说,这一个画面 这一帧,这一帧的图片,这一帧的画面,对应到这一小段声音,这一帧的画面对应到这一小段声音,把这些资料蒐集起来,你就可以 Train 一个 Conditional GAN</span></p><p><span>那这个是我们实验室有个同学做的,这个是一个那个真正的 Demo </span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520175837811.png" alt="image-20210520175837811" style="zoom:50%;" /></p><p><span>那机器听这样的声音,好 这听起来有点像是这个电视机坏掉的声音,那机器觉得它听到什麼,刚才那一段声音机器觉得,它听到一个小溪,听到一个小瀑布</span></p><p><span>或者是我们再听另外一段声音,机器觉得它听到一艘快艇在海上奔驰</span></p><p><span>当然我有点担心说,欸 这个会不会机器并没有真的学到,声音跟图片之间的关係,会不会它只是把,它在训练资料裡面有看过的图片存起来而已,所以我决定把声音调大,你听看看结果会怎样,所以我们把声音调大,接下来真的很大声哦,好 然后声音越来越大,你就发现说,这个溪流裡面的水花就越来越多,从一条小溪,变成尼加拉瓜瀑布</span></p><p><span>然后刚才的这个快艇的例子也是一样,就把快艇的声音变大,你听看看会怎样,当声音越来越大的时候,你发现快艇旁边的水花就越来越多,好像快艇开得越来越快</span></p><p><span>不过我要承认,这个其实是稍微 Cherry Pick 的结果,就稍微挑过的结果,很多时候觉得 Generator 產生出来的东西,就是这个样子啦,不知所云这样,这就给它一个钢琴声,然后它好像想画一个钢琴,但又没有很清楚,这个是给它听狗叫声啦,好像想画一个动物,但又不知道要画些什麼,这个是声音到影像的產生,好 那我看到最近最惊人的,Conditional GAN 的应用,是有人用 Conditional GAN 產生会动的图片</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210520180014698.png" alt="image-20210520180014698" style="zoom:50%;" /></p><p><span>我们知道在哈利波特裡面,那些人物的画像是会动的,是会说话的,那 Samsung ,就做了一个类似的应用,用 GAN 做的,给它一张图片,比如说蒙娜丽莎的画像,然后就可以让蒙娜丽莎开始讲话,这个是 Conditional GAN 的其中一个应用,我把论文放在这边给大家参考</span></p></div></div>
+</body>
+</html>
