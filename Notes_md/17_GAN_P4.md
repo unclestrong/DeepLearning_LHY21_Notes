@@ -19,7 +19,9 @@
 
 我们这边举一个例子,**影像风格转换**,假设今天我要训练,一个Deep Network,它要做的事情是把X domain的图,X domain的图,我们假设是真人的照片,Y domain的图是二次元人物的头像
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524134333519.png" alt="image-20210524134333519" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524134333519.png?raw=true" alt="image-20210524134333519" style="zoom:50%;" />
+
+
 
 在这个例子裡面我们可能,就**没有任何的成对的资料**，在这种状况下,还有没有办法训练一个Network,输入一个X產生一个Y呢,这个就是GAN可以帮我们做的事情
 
@@ -35,7 +37,7 @@
 
 现在我们在稍微,转换一下我们的想法,**输入**我们不说它是Gaussian的分佈,我们说它是**X domain的图片的分佈**,那**输出**我们说,是**Y domain图片的分佈**
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524134901281.png" alt="image-20210524134901281" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524134901281.png?raw=true" alt="image-20210524134901281" style="zoom:50%;" />
 
 
 
@@ -53,7 +55,7 @@
 
 那就要两三个discriminator,那这个discriminator给它,看过很多Y domain的图,所以它能够分辨Y domain的图,跟不是Y domain的图的差异
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524140458705.png" alt="image-20210524140458705" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524140458705.png?raw=true" alt="image-20210524140458705" style="zoom:50%;" />
 
 看到**Y domain的图**就给它**高分**,看到**不是Y domain的图**,不是二次元人物就给它**低分**,那就这样结束了
 
@@ -63,7 +65,7 @@
 
 你的generator也许就把这张图片,当作一个Gaussian的noise,然后反正它就是看到,不管你输入什麼它都无视它,反正它就输出一个,像是二次元人物的图片,discriminator觉得它做得很好,其实就结束了
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524141004712.png" alt="image-20210524141004712" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524141004712.png?raw=true" alt="image-20210524141004712" style="zoom:50%;" />
 
 所以如果我们完全只套用,这个一般的GAN的做法,只训练一个generator,这个generator input的distribution,从Gaussian变成X domain的image,然后训练一个discriminator,显然是不够的,因為你训练出来的generator,它可以**產生二次元人物的头像,但是跟输入的真实的照片,没有什麼特别的关係**,那这个不是我们要的,
 
@@ -76,7 +78,7 @@
 - 第一个generator它的工作是,把X domain的图变成Y domain的图
 - 第二个generator它的工作是,看到一张Y domain的图,把它**还原**回X domain的图
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524141830620.png" alt="image-20210524141830620" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524141830620.png?raw=true" alt="image-20210524141830620" style="zoom:50%;" />
 
 在训练的时候,我们今天增加了一个额外的目标,就是我们希望输入一张图片,从X domain转成Y domain以后,要从Y domain转回原来,一模一样的X domain的图,经过两次转换以后,**输入跟输出要越接近越好**
 
@@ -96,13 +98,13 @@
 
 这边假设输入一个死臭酸宅,这边假设输出的是辉夜
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524142659180.png" alt="image-20210524142659180" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524142659180.png?raw=true" alt="image-20210524142659180" style="zoom:50%;" />
 
 另外一个这个不知道这是谁的,然后对第二个generator来说,它就是视这张辉夜作為输入,它根本无法想像说,要把辉夜还原回死臭酸宅,它根本不知道说,原来输入的图片长什麼样子
 
 所以对第一个generator来说,為了要让第二个generator能够,成功的还原原来的图片,它產生出来的图片,就不能跟输入差太多,所以这边是一个死臭酸宅,这边输出至少也得是一个,戴眼镜的男生的角色才行
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524142737091.png" alt="image-20210524142737091" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524142737091.png?raw=true" alt="image-20210524142737091" style="zoom:50%;" />
 
 所以这边是一个戴眼镜男生的角色,然后第二个generator才能够,把这个角色还原回原来的输入,所以如果你加Cycle GAN,你至少可以强迫你的generator,它输出的Y domain的图片,至少跟输入的X domain的图片,有一些关係
 
@@ -164,7 +166,7 @@ Cycle GAN只能在两种风格间做转换,那StarGAN 它厉害的地方是,它�
 
 你会发现说机器确实,有学到一些二次元人物的特徵,比如说 把眼睛变大,本来眼睛其实没有很大,变成二次元人物之后,眼睛变这麼大,但有时候也是会失败
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210524144030930.png" alt="image-20210524144030930" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210524144030930.png?raw=true" alt="image-20210524144030930" style="zoom:50%;" />
 
 比如说 这个是美国前总统,转完以后变成这个样子,两隻眼睛一眼大一眼小就是了,它不是总是会成功的
 
