@@ -34,5 +34,5 @@
 
 [17_GAN P4](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/17_GAN_P4.html)
 
-[18_BERT_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/18_BERT.html)
+[18_BERT_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/18_BERT_P1.html)
 
