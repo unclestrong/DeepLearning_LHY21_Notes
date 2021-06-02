@@ -36,3 +36,4 @@
 
 [18_BERT_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/18_BERT_P1.html)
 
+[19_BERT_P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/19_BERT_P2.html)
