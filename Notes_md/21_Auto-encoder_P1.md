@@ -22,7 +22,7 @@
 
 Auto-Encoder 是怎麽运作的呢,那现在我们,因为刚才在讲 Self-Supervised Learning 的时候,都是用文字做例子,那现在我们换成用影像来做例子
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210620143611383.png" alt="image-20210620143611383" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210620143611383.png?raw=true" style="zoom:50%;" />
 
 假设你有非常大量的图片,在 Auto-Encoder 裡面你有两个 Network,一个叫做 Encoder,一个叫做 Decoder,他们就是两个 Network
 
@@ -38,7 +38,7 @@ Auto-Encoder 是怎麽运作的呢,那现在我们,因为刚才在讲 Self-Super
 
 讲到这边你可能会发现说,这个东西 这个概念似曾相似,没错 我们在讲 ==Cycle GAN== 的时候,已经讲过了这个概念
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210620143955632.png" alt="image-20210620143955632" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210620143955632.png?raw=true" style="zoom:50%;" />
 
 我们说在做 Cycle GAN 的时候,我们会需要两个 Generator,第一个 Generator,把 X Domain 的图片转到 Y Domain,另外一个 Generator,把 Y Domain 的图片转回来,希望最原先的图片,跟转完两次后的图片越接近越好
 
@@ -46,7 +46,7 @@ Auto-Encoder 是怎麽运作的呢,那现在我们,因为刚才在讲 Self-Super
 
 所以它是一个 **Unsupervised Learning 的方法**,跟 Self-Supervised 那一系列,Pre-Training 的做法一样,你**完全不需要任何的标注资料**
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210620144344821.png" alt="image-20210620144344821" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210620144344821.png?raw=true" style="zoom:50%;" />
 
 那像这样子这个 Encoder 的输出,有时候我们叫它 Embedding,我们在讲 BERT 的时候,也提过 Embedding 这个词彙了,那有的人叫它 Representation,有的人叫它 Code,因为 Encoder 是一个编码嘛,所以这个有人把这个 Vector 叫做 Code,那其实指的都是同一件事情
 
@@ -56,7 +56,7 @@ Auto-Encoder 是怎麽运作的呢,那现在我们,因为刚才在讲 Self-Super
 
 你把这个图片丢到 **Encoder 以后,输出另外一个向量,这个向量你会让它比较短**,比如说只有 10 维 只有 100 维,那你拿这个新的向量来做你接下来的任务,也就是图片不再是一个很高维度的向量,它通过 Encoder 的压缩以后,变成了一个低维度的向量,你再拿这个低维度的向量,来做接下来想做的事情,这就是常见的,Auto-Encoder用在 Downstream 的任务,用在下游任务的方法
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210620145148352.png" alt="image-20210620145148352" style="zoom:50%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210620145148352.png?raw=true" style="zoom:50%;" />
 
 那因为通常 Encoder 的输入,是一个维度非常高的向量,而 Encoder 的输出,也就是我们的 Embedding,Representation 或者 Code,它是一个非常低维度的向量,比如说输入是 100×100 的图片,那 100×100 那就是 1 万维的向量了,如果是 RGB 那就是 3 万维的向量
 
@@ -84,7 +84,7 @@ Dimension Reduction 这个技术,我相信你在 Machine Learning 相关的应�
 
 好 我们来想一下,Auto-Encoder 这件事情它要做的,是**把一张图片压缩又还原回来,**但是还原这件事情为什麽能成功呢
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210620151248207.png" alt="image-20210620151248207" style="zoom: 67%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210620151248207.png?raw=true" style="zoom: 67%;" />
 
 你想想看假设本来图片是 3×3,3×3 很小,但我们就假设 3×3 好了,本来的图片是 3×3,你要用 9 个数值来描述一张 3×3 的图片,假设 Encoder 输出的这个向量是二维的,我们怎麽有可能从二维的向量,去还原 3×3 的图片,还原9个数值呢
 
@@ -142,7 +142,7 @@ Hinton 在 06 年的 Science 的 Paper 裡面,就有提到 Auto-Encoder 这个�
 
 那 Auto-Encoder 还有一个常见的变形,叫做 De-Noising 的 Auto-Encoder
 
-<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210620154032761.png" alt="image-20210620154032761" style="zoom: 67%;" />
+<img src="https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_pic/image-20210620154032761.png?raw=true" style="zoom: 67%;" />
 
 De-Noising 的 Auto-Encoder 是说,我们把原来要输进去给 Encoder 的图片,**加上一些杂讯**,就自己随便找一个杂讯把它加进去,然后一样通过 Encoder,一样再通过 Decoder,试图还原原来的图片
 
