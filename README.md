@@ -40,3 +40,5 @@
 
 [20_BERT_P3](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/20_BERT_P3.html)
 
+[21_Auto-encoder_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/21_Auto-encoder_P1.html)
+
