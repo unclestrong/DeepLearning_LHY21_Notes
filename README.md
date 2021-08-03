@@ -42,3 +42,4 @@
 
 [21_Auto-encoder_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/21_Auto-encoder_P1.html)
 
+[22_Auto-encoder_P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/22_Auto-encoder_P2.html)
