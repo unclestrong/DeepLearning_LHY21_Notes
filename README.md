@@ -46,3 +46,5 @@
 
 [23_Adversarial Attack_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/23_Adversarial%20Attack_P1.html)
 
+[24_Adversarial Attack_P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/24_Adversarial%20Attack_P2.html)
+
