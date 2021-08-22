@@ -48,3 +48,4 @@
 
 [24_Adversarial Attack_P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/24_Adversarial%20Attack_P2.html)
 
+[25_Explainable AI_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/25_Explainable%20AI_P1.html)
