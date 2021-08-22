@@ -6,7 +6,7 @@
 
 那开始之前,开始介绍技术之前,我们需要讲一下,為什么 Explainable 的 Machine Learning,是一个重要的议题呢,我觉得那个本质上的原因是,就算今天机器可以得到正确的答案,也不代表它一定非常地聪明,举一个例子,过去有一匹马它很聪明,所以大家叫它**神马汉斯**,那这个神马汉斯可以做什么事情呢
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822105149972.png" alt="image-20210822105149972" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822105149972.png" alt="image-20210822105149972" style="zoom:67%;" />
 
 **它会做数学问题**,举例来说,你问它根号 9 是多少,然后它就开始计算得到答案,它怎么告诉你它的答案呢,它会用它的马蹄去跺地板,所以如果答案是 3,它就敲三下,然后就停下来,代表它得到正确的答案,然后旁边的人就会欢呼,所以这个是神马汉斯,然后一堆人呢,在看它解数学问题
 
@@ -16,7 +16,7 @@
 
 而今天在很多真实的应用中,Explainable 的 Machine Learning,可解释性的模型往往是必须的
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822105529184.png" alt="image-20210822105529184" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822105529184.png" alt="image-20210822105529184" style="zoom:67%;" />
 
 举例来说
 
@@ -29,11 +29,11 @@
 
 更进一步,也许机器学习的模型,如果具有解释力的话,那未来我们可以凭**藉著解释的结果,再去修正我们的模型**
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822105715875.png" alt="image-20210822105715875" style="zoom:50%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822105715875.png" alt="image-20210822105715875" style="zoom:50%;" />
 
 今天在使用这些深度学习技术的时候,往往状况是这个样子,有某人说,这个就是你的机器学习的系统,是啊 我就是**把资料丢进去,裡面就是有很多矩阵的相乘**,接下来呢,就会跑出我的结果,如果结果**不如预期的话**,怎么样呢,现在大家都知道就**爆调一下参数**对不对,改个 Learning Rate 对不对,调一下 Network 的架构对不对,你根本不知道自己在做什么对不对,就调一下 Network 的架构,我就把这一堆数学,**这一堆 Linear Algebra 再重新打乱一下,看看结果会不会比较好**,那如果其它没有做过 Deep Learning 的人,就会大吃一惊,觉得哇 这样怎么可以呢
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822105744752.png" alt="image-20210822105744752" style="zoom:50%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822105744752.png" alt="image-20210822105744752" style="zoom:50%;" />
 
 但实际上今天深度学习的模型,你往往要改进模型,就是需要调一些 Hyperparameter,但是我们期待也许未来,当我们知道,Deep Learning 的模型犯错的时候,它是错在什么样的地方,它為什么犯错,也许我们可以有更好的方法,更有效率的方法,来 Improve 我的模型,当然这个是未来的目标,今天离用 Explainable 的 Machine Learning,**做到上述  Improve Model 的想法,还有很长的一段距离**
 
@@ -43,7 +43,7 @@
 
 **如果不要用深度学习的模型,改採用其他比较容易解释的模型,会不会就不需要研究,Explainable Machine Learning 了呢**,举例来说,假设我们都**採用 Linear 的 Model,Linear 的 Model,它的解释的能力是比较强的**,我们可以轻易地知道,根据一个 Linear Model 裡面的,每一个 Feature 的 Weight,知道 Linear 的 Model 在做什么事
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822110102463.png" alt="image-20210822110102463" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822110102463.png" alt="image-20210822110102463" style="zoom:67%;" />
 
 所以你训练完一个 Linear Model 以后,你可以轻易地知道,它是怎么得到它的结果的,但是  **Linear Model 的问题就是,它没有非常地 Powerful**,我们其实在第一堂课就已经告诉你说,Linear 的 Model 有很巨大地限制,所以我们才很快地进入了 Deep 的 Model
 
@@ -53,7 +53,7 @@
 
 我听过Yann LeCun讲了一个故事,这个是Yann LeCun讲的,那这个故事是个老梗,谁都听过
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822110255158.png" alt="image-20210822110255158" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822110255158.png" alt="image-20210822110255158" style="zoom:67%;" />
 
 就是有一个醉汉,他在路灯下面找钥匙,大家问他说,你的钥匙掉在路灯下吗,他说不是,因為这边有光
 
@@ -70,13 +70,13 @@
 
 那讲到既 Interpretable 又 Powerful 的模型,也许有人会说,那 ==Decision Tree== 会不会就是一个好的选择呢,Decision Tree 相较於 Linear 的 Model,它是更强大的模型
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822110924962.png" alt="image-20210822110924962" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822110924962.png" alt="image-20210822110924962" style="zoom:67%;" />
 
 而 Decision Tree 的另外一个好处,**相较於 Deep Learning,它非常地 Interpretable**,你看一个 Decision Tree 的 Structure,你就可以知道说,今天模型是凭藉著什么样的规则,来做出最终的判断,那 Decision Tree,不是我们这门课会讲的东西
 
 但是就算是你没有学过的 Decision Tree,你其实也不难想像,Decision Tree 它是在做什么,它做的事情就是,你有很多的节点,那每一个节点都会问一个问题,让你决定向左还是向右,最终当你走到节点的末尾,当你走到 Leaf Node 的时候,就可以做出最终的决定,因為在每一个节点都有一个问题,你看那些问题以及答案,你就可以知道,现在整个模型,凭藉著什么样的特徵,是如何做出最终的决断,所以从这个角度看来,**Decision Tree,它既强大又 Interpretable**
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822111014791.png" alt="image-20210822111014791" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822111014791.png" alt="image-20210822111014791" style="zoom:67%;" />
 
 所以这堂课我们可以就上到这边,就是 Decision Tree is all you need?,然后就结束了这样子
 
@@ -84,7 +84,7 @@
 
 但是 Decision Tree,真的就是我们所需要的吗,你再仔细想一下,**Decision Tree 也有可能是很复杂的**
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822111138323.png" alt="image-20210822111138323" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822111138323.png" alt="image-20210822111138323" style="zoom:67%;" />
 
 举例来说,我看到在网路上找到,有人问了一个问题,他说他有一个这么复杂的 Decision Tree,他完全看不懂这个 Decision Tree 在干嘛,有没有人有什么样的,Explainable Machine Learning 的方法,可以把这个 Decision Tree 变得更简单一点,我看三 四年过去了,都没有人回答这个问题,有人看到的话,也许可以帮忙回答一下
 
@@ -102,7 +102,7 @@
 
 但你想想看,世界上有很多很多的黑盒子,正在你的身边,**人脑不是也是黑盒子吗,我们其实也并不完全知道,人脑的运作原理,但是我们可以相信,另外一个人做出的决断**,那人脑其实也是一个黑盒子,你可以相信人脑做出了决断,為什么 Deep 的 Netwok 是一个黑盒子,你没有办法相信,Deep 的 Netwok 做出来的决断,為什么你对 Deep 的 Netwok 会这么恐惧呢,那我觉得其实对人而言,也许一个东西,能不能让我们放心,能不能够让我们接受,理由是非常重要的,以下呢,是一个跟 Machine Learning,完全无关的心理学实验
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822111733696.png" alt="image-20210822111733696" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822111733696.png" alt="image-20210822111733696" style="zoom:67%;" />
 
 这个实验是 1970 年代就做了,这是 Ellen Langer,一个哈佛大学教授做的,这个实验非常地有名,这个实验是这样,这个实验是一个跟印表机有关的实验,在哈佛大学图书馆印表机呢,会大排长龙,很多人都排队要印东西,这个时候
 
@@ -114,7 +114,7 @@
 
 什么叫做好的 Explanation,**好的 Explanation就是人能接受的 Explanation**,人就是需要一个理由让我们觉得高兴,而到底是让谁高兴呢
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822112022693.png" alt="image-20210822112022693" style="zoom: 67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822112022693.png" alt="image-20210822112022693" style="zoom: 67%;" />
 
 这个是高兴的人,可能是你的客户,因為很多人就是听到,Deep Network 是一个黑盒子,他就不爽,你告诉他说这个是可以被解释的,给他一个理由,他就高兴了,他可能是你的老闆,老闆看了很多的农场文,他也觉得说 Deep Learning 黑盒子就是不好的,告诉他说这个是可以解释的,他就高兴了,或者是你今天要让,你今天要说服的对象是你自己,你自己觉得有一个黑盒子,Deep Network 是一个黑盒子,你心裡过不去,今天它可以给你一个做出决断的理由,你就高兴了
 
@@ -124,7 +124,7 @@
 
 所以 Explainable Machine Learning,它的目标就像我刚才讲的,就是要给我们一个理由,那 Explainable 的 Machine Learning 呢,又分成两大类,第一大类叫做 ==Local 的 Explanation==,第二大类叫做 ==Global 的 Explanation==
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822112442282.png" alt="image-20210822112442282" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822112442282.png" alt="image-20210822112442282" style="zoom:67%;" />
 
 Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给它一张图片,它判断说它是一只猫,那我们要问的问题是,為什么,或者机器要回答问题是,**為什么你觉得这张图片是一只猫,它根据某一张图片来回答问题**,这个叫做 Local Explanation
 
@@ -138,7 +138,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 我们可以把一个图片,这个问题问得更具体一点,给机器一张图片,它知道它是一只猫的时候,**到底是这个图片裡面的什么东西,让模型觉得它是一只猫**
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822150222534.png" alt="image-20210822150222534" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822150222534.png" alt="image-20210822150222534" style="zoom:67%;" />
 
 是眼睛吗,是耳朵吗,还是猫的脚,让机器觉得它看到了一只猫,或者讲的更 General 一点,假设现在我们模型的输入叫做 x,这个 x 可能是一张影像,可能是短文字,而 x 呢,可以**拆成多个 Component**,$x_1$ 到 $x_N$,如果对於影像而言,可能每一个 Component,就是一个 Pixel,那对於文字而言,可能每一个 Component,就是一个词汇,或者是一个 Token,那我们现在要问的问题就是,这些  Token 裡面,那这些 Component 裡面,那这个如果对文字来说是 Token,对 Image 来说可能就是 Pixel,这些 Component 裡面,哪一个对於机器现在做出最终的决断是最重要的呢
 
@@ -148,7 +148,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 讲得更具体一点,你想要知道,今天一个影像裡面,每一个区域的重要性的时候,有一个非常简单的方法
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822151353180.png" alt="image-20210822151353180" style="zoom:50%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822151353180.png" alt="image-20210822151353180" style="zoom:50%;" />
 
 像是这个样子,就给一张图片,然后丢到 Network 裡面,它知道这是一只博美狗,接下来在这个图片裡面,**不同的位置放上这个灰色的方块**,当这个方块放在不同的地方的时候,今天你的 Network 会 Output 不同的结果
 
@@ -162,7 +162,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 接下来还有一个更进阶的方法,是**计算 Gradient**,这个方法是这样子的
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822151827632.png" alt="image-20210822151827632" style="zoom:50%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822151827632.png" alt="image-20210822151827632" style="zoom:50%;" />
 
 假设我们有一张图片,我们把它写作 $x_1$ 到 $x_N$,这边的**每一个 x,代表了一个 Pixel**,接下来呢,我们去计算这张图片的 Loss,我们这边呢,用小 e 来表示,这个小 e 是什么呢,**这个小 e 是把这张图片呢,丢到你的模型裡面,这个模型的输出的结果跟正确答案的差距**,跟正确答案的 ==Cross Entropy==,这个 **e 越大**,就代表现在辨识的**结果越差**
 
@@ -185,7 +185,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 这个宝可梦是一种动物,数码宝贝是另外一种动物,然后我在网路上呢,看到有人说,他训练了一个数码宝贝跟宝可梦的分类器,然后正确率非常地高,所以我决定自己也来做这个实验,看看為什么可以得到这么高的正确率
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822152912268.png" alt="image-20210822152912268" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822152912268.png" alt="image-20210822152912268" style="zoom:67%;" />
 
 那你可以在网路上呢,找到宝可梦的图库,也可以找到数码宝贝的图库,所以你有一堆宝可梦的图,有一堆数码宝贝的图,那这个对大家来说一定都不成问题,这个就是二元分类的问题而已 对不对,胡乱 Train 一个 Classifier,就结束了,就把作业三的 Code 改一改,然后把本来分成 11 类,改成分成两类,就结束了
 
@@ -199,7 +199,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 好 这边就是随便兜了一个模型,也没有几层,Train 下去
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822153122800.png" alt="image-20210822153122800" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822153122800.png" alt="image-20210822153122800" style="zoom:67%;" />
 
 哇 Training Accuracy,98.9% 这个非常地高,但是不要高兴地太早,这个也许Overfitting 而已,也许 Machine 只是把 Training 的 Data,记下来而已,因為毕竟训练资料没几张啊,数码宝贝 宝可梦才各几千张而已,所以也许Overfitting,所以测试资料上没看过的图怎么样呢,正确率 98.4 啊,这个不可思议,这个伟哉机器学习,这个人类都没有办法判断,宝可梦跟数码宝贝的差异,但机器可以,还有 98.4% 的正确率
 
@@ -207,19 +207,19 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 这边有几只动物,它们是什么呢,它们是数码宝贝
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822153309916.png" alt="image-20210822153309916" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822153309916.png" alt="image-20210822153309916" style="zoom:67%;" />
 
 这些是数码宝贝,接下来呢,我就在这些图片上画 Saliency Map,让机器来告诉我说,為什么它觉得这几张是数码宝贝,机器给我的答案是这个样子,这边亮亮的点,代表它觉得比较重要,这有点怪怪的,好像亮亮的点都分布在四个角落,不知道发生了什么事
 
 接下来我来分析宝可梦,这个情况更明显
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822153335506.png" alt="image-20210822153335506" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822153335506.png" alt="image-20210822153335506" style="zoom:67%;" />
 
 你发现说机器觉得重要的点,基本上都是避开宝可梦的本体啦,都是在影像的背景上啊,為什么呢
 
 因為我后来发现
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822153414633.png" alt="image-20210822153414633" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822153414633.png" alt="image-20210822153414633" style="zoom:67%;" />
 
 **宝可梦都是 PNG 档啦,数码宝贝都是 JPEG 档,PNG 档读进来以后,背景都是黑的啦,所以机器只要看背景,就知道一张图片是宝可梦还是数码宝贝**啦,就结束了这样子,好,所以这个例子就是告诉我们说,Explainable AI 是一个很重要的技术
 
@@ -229,7 +229,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 有一个真实的例子,有一个 Benchmark Corpus,叫做 PASCAL VOC 2007,裡面有各式各样的物件,机器要学习做影像的分类,机器看到这张图片
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822162942014.png" alt="image-20210822162942014" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822162942014.png" alt="image-20210822162942014" style="zoom:67%;" />
 
 它知道是马的图片,但如果你画 Saliency Map 的话,你发现结果是这个样子的,只是觉得左下角对马是最重要,為什么,因為左下角有一串英文啊,这个图库裡面马的图片,很多都是来自於某一个网站啊,左下角都有一样的英文啊,所以机器看到左下角这一行英文,就知道是马,它根本不需要学习马是长什么样子
 
@@ -239,7 +239,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 那有没有什么方法,把 Explainable 的 Machine Learning,Saliency Map 画得更好呢,第一个方法啊,就是助教刚才有提到的这个 ==SmoothGrad==,什么意思呢,这张图片是指瞪羚
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822163130815.png" alt="image-20210822163130815" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822163130815.png" alt="image-20210822163130815" style="zoom:67%;" />
 
 那你期待说,你今天去做 Saliency Map 的时候,机器会把它主要的精力,集中在瞪羚身上
 
@@ -257,7 +257,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 但是呢,其实光看  Gradient,并不完全能够反映一个 Component 的重要性,怎么说呢,这边就举一个例子给大家参考
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822163551094.png" alt="image-20210822163551094" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822163551094.png" alt="image-20210822163551094" style="zoom:67%;" />
 
 - 这个横轴代表的是大象鼻子的,某一个生物鼻子的长度
 - 那纵轴代表说这个生物是大象的可能性
@@ -276,7 +276,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 那有不同的方法,第一个方法最直觉的,就是**人眼去看,今天 Network 裡面到底发生了什么事情**,那在作业裡面,是要你去看 BERT 裡面发生了什么事情,是跟文字有关的,那上课举的例子,我们就举语音的例子,在作业二裡面,你已经训练了一个 Network
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822170925033.png" alt="image-20210822170925033" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822170925033.png" alt="image-20210822170925033" style="zoom:67%;" />
 
 这个 Network 就是吃一小段声音当中输入,判断说这段声音,是属於哪一个 Phoneme,属於哪一个 KK 音标,然后呢,假设你第一个 Layer 有 100 个 Neurons,第二个 Layer 也有 100 个 Neurons,那第一个 Layer 的输出,就可以看作是 100 维的向量,第二个 Layer 的输出,也可以看作是 100 维的向量,通过这些分析这些向量,也许我们就可以知道一个 Network 裡面,发生了什么事
 
@@ -284,7 +284,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 以下呢,举的是语音的例子,那这个例子来自於一篇 2012 年的 Paper
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822171352633.png" alt="image-20210822171352633" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822171352633.png" alt="image-20210822171352633" style="zoom:67%;" />
 
 你会发现 Hinton,这个深度学习之父,也是这篇文章的作者,这篇文章做的事情是什么呢,这篇文章,其实老实说,这篇文章做的就是你的作业二 知道吗,它跟你作业二用的 Data 是一模一样的
 
@@ -300,7 +300,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 好 那刚才讲的是直接拿 Neuron 的输出,来进行分析,你也可以分析这个 Attention 的 Layer,现在 Self-Attention 用得很广,你也可以看 Attention 的结果,来决定今天 Network 学到什么事
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822171655060.png" alt="image-20210822171655060" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822171655060.png" alt="image-20210822171655060" style="zoom:67%;" />
 
 那我们在作业裡面,也要求大家看了 BERT 的 Attention,但是当你使用 Attention 的时候,还是有一些要注意的地方,我们直觉觉得 Attention 应该非常具有解释力,从某一个词汇 Attention 到另外一个词汇,当然就代表说这两个的词汇有关係啊等等,那在作业裡面,我们也挑了比较明显可以看出关联性的例子,给大家来实作,给大家来回答问题
 
@@ -312,7 +312,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 举例来说,假设你想要知道 BERT 的某一个 Layer,到底学到了什么东西,除了用肉眼观察以外,不过肉眼观察比较有极限嘛,可能有很多你没有观察到的现象,而且你也没有办法一次看过大批的资料,所以怎么办呢,你可以训练一个探针,**你的探针其实就是分类器**
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822172202445.png" alt="image-20210822172202445" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822172202445.png" alt="image-20210822172202445" style="zoom:67%;" />
 
 举例来说,你训练一个分类器,这个分类器是要根据一个 Feature,根据一个向量决定说现在这个词汇,它的 POS Tag,也就是它的词性是什么,你就把 BERT 的 Embedding,丢到 POS 的 Classifier 裡面去,你就训练一个 POS 的 Classifier,它要试图根据这些 Embedding,决定说现在这些 Embedding,是来自於哪一个词性的词汇
 
@@ -328,7 +328,7 @@ Local 的 Explanation 是说,假设我们有一个 Image 的 Classify,我们给�
 
 Probing 不一定要是 Classifier,我这边特别举一个例子告诉你说,Probing 有种种的可能性,举例来说,我们实验室有做一个尝试是,训练一个语音合成的模型,一般语音合成的模型是吃一段文字,產生对应的声音讯号
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822172636822.png" alt="image-20210822172636822" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822172636822.png" alt="image-20210822172636822" style="zoom:67%;" />
 
 我们这边语音合成的模型不是吃一段文字,它是吃 Network Output 的 Embedding,**它吃 Network Output 的 Embedding 作為输入,然后试图去输出一段声音讯号**
 
@@ -342,7 +342,7 @@ Probing 不一定要是 Classifier,我这边特别举一个例子告诉你说,Pr
 
 以下是真实的例子
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210822173012880.png" alt="image-20210822173012880" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210822173012880.png" alt="image-20210822173012880" style="zoom:67%;" />
 
 这个例子是这样子的,这边有一个 5 层的 Bi-directional 的 Lstm,它吃声音讯号做输入,那输出就是文字,它是语音辨识的模型,好 那现在我们给它一段声音讯号做输入,是女生的声音,接下来再给它听另外一个,男生讲不一样的内容,听起来像是这样的,接下来我们把这些声音讯号,丢到这个 Network 裡面,然后再把这个 Network 的 Embedding,用 TTS 的模型去还原回原来的声音讯号,看看我们听到什么,以下是过第一层 Lstm 的结果,你会发现声音讯号有一点失真,但基本上跟原来是差不多的,男生的声音是这样的,跟原来都是差不多的,但通过了 5 层的 Lstm 以后发生什么事呢,声音讯号变成这个样子,所以本来一个句子是男生讲的,一个句子是女生讲的,通过 5 层的 Lstm 以后,就听不出来是谁讲的,它把两个人的声音,都变成是一样的
 
