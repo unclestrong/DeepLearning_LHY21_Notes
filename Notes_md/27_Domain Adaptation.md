@@ -164,13 +164,13 @@ Label Predictor 它也需要这个 Feature,让它可以去判断,输入的图片
 
 好 那我们来看一下,Domain Adversarial Training,最原始的 Paper,它做的结果怎麼样呢,当年看到这个 Paper 的时候,真的觉得结果非常地惊人
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911180533698.png" alt="image-20210911180533698" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911180533698.png" alt="image-20210911180533698" style="zoom:67%;" />
 
 那这边呢 它做了四个任务,那上半部 是 Source Domain 的图片,这边其实都是数字辨识啦,那下半部呢 都是 Target Domain 的图片,好 如果今天呢,我们是拿 Target Domain 的图片来做 Training,Target Domain 的图片来做 Testing,那结果像是这个样子,每一个任务正确率都是 90% 以上,但如果说,我们今天是 Source Domain Training,Target Domain Testing,Train 在黑白的数字上,测试在彩色的数字上,结果直接惨掉,哇 这直接惨掉 没办法做啦,结果直接惨掉
 
 那如果加上 Domain Adversarial Training 的话,结果怎麼样呢,你会发现说本来如果只 Train 在黑白的图片上,测试在彩色的图片上,正确率 57.5
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911180619681.png" alt="image-20210911180619681" style="zoom:50%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911180619681.png" alt="image-20210911180619681" style="zoom:50%;" />
 
 那如果今天有做 Domain Adversarial Training,正确率就飆升到 81%,在很多其他任务上进步量都挺明显的,59 到 71,74 到 88.7,这个进步量都是挺明显的,那这个就是 Domain Adversarial Training
 
@@ -178,7 +178,7 @@ Label Predictor 它也需要这个 Feature,让它可以去判断,输入的图片
 
 那刚才这整套想法,还是有一个限制,有一个小小的问题,什麼样小小的问题呢
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911181003396.png" alt="image-20210911181003396" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911181003396.png" alt="image-20210911181003396" style="zoom:67%;" />
 
 我们来看看哦,今天 蓝色的圈圈跟蓝色的三角形,代表 Source Domain 上的两个 Class,那我们当然可以找一个 Boundary,去把这两组 Class 把它分开来,对於 Target Domain 上的 Data,我们没有任何的 Class 的 Label,我们就只能说所有 Target Domain 的 Data,我们都用这个正方形来表示它
 
@@ -195,7 +195,7 @@ Label Predictor 它也需要这个 Feature,让它可以去判断,输入的图片
 - 如果今天输出的结果非常地集中,叫做离 Boundary 远
 - 如果今天输出的结果每一个类别都非常地接近,叫做离 Boundary 近
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911181351557.png" alt="image-20210911181351557" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911181351557.png" alt="image-20210911181351557" style="zoom:67%;" />
 
 所以我希望说把 unLabled 的 Image,丢进 Feature Extractor,再丢进 Label Predictor,输出的结果,它离 Boundary 越远越好,也就是说这**集中在某一个类别上**,我们虽然不知道它应该算是哪一个类别,但至少应该集中在某一个类别上
 
@@ -207,7 +207,7 @@ Label Predictor 它也需要这个 Feature,让它可以去判断,输入的图片
 
 Target Domain 是没有 Label 的,我们根本不知道 Target Domain 裡面,有什麼样的类别
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911181655614.png" alt="image-20210911181655614" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911181655614.png" alt="image-20210911181655614" style="zoom:67%;" />
 
 而在这个图示裡面 这个实心的,实线的圈圈代表,Source Domain 裡面有的东西,这个虚实线的圈圈,代表 Target Domain 裡面有的东西,所以呢 有没有可能是,这个 **Source Domain 裡面的东西比较多,Target Domain 裡面的东西比较少**呢,有没有可能是,**Source Domain 裡面的东西比较少,Target Domain 的东西比较多**呢,有没有可能两者虽然有交集,但是各自都有独特的类别呢,这都是有可能发生的
 
@@ -231,7 +231,7 @@ Target Domain 是没有 Label 的,我们根本不知道 Target Domain 裡面,有
 
 但是有一个可能是,假设不只没有 Label,而且 Data 还很少,比如说我就只有一张而已
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911182233057.png" alt="image-20210911182233057" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911182233057.png" alt="image-20210911182233057" style="zoom:67%;" />
 
 这个时候你只有一张,你的这个 Target Domain 只有一张,只有一个点,你根本没有办法跟那个 Source Domain,把它 Align 在一起,这个时候怎麼办呢,假设 Target Domain 的 Data 非常少的时候,怎麼办呢,也不是没有方法啦
 
@@ -241,11 +241,11 @@ Target Domain 是没有 Label 的,我们根本不知道 Target Domain 裡面,有
 
 但其实还有一个更严峻的状况,这个状况是,如果我什麼都不知道怎麼办呢,如果我们对 Target Domain 一无所知的话,怎麼办呢
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911182329234.png" alt="image-20210911182329234" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911182329234.png" alt="image-20210911182329234" style="zoom:67%;" />
 
 这个时候又分成两种情形,对 Target Domain 一无所知的这种问题,这个时候我们就不叫 Domain 的 Adaptation,通常就叫 ==Domain Generalization==
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210911182517320.png" alt="image-20210911182517320" style="zoom:67%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911182517320.png" alt="image-20210911182517320" style="zoom:67%;" />
 
 因為我们并不是要,Adapt 到某一个特定的 Domain 上,我们对那个特定的 Domain 已经一无所知了,我们是期待今天机器学到,Domain Generalization,在 Testing 的时候,不管来什麼神奇的 Domain,它都可以处理,那 Domain Generalization,又分成两种状况
 
