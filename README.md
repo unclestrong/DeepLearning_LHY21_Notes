@@ -51,3 +51,6 @@
 [25_Explainable AI_P1](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/25_Explainable%20AI_P1.html)
 
 [26_Explainable AI_P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/26_Explainable%20AI_P2.html)
+
+[27_Domain Adaptation](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/27_Domain%20Adaptation.html)
+
