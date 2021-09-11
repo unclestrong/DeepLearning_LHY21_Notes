@@ -1,0 +1,746 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>27_Domain Adaptation</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='27-domain-adaptation'><span>27 Domain Adaptation</span></h1><p><span>到目前為止,我们已经训练了很多,Machine Learning 的 Model,所以对大家来说,训练一个 Classifier 完全不是一个问题</span></p><p><span>所以假设要你训练一个数字的 Classifier,你只要有给你训练资料,你训练好一个模型,然后 Apply 在 用在测试资料上就结束了,那像数字辨识这麼简单的问题,你在 Benchmark Corpus,在MNIST Benchmark Corpus 上,随便做一做,可能都会做到 99.5% 的正确率</span></p><p><span>但是假设今天</span><strong><span>测试资料,跟训练资料的分布不一样</span></strong><span>,怎麼办呢</span></p><p><span>我们举一个简单的例子,假设</span><strong><span>训练</span></strong><span>的时候,你的</span><strong><span>数字是黑白</span></strong><span>的,但</span><strong><span>测试</span></strong><span>的时候,你的</span><strong><span>数字是彩色</span></strong><span>的,会发生什麼样的事情呢</span></p><p><span>你可能会觉得说,一边是黑白的 一边是,虽然一边是黑白的 一边是彩色的,但是对 Model 来说,数字的形状是一样的,它能够在黑白的图片上认出数字来,在彩色的图片上,会不会应该也可以认出数字来呢</span></p><p><span>但实际上不是,如果你今天在这样子黑白的数字上面,训练一个模型,直接用到彩色的数字上,你得到的正确率会非常地低,会低到只有 57%,不能算是一个及格的分数</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210910220128165.png" alt="image-20210910220128165" style="zoom: 67%;" /></p><p><span>所以我们今天知道说,一旦训练资料跟测试资料,它中间有一些差异,它们中间的分布是不一样的,你在训练资料上训练出来的模型,在测试资料上面可能就会坏掉,那这种问题 叫做 </span><mark><span>Domain Shift</span></mark><span>,也就是当你的训练资料跟测试资料,它的分布有些不同的时候,这种状况叫做 Domain Shift</span></p><p><span>在多数的这种作业裡面,或者是 Benchmark Corpus 裡面,我们都假设无视 Domain Shift 这个问题,我们的训练资料跟测试资料,往往有著一样的分布,那这样都会给大家一个错误的印象就是,哇 这个今天的什麼人工智慧,真的是很厉害,都超越人类啦,在很多任务上面都有极高的正确率,但是实际上用在真实的应用上,当你的训练资料跟测试资料的中间,有一点差异的时候,机器能不能够做得好,就是一个未知数了</span></p><p><span>那我们今天就是要来讲说,假设训练资料跟测试资料,有一点差异的时候,有没有什麼方法可以让我们,能够做得比什麼都不做结果还要好</span></p><p><span>那今天就是要讲 </span><mark><span>Domain Adaptation</span></mark><span> 的技术,那 Domain Adaptation 的技术,也可以看做是 </span><mark><span>Transfer Learning</span></mark><span> 的一种</span></p><p><span>Transfer Learning 就是,你在 A 任务上学到的技能,可以被用在 B 任务上,那对於 Domain Adaptation 来说,你的训练资料是一个 Domain,你的测试资料是另外一个 Domain,你在训练资料上面,某一个 Domain 上学到的资讯,你要把它用到另外一个 Domain,用到测试资料上面,所以你是把一个 Domain 学到的知识,用在另外一个 Domain 上,所以它可以看做是,Transfer Learning 的其中一个环节,那在过去上课的录影裡面,有完整的讲了 Transfer Learning 相关的技术,那因為今天时间有限,我们就只 Focus 在,Domain Adaptation 的部分就好,如果你有兴趣的话,你可以再看一下过去上课的录影</span></p><h2 id='domain-shift'><span>Domain Shift</span></h2><p><span>Domain Shift,其实有很</span><strong><span>多种不同的类型</span></strong><span>,我们刚才看到的,只是 Domain Shift 的其中一种可能,是模型输入的资料的分布有变化的状况,那输入分布有变化是一种可能性</span></p><p><span>其实还有另外一种可能性是,</span><strong><span>输出的分布也可能有变化</span></strong><span>,举例来说 在你的训练资料上面,可能每一个数字它出现的机率都是一样的,但是在测试资料上面,可能每一个输出的机率是不一样的,有可能某一个数字它输出的机率特别大,有没有可能有这种事情发生呢,这也是有可能的</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210910220642626.png" alt="image-20210910220642626" style="zoom:67%;" /></p><p><span>那这也是一种 Domain Shift,还有一种更罕 比较罕见,但也不是完全不可能发生的状况是,</span><strong><span>输入跟输出虽然分布可能是一样的,但它们之间的关係变了</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210910220714133.png" alt="image-20210910220714133" style="zoom:67%;" /></p><p><span>也许在你的训练资料裡面,这种东西叫做 0,但是在你的测试资料裡面,这种东西叫做 1,这也不是不可能的,也是有可能发生这种状况嘛,也是有可能发生说,输入跟输出它们的关係不一样,在训练跟测试资料不一样的状况,那这又是另外一种 Domain Shift</span></p><p><span>那我们今天呢 只专注在,输入资料不同的 Domain Shift 的上面,好 那在等一下的课程裡面,这个</span><strong><span>测试的资料</span></strong><span>,我们说它来自 </span><mark><span>Target Domain</span></mark><span> </span><strong><span>训练的资料</span></strong><span>,我们说它来自 </span><mark><span>Source Domain</span></mark><span>,所以 </span><strong><span>Source Domain 是我们的训练资料,Target Domain 是我们的测试资料</span></strong></p><h2 id='domain-adaptation'><span>Domain Adaptation  </span></h2><p><span>在 Domain Adaptation 裡面,我们的这个情境是这个样子的,我们有一堆训练资料,那这边我们就直接拿手写数字辨识,来当作我们的例子啦</span></p><p><span>我们有一堆训练资料,那这些资料来自 Source Domain,而且这些训练资料是有标註的,我们知道每张图片对应的数字是什麼,但是我们希望再用这些资料,训练出一个模型,这个模型可以用在不一样的 Domain 上</span></p><p><img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210910222206884.png" referrerpolicy="no-referrer" alt="image-20210910222206884"></p><p><span>那要</span><strong><span>把这个模型用在不一样的 Domain 上</span></strong><span>,在训练的时候,我们就必须要对另外一个 Domain,也就是现在测试资料所在的 Target Domain,有一些了解,那随著了解的程度不同,我们就有不同的 Domain Adaptation 的方法</span></p><ul><li><span>那了解最多的是,假设我们在 Target Domain 上,我们有</span><strong><span>一点资料</span></strong><span>,而且这些资料居然还有 Label,那这是一种情况</span></li><li><span>但还有另外一种更好的状况是,也许你根本在 Target Domain 上,就有</span><strong><span>一大堆的资料</span></strong><span>,那些资料也都有 Label,那你其实就不需要做 Domain Adaptation,你直接拿 Target Domain 的资料来训练就好了</span></li></ul><p><span>所以如果你在 Target Domain 上,已经有一大堆的资料,而且它们还有标註,那你不需要做 Domain Adaptation</span></p><p><span>那要做 Domain Adaptation 的情境可能是,你有 </span><strong><span>Target Domain 的资料 也有标註,但是量非常地少</span></strong><span>,那在这种状况下怎麼办呢</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210910222347878.png" alt="image-20210910222347878" style="zoom:67%;" /></p><p><span>那这种状况还算是在 Domain Adaptation 裡面,比较容易处理的状况,如果你今天遇到的是,有标註资料 只是资料量很少的情况下,你可以用这些有标註的资料,来</span><strong><span>微调你在 Source Domain 上训练出来的模型</span></strong><span>,那这边所谓的微调,就跟你在做 BERT 的时候的行為很像,就是你已经有一个在 Source Domain 上,训练好的 Model,那你拿 Target Domain 的 Data,只稍微跑个两 三个（Epoch）就足够了</span></p><p><span>那在这一种情境下,你需要注意的问题就是,因為你的 Target Domain 的资料量非常少,所以你要小心 不要 Overfit,也就是说 你</span><strong><span>不要在 Target Domain 上的资料上,跑太多的  Iteration,</span></strong><span>那如果你跑太多的 Iteration,可能会 Overfit 到 Target 的这些少量的资料上,然后呢 你在你真正的 Testing Set 上就做不好,这是有可能的</span></p><p><span>那為了避免 Overfitting 的情况,过去就有很多的 Solution,比如说 把 Learning Rate 调小一点,举例来说 你要让（fine tune）前,跟（fine tune）后的模型的参数,不要差很多,或者是让（fine tune）前,跟（fine tune）后的模型,它的输入跟输出的关係,不要差很多 等等,那有很多不同的方法,那这边呢 我们就不细讲</span></p><p><span>那今天主要想要跟大家分享的情境,也是我们作业要处理的情境是,我们在 </span><strong><span>Targe Domain 上有大量的资料</span></strong><span>,但是这些资料是</span><strong><span>没有标註</span></strong><span>的,你的 Targe Domain 是有顏色的数字,你也蒐集到了一大堆有顏色的数字的图片,但是没有人标註说,每一张图片裡面的数字是什麼</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911162419412.png" alt="image-20210911162419412" style="zoom:67%;" /></p><p><span>那我们在作业裡面要处理的就是,遇到这种状况的时候,到底应该要怎麼解呢,好 到底应该要怎麼解呢</span></p><p><span>那像这种情境,其实是蛮符合你在真实的系统上,有可能会发生的情境,举例来说 你在实验室裡面训练了一个模型,你想要把它用在真实的场域裡面,你就把你的模型上线,那确实有一些人来用,但是你发现你得到的 Feedback 很差,大家都嫌弃你的系统正确率很低,那怎麼办,但是你这个时候,你也许就可以用 Domain Adaptation 的技术,那因為你的系统已经上线,也真的有人使用,所以你可以蒐集到一大堆的资料,只是这些资料它们是没有标註的</span></p><p><span>那现在要问的问题是,</span><strong><span>怎麼用这些没有标註的资料,来帮助我们在 Source Domain 上,训练出一个模型</span></strong><span>,它可以用在 Targe Domain 上呢</span></p><h3 id='basic-idea'><span>Basic Idea</span></h3><p><span>那这边最 Basic 的想法是这个样子的,这边基本的概念是这个样子,我们想要</span><strong><span>找一个 Feature Extractor</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911162648850.png" alt="image-20210911162648850" style="zoom:67%;" /></p><p><span>这个 Feature Extractor,它其实也是一个 Network,这个 Network 呢 吃一张图片作為输入,它吐出一个 vector,吐出一个 Feature,虽然 Source Domain 跟 Target Domain,它们的 Image 表面上看起来不一样,但是 Feature Extractor,会</span><strong><span>把它们不一样的部分拿掉,只抽取出它们共同的部分</span></strong></p><p><span>所以虽然从图片上看起来,这两组图片一个有顏色 一个没有顏色,它本来就很不一样,但是我们期待说,这个 Feature Extractor 可以学到,就无视顏色这件事情,把顏色的资讯滤掉,那今天不管是来自 Source Domain 的图片,还是来自 Target Domain 的图片,只要通过这个 Feature Extractor 以后,它得到的 Feature 看起来是没有差异的,它们看起来有一样的分布,那这样你就可以用这些 Feature,训练一个模型,在 Source Domain 上训练一个模型,直接用在 Target Domain 上,那接下来的问题就是,怎麼找出这样一个 Feature Extractor</span></p><h3 id='domain-adversarial-training'><span>Domain Adversarial Training</span></h3><p><span>怎麼找出这样的一个 Feature Extractor 呢,那其实我们可以</span><strong><span>把一个一般的 Classifier,就分成 Feature Extractor,跟 Label Predictor 两个部分</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911163352331.png" alt="image-20210911163352331" style="zoom:67%;" /></p><p><span>我们知道一个 Image 的 Classifier,就是输入一张 Image Output,就是分类的结果,那假设这个 Image 的 Classifier 有 10 层,那我们就说,前 5 层算是 Feature Extractor,后 5 层算是 Label Predictor,因為前 5 层,你一个 Image 通过前 5 层,它输出就是一个 vector 嘛,那如果你上 CNN 的话,它输出其实是 Feature Map 啦,但 Feature Map 拉直,也可以看做是一个 vector 嘛,那这个 vector,再丢到 Label Predictor 的后面 5 层,它会產生 Class,那所以我们可以把前 5 层,看做是 Feature Extractor</span></p><p><span>那你可能会问说,那為什麼是前 5 层呢,為什麼不是前 4 层 前 3 层 前 2 层 前 1 层呢,可以是前 4 前 3 前 2 前 1,这个是你自己决定的,</span><strong><span>一个 Classifier 裡面,哪些部分算 Feature Extractor,哪些部分算是 Label Predictor,这个是你自己决定的,那这个也算是一个 Hyper Paramete</span></strong><span>r 啦,就跟 Network 架构要调一下一样,要调一样</span></p><p><span>那如果你今天呢,用 Domain Adaptation 的方法,那这边等一下要用的方法叫,</span><mark><span>Domain Adversarial Training</span></mark></p><p><span>用 Domain Adversarial Training,你要把 Classifier 裡面的哪个部分 哪几层,当做 Feature Extractor,这个也要问你自己,那这个也是你自己要决定的</span></p><p><span>那我们现在要怎麼来训练这个,Feature Extractor 跟 Label Predictor 呢,今天对於 Source Domain 上的资料,Source Domain 上的资料是有标註的,我们就期待把 Source Domain 的资料丢进去,那就去跟训练一个一般的分类器一样,它通过 Feature Extractor,再通过 Label Predictor,可以產生正确的答案</span></p><p><span>但不一样的地方是,Target Domain 的这些资料,我们有一堆 Target Domain 的资料,但这些资料是没有任何的标註的,这些资料是没有任何的标註的,所以我们</span><strong><span>不能说把这些资料丢进去以后,期待 Label Predictor 会 Output 什麼数字</span></strong><span>,因為我们根本不知道 Label Predictor,要 Output 什麼数字才是对的</span></p><p><span>但是这些资料可以怎麼被使用呢,这些资料的使用方式就是,我们把这些图片丢到这个 Image,丢进这个 Image Classifier,然后我们把,Feature Extractor 的 Output 拿出来看,拿出来看以后,我们希望 </span><strong><span>Source Domain 的图片,丢进去的 Feature,跟 Target Domain 的图片丢进去的 Feature,它们看起来要分不出差异</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911163602009.png" alt="image-20210911163602009" style="zoom:67%;" /></p><p><span>就是这个 Source Domain 的图片,我们用它的 Feature,我们用蓝色的点来表示,Target Domain 的图片,它的 Feature 我们用红色的点来表示,我们要这些蓝色的点跟这些红色的点,分不出差异,那怎麼让蓝色的点跟红色的点,分不出差异呢,那这个就要藉由,Domain Adversarial Training 的技术</span></p><p>&nbsp;</p><p><span>那我们现在要做的事情就是,训练一个 Domain 的 Classifier,这个 Domain 的 Classifier,它就是一个</span><strong><span>二元的分类器</span></strong><span>,它吃这个 vector 当作输入,它要做的事情就是判断说,</span><strong><span>这个 vector 是来自於 Source Domain,还是来自於 Target Domain</span></strong></p><p><span>而 Feature Extractor 它学习的目标,就是要去想办法骗过这个 Domain Classifier,那听到骗过这件事情</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911164939478.png" alt="image-20210911164939478" style="zoom: 50%;" /></p><p><span>是不是让你脑中就浮现了,Gan 这个东西,是不是就浮现了,Generative Adversaria Network 这个东西呢,没错 Domain Adversarial Training,就非常像是 Gan,你可以把 Feature Extractor,想成是 Generator,把 Domain Classifier,想成是 Discriminator,那其实 Domain Adversarial Training,最早的 Paper,我记得是发表在 2015 年的 ICML 上面,比那个 Gan 还要稍微晚一点点啦,不过它们几乎可以说是同时期的作品,在 Domain Adversarial Training 那篇 Paper 裡面,是有引用到 Gan 那篇 Paper,但那时候 Gan 那篇 Paper,还没有上</span><a href='https://neurips.cc/'><span>NeurIPS</span></a><span>,所以它只说,欸 有一篇 有另外一篇 Paper,它提了一个叫 Gan 的想法,然后它是 Technical report 放在网路上的,还跟我的想法有点像,所以它们算是一个同时期的作品</span></p><p><span>但是讲到这边,这个 Domain Adversarial Training,跟 Gan 还是有一点不一样,那在这个游戏裡面,对 </span><strong><span>Generator 好像优势太大了</span></strong><span>,那对 Generator 来说,它要骗过 Discriminator,完全不需要花什麼力气,有一个非常无脑的做法,就是你的 Feature Extractor,也就是你的 </span><strong><span>Generator,不管看到什麼输入,永远都输出 0 就好了</span></strong></p><p><span>看到什麼输入我都输出一个 Zero vector,那对 Domain Classifier 来说,它完全不知道 Input 的 Image 是什麼,它永远都看到 Zero vector,它就完全无法分辨这个 vector,来自於哪一个 Domain,但是这显然不是我们要的状况,如果 Feature Extractor 只会输出 Zero vector,那这样子等於根本就什麼事都没有做是一样的</span></p><p><span>那这件事情会发生吗,其实</span><strong><span>这件事情是不会发生的</span></strong><span>,為什麼,因為 </span><strong><span>Label Predictor 也需要这个 Feature</span></strong></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911165220437.png" alt="image-20210911165220437" style="zoom:50%;" /></p><p><span>Label Predictor 它也需要这个 Feature,让它可以去判断,输入的图片属於哪一个类别,所以假设 Generator 它就直接放一个大绝说,今天不管输入什麼样的 Image,我输出都是 Zero vector,那对於 Label Predictor 来说,它就没有办法判断是哪一张图片,那在这个情况下,因為 Feature Extractor,它还是需要產生这个 vector,让 Label Predictor 可以產生正确的图片,所以 Feature Extractor 它就不能放大绝,它就不能看到什麼东西,永远都输出 Zero vector</span></p><p><span>那这边呢,我们用符号再稍微把我们刚才讲过的事情,再重新说 说得更清楚一点</span></p><ul><li><span>假设 Label Predictor 的参数,我们就叫它 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.054ex" height="2.245ex" role="img" focusable="false" viewBox="0 -705 907.7 992.2" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.65ex;"><defs><path id="MJX-22-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path id="MJX-22-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D703" xlink:href="#MJX-22-TEX-I-1D703"></use></g><g data-mml-node="mi" transform="translate(502,-150) scale(0.707)"><use data-c="1D45D" xlink:href="#MJX-22-TEX-I-1D45D"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>θ</mi><mi>p</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">θ_p</script></li><li><span>Domain Classifier 的参数 叫做 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.081ex" height="1.95ex" role="img" focusable="false" viewBox="0 -705 919.7 862.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-23-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path id="MJX-23-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D703" xlink:href="#MJX-23-TEX-I-1D703"></use></g><g data-mml-node="mi" transform="translate(502,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-23-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>θ</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">θ_d</script></li><li><span>然后 Feature Extractor 的参数 叫做 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.129ex" height="2.262ex" role="img" focusable="false" viewBox="0 -705 940.9 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.667ex;"><defs><path id="MJX-27-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path id="MJX-27-TEX-I-1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D703" xlink:href="#MJX-27-TEX-I-1D703"></use></g><g data-mml-node="mi" transform="translate(502,-150) scale(0.707)"><use data-c="1D453" xlink:href="#MJX-27-TEX-I-1D453"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>θ</mi><mi>f</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">θ_f</script></li></ul><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911172941695.png" alt="image-20210911172941695" style="zoom:50%;" /></p><p><span>然后呢 这个 Source Domain 上的这些 Image,它的 Classification 的这个 Cross Entropy,就 Source Domain 这些 Image,它是有 Label 的,所以你可以算它们的 Cross Entropy,你根据它们的 Cross Entropy,订出一个 Loss</span></p><p><span>这边是有一个 L,L 是这个 Domain 的这个,这个 Source Domain 上的那些 Image,它有 Label,你可以算出 Cross Entropy,然后对於这个 Domain 的 Classifier 而言,它要去想办法分辨,Source 跟 Target Domain 的差距,它要去做一个,Binary 的 Classification 的问题,它要去做一个二元分类的问题,这个分类的问题有一个 Loss 叫做</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script></p><p><span>那我们现在要去找一个  </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.054ex" height="2.245ex" role="img" focusable="false" viewBox="0 -705 907.7 992.2" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.65ex;"><defs><path id="MJX-22-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path id="MJX-22-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D703" xlink:href="#MJX-22-TEX-I-1D703"></use></g><g data-mml-node="mi" transform="translate(502,-150) scale(0.707)"><use data-c="1D45D" xlink:href="#MJX-22-TEX-I-1D45D"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>θ</mi><mi>p</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">θ_p</script><span>,它可以让这个 L 越小越好</span></p><p><span>我们要去找一个 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.081ex" height="1.95ex" role="img" focusable="false" viewBox="0 -705 919.7 862.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-23-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path id="MJX-23-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D703" xlink:href="#MJX-23-TEX-I-1D703"></use></g><g data-mml-node="mi" transform="translate(502,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-23-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>θ</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">θ_d</script><span>,它可以让这个</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span>  越小越好</span></p><p><span>你说 Label Predictor 它要做的事情,就是让这个 Source Domain 的 Image,分类越正确越好,Domain Classifier 要做的事情,就是让 Domain 的分类越正确越好</span></p><p><span>而 Feature Extractor 呢,Feature Extractor 它要做的事情是,它站在 Label Predictor 这边,然后呢 它要去捅 Domain Classifier 一刀,它要去做 Domain Classifier 相反的事情,所以这个 Feature Extractor,它的 Loss 是 Label Predictor 的 Loss L,去减掉 Domain Classifier 的 Loss,叫做 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script></p><p><span>所以 Feature Extractor 它的 Loss,就是大 L 减掉</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span>,你要去找一个参数 找一组参数 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.129ex" height="2.262ex" role="img" focusable="false" viewBox="0 -705 940.9 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.667ex;"><defs><path id="MJX-27-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path id="MJX-27-TEX-I-1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D703" xlink:href="#MJX-27-TEX-I-1D703"></use></g><g data-mml-node="mi" transform="translate(502,-150) scale(0.707)"><use data-c="1D453" xlink:href="#MJX-27-TEX-I-1D453"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>θ</mi><mi>f</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">θ_f</script><span>,它可以让大 L 减 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span>的值越小越好</span></p><p><span>这个是最原始的,Domain Adversarial Training 的做法,但这真的是最好的做法吗,你可以想想看喔,那这个详情我们就不细讲,这个留给大家自己思考 自己发觉,你想想看喔,假设 Domain Classifier 它的工作,是要把 Source Domain 跟 Target Domain 分开,是要看到这种图片,它知道它的 Feature 来自 Source Domain,看到这种图片,它知道它的 Feature 来自 Target Domain,它要把这两组 Feature 分开</span></p><p><span>而 </span><strong><span>Feature Extractor 如果它的 Loss是 Domain Classifier 直接加一个负号</span></strong><span>,那意味著什麼,意味著说 它要做的事情,就是跟 Domain Classifier 相反,本来 Domain Classifier 看到这张图片的 Feature,它说是 Source,那现在 Feature Extractor,是要让 Domain Classifier 看到这个图片以后,它说是 Target,看到这个图片 反过来要说是 Source,如果你这麼做,不是也把两组 Feature 分开来了吗</span></p><p><span>我们说我们现在要做的事情,是要让 Domain 跟,这个 Source 跟 Target Domain 没有差别,但是你今天不管是用 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span>,还是负的 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span>,其实都是要,把 Source 跟 Target Domain 分开呀,你去让 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span> 的值,本来 Domain Classifier,是要让 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span> 的值越小越好,你现在是负的</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span>,Feature Extractor 要让 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.56ex" height="1.901ex" role="img" focusable="false" viewBox="0 -683 1131.7 840.1" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.355ex;"><defs><path id="MJX-34-TEX-I-1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path id="MJX-34-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D43F" xlink:href="#MJX-34-TEX-I-1D43F"></use></g><g data-mml-node="mi" transform="translate(714,-150) scale(0.707)"><use data-c="1D451" xlink:href="#MJX-34-TEX-I-1D451"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>L</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container><script type="math/tex">L_d</script><span> 的值越大越好,其实也是把 Source 跟 Target Domain分开,所以这未必是最好的做法,至於怎麼做,当然这招是有用的,这招是有用的,那但是怎麼做可以做得更好,欸 这个留给大家慢慢思考</span></p><p>&nbsp;</p><p>&nbsp;</p><p><span>好 那我们来看一下,Domain Adversarial Training,最原始的 Paper,它做的结果怎麼样呢,当年看到这个 Paper 的时候,真的觉得结果非常地惊人</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911180533698.png" alt="image-20210911180533698" style="zoom:67%;" /></p><p><span>那这边呢 它做了四个任务,那上半部 是 Source Domain 的图片,这边其实都是数字辨识啦,那下半部呢 都是 Target Domain 的图片,好 如果今天呢,我们是拿 Target Domain 的图片来做 Training,Target Domain 的图片来做 Testing,那结果像是这个样子,每一个任务正确率都是 90% 以上,但如果说,我们今天是 Source Domain Training,Target Domain Testing,Train 在黑白的数字上,测试在彩色的数字上,结果直接惨掉,哇 这直接惨掉 没办法做啦,结果直接惨掉</span></p><p><span>那如果加上 Domain Adversarial Training 的话,结果怎麼样呢,你会发现说本来如果只 Train 在黑白的图片上,测试在彩色的图片上,正确率 57.5</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911180619681.png" alt="image-20210911180619681" style="zoom:50%;" /></p><p><span>那如果今天有做 Domain Adversarial Training,正确率就飆升到 81%,在很多其他任务上进步量都挺明显的,59 到 71,74 到 88.7,这个进步量都是挺明显的,那这个就是 Domain Adversarial Training</span></p><h4 id='limitation'><span>Limitation </span></h4><p><span>那刚才这整套想法,还是有一个限制,有一个小小的问题,什麼样小小的问题呢</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911181003396.png" alt="image-20210911181003396" style="zoom:67%;" /></p><p><span>我们来看看哦,今天 蓝色的圈圈跟蓝色的三角形,代表 Source Domain 上的两个 Class,那我们当然可以找一个 Boundary,去把这两组 Class 把它分开来,对於 Target Domain 上的 Data,我们没有任何的 Class 的 Label,我们就只能说所有 Target Domain 的 Data,我们都用这个正方形来表示它</span></p><p><span>那我们今天训练的目标,就是要让这些正方形它的分布,跟这个圈圈三角形合起来的分布越接近越好,但是什麼叫做越接近越好呢,左边这个 Case,红色的点跟蓝色的点,它们也算是蛮 Align 在一起的,也算是分布蛮接近的,右边这个 Case,红色的点跟蓝色的点,它们也算是分布蛮接近的,但是你觉得左边比较好,还是右边比较好呢,</span></p><p><span>没错 很多人也觉得是右边,所以我们是不是</span><strong><span>应该要让右边的状况发生</span></strong><span>,而避免让左边的状况发生呢,好 怎麼做呢,怎麼让右边的状况发生,左边的状况不要发生呢</span></p><p><span>也许一个可能的想法是,我们既然知道蓝色的圈圈跟蓝色的三角形,它们的</span><strong><span>分界点</span></strong><span>在哪裡,这个分界点我们是知道的,那我们应该要让这些方形,虽然我们不知道它是哪一个类别,但我们让这些方形远离这一个分界点,怎麼让方形远离这个分界点呢,那在文献上就有很多不同的做法啦,你可以参考一下文献,看看你觉得怎麼做比较好</span></p><h4 id='considering-decision-boundary'><span>Considering Decision Boundary  </span></h4><p><span>举例来说一个最简单的做法是说,呃 今天我有很多 Unlabeled 的图片,丢到 Feature Extractor,再丢到 Label Predictor 以后,我不知道它是哪一个类别,但是我希望</span><strong><span>它离 Boundary 越远越好</span></strong><span>,那什麼叫做离 Boundary 越远越好呢</span></p><ul><li><span>如果今天输出的结果非常地集中,叫做离 Boundary 远</span></li><li><span>如果今天输出的结果每一个类别都非常地接近,叫做离 Boundary 近</span></li></ul><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911181351557.png" alt="image-20210911181351557" style="zoom:67%;" /></p><p><span>所以我希望说把 unLabled 的 Image,丢进 Feature Extractor,再丢进 Label Predictor,输出的结果,它离 Boundary 越远越好,也就是说这</span><strong><span>集中在某一个类别上</span></strong><span>,我们虽然不知道它应该算是哪一个类别,但至少应该集中在某一个类别上</span></p><p><span>那这只是一种招数,并不是全部,那你可以参考一下文献,比如说有一个知名的方法叫做 DIRT-T,DIRT-T,这个 DIRT-T  它其实,它 Paper 裡面还特别告诉你说,这个要唸 Dirty,要唸 Dirty,这个大家都是这个模型命名大师,都会命名一些很有创意的名字,好 这个 DIRT-T 是一个招数,还有另外一个招数叫这个,Maximum Classifier Discrepancy,如果你要在这个 Domain Adaptation 座位裡面,得到最好的结果的话,那这些招数是不可或缺的,那实际上这些招数怎麼进行,还挺复杂,这个就留给大家自己研究</span></p><p>&nbsp;</p><p><span>那这边还有一个问题,什麼样的问题呢,我们到目前為止,好像都假设说,</span><strong><span>Source Domain 跟 Target Domain,它的类别都要是一模一样</span></strong><span>,Source Domain 假设是影像分类的问题,Source Domain 有老虎 狮子跟狗,Target Domain 也应该要有老虎 狮子跟狗,但是真的一定会这样吗</span></p><p><span>Target Domain 是没有 Label 的,我们根本不知道 Target Domain 裡面,有什麼样的类别</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911181655614.png" alt="image-20210911181655614" style="zoom:67%;" /></p><p><span>而在这个图示裡面 这个实心的,实线的圈圈代表,Source Domain 裡面有的东西,这个虚实线的圈圈,代表 Target Domain 裡面有的东西,所以呢 有没有可能是,这个 </span><strong><span>Source Domain 裡面的东西比较多,Target Domain 裡面的东西比较少</span></strong><span>呢,有没有可能是,</span><strong><span>Source Domain 裡面的东西比较少,Target Domain 的东西比较多</span></strong><span>呢,有没有可能两者虽然有交集,但是各自都有独特的类别呢,这都是有可能发生的</span></p><p><span>所以在这个前提之下,你说 Source Domain 跟 Target Domain,你硬要把它们完全 Align 在一起,听起来有点问题呀,因為举例来说在这个 Case 裡面,哦 你说你要让 Source Domain 的 Data,跟 Target Domain 的 Data,它们的 Feature 完全 Match 在一起,那意味著说,你硬是要让老虎去变得跟狗像,或者是老虎硬是要变得跟狮子像,到时候你就分不出老虎这个类别了</span></p><p><span>听起来就是有问题的方法,那怎麼解决这个问题,怎麼解决 Source Domain 跟 Target Domain,它可能有不一样的 Label 的问题,那你可以参见这个,Universal Domain Adaptation 这篇文章</span></p><p>&nbsp;</p><p><span>好 那我们来看看有没有同学有问题要问的,好 有同学问说</span></p><p><strong><span>如果 Feature Extractor 是 CNN,而不是 Linear Layer,那 Domain Classifier Input,就是 Feature Map,拉直的 Latent Embedding,这样 Latent Space 学到的东西,把两个 Domain 分部弥平会不会有影响,因為 Feature Map 本来就有 Space 的关係,现在却硬是被拉直</span></strong></p><p><span>答：</span></p><p><span>你说得非常对,真的 你说得非常对,就是 Feature Extractor,它是一个复杂的 Network,然后我们硬是要,把两个 Domain 的东西拉在一起,会不会变成它只是為了拉在一起而拉在一起,它根本就没有学到,我们本来希望,这个 Feature Space 学到的东西呢,简单的回答就是 会,会,所以 Domain Adaptation,没有大家想像得那麼容易 Train 起来,虽然好像刚才讲得都非常地顺利,那作业裡面可以自己体验一下啦,这个 Domain Adaptation,算是偏难做的一个作业,所以 呃 这一个,你知道我们在 Train 的时候,我们有两件事情,有两件事互相结抗,一个是要去骗过 Domain Classifier,另外一个是要让分类变正确,那我们期待说这两件事情都可以同时做好,也就是说一方面既骗过 Domain Classifier,一方面又分类分得好,那就同时把两个 Domain Align 在一起,同时 Latent Space,我们又希望它的分布是正确的,比如说我们觉得 1 跟 7 比较像,那他们為了要让 Classifier 做好,那今天你的 Feature Extractor,就会让 1 跟 7 比较像,然后 1 跟,比如说 1 跟 4 比较不像,它就让 1 跟 4 拉得比较远一点,我们期待说,藉由需要把 Label Predictor 的 Performance,冲高这件事情,latent representation 裡面的这个 Space,仍然是保留一个比较好的 Latent Space,但是不一定 这件事不一定总是会成功了,如果你今天你给 Domain Classifier,就是要骗过 Domain Classifier,这件事情的权重太大,你的 Model 就会学到说,它都只想骗过 Domain Classifier,它就不会產生好的 Latent Space,所以刚才同学问的问题,确实是有可能会发生的,所以大家在实做的时候,这个也是有些参数要调的,好,好 希望这样有回答到同学的问题</span></p><p>&nbsp;</p><p><span>那接下来 还有一个更严峻的状况,刚才我们是假设说没有 Labeled Data,但至少有一大堆,这个时候你还可以说,我要把两个 Space 呢 把它拉在一起</span></p><p><span>但是有一个可能是,假设不只没有 Label,而且 Data 还很少,比如说我就只有一张而已</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911182233057.png" alt="image-20210911182233057" style="zoom:67%;" /></p><p><span>这个时候你只有一张,你的这个 Target Domain 只有一张,只有一个点,你根本没有办法跟那个 Source Domain,把它 Align 在一起,这个时候怎麼办呢,假设 Target Domain 的 Data 非常少的时候,怎麼办呢,也不是没有方法啦</span></p><p><span>有一个方法叫做 </span><mark><span>Testing Time Training</span></mark><span>,它的缩写是 TTT,这个我们就把连结附在这边给大家参考,Testing Time Training 就是想要处理,假设我的 Target Domain 没有 Lable,而且还只有一张的时候,到底应该要怎麼办</span></p><p>&nbsp;</p><p><span>但其实还有一个更严峻的状况,这个状况是,如果我什麼都不知道怎麼办呢,如果我们对 Target Domain 一无所知的话,怎麼办呢</span></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911182329234.png" alt="image-20210911182329234" style="zoom:67%;" /></p><p><span>这个时候又分成两种情形,对 Target Domain 一无所知的这种问题,这个时候我们就不叫 Domain 的 Adaptation,通常就叫 </span><mark><span>Domain Generalization</span></mark></p><p><img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210911182517320.png" alt="image-20210911182517320" style="zoom:67%;" /></p><p><span>因為我们并不是要,Adapt 到某一个特定的 Domain 上,我们对那个特定的 Domain 已经一无所知了,我们是期待今天机器学到,Domain Generalization,在 Testing 的时候,不管来什麼神奇的 Domain,它都可以处理,那 Domain Generalization,又分成两种状况</span></p><ul><li><span>一种状况是我的训练资料非常地丰富,本来就包含了各式各样不同的 Domain,假设你要做猫狗的分类器,那你现在呢 在训练资料裡面,有真实的猫跟狗的照片,有素描的猫跟狗的照片,然后有这个水彩画的猫跟狗的照片,期待因為训练资料有多个 Domain,模型可以学到如何弥平 Domain 间的差异,今天有测试资料是卡通的猫跟狗,它也可以处理,这是一种状况,那这种状况你还比较能够想像要怎麼处理,那我们这边就不细讲,我们都只各放一些有代表性的论文,给大家参考</span></li><li><span>但还有另外一种,你会觉得真的不知如何下手的状况是,假设训练资料只有一个 Domain 呢,假设你的训练资料只有一个 Domain,而测试资料有多种不同的 Domain 的话,怎麼处理呢,在文献上也不是没有人试,也是有人试著去解惑这种问题的,那他怎麼做呢,这细节我们就不讲啦,在概念上就是有点像是 Data Augmentation,虽然你只有一个 Domain 的资料,想个 Data Augmentation 的方法,去產生多个 Domain 的资料,然后你就可以套上面这个 Secnario 来做做看,看能不能够在测试的时候,新的 Domain 都可以做好,好 这个是 Domain Generalization</span></li></ul><p><span>那这个部分就是很简短的跟大家带过,这个 Domain Adaptation 的种种技术,更多的细节,在下一堂课助教的说明裡面</span></p></div></div>
+</body>
+</html>
