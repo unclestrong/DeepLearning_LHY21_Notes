@@ -192,13 +192,13 @@
 
 首先有一个初始的游戏画面,这个初始的游戏画面,被作为你的 Actor 的输入
 
-你的 Actor 那就输出了一个 Action,比如说向右,输入的游戏画面呢,我们叫它 s1,然后输出的 Action 呢,就叫它 a1
+你的 Actor 那就输出了一个 Action,比如说向右,输入的游戏画面呢,我们叫它 $s_1$,然后输出的 Action 呢,就叫它 $a_1$
 
 那现在会得到一个 Reward,这边因为向右没有做任何事情,没有杀死任何的外星人,所以得到的 Reward 可能就是 0 分
 
 ![image-20210912214950357](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912214950357.png)
 
-採取向右以后,会看到新的游戏画面,这个叫做 s2,根据新的游戏画面 s2,你的 Actor 会採取新的行为,比如说开火,这边用 a2,来表示看到游戏画面 s2 的时候,所採取的行为
+採取向右以后,会看到新的游戏画面,这个叫做 $s_2$,根据新的游戏画面 $s_2$,你的 Actor 会採取新的行为,比如说开火,这边用 $a_2$,来表示看到游戏画面 $s_2$ 的时候,所採取的行为
 
 那假设开火恰好杀死一隻外星人,和你的 Actor 就得到 Reward,这个 Reward 的分数呢,是 5 分,然后採取开火这个行为以后
 
@@ -214,7 +214,7 @@
 
 ![image-20210912215203605](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912215203605.png)
 
-那这个 Total Reward 呢,就是从游戏一开始得到的 r1,一直得,一直加,累加到游戏最后结束的时候,得到的 rt,假设这个游戏裡面会互动,T 次,那麽就得到一个 Total Reward,我们这边用 R,来表示 Total Reward,其实这个 Total Reward 又有另外一个名字啊,叫做 ==Return== 啦,你在这个 RL 的文献上,常常会同时看到 Reward 跟 Return,这两个词会出现,那 Reward 跟 Return 其实有点不一样,Reward 指的是你採取某一个行为的时候,立即得到的好处,这个是 Reward,把整场游戏裡面所有的 Reward 通通加起来,这个叫做 Return
+那这个 Total Reward 呢,就是从游戏一开始得到的 $r_1$,一直得,一直加,累加到游戏最后结束的时候,得到的 rt,假设这个游戏裡面会互动,T 次,那麽就得到一个 Total Reward,我们这边用 R,来表示 Total Reward,其实这个 Total Reward 又有另外一个名字啊,叫做 ==Return== 啦,你在这个 RL 的文献上,常常会同时看到 Reward 跟 Return,这两个词会出现,那 Reward 跟 Return 其实有点不一样,Reward 指的是你採取某一个行为的时候,立即得到的好处,这个是 Reward,把整场游戏裡面所有的 Reward 通通加起来,这个叫做 Return
 
 但是我知道说,很快你就会忘记 Reward 跟 Return 的差别了,所以我们等一下就不要再用 Return 这个词彙,我们直接告诉你说,整场游戏的 Reward 的总和,就是 Total 的 Reward,而这个 Total 的 Reward 啊,就是我们想要去最大化的东西,就是我们训练的目标
 
@@ -226,19 +226,19 @@
 
 ![image-20210912220011837](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912220011837.png)
 
-这个是你的环境,你的环境呢,输出一个 Observation,叫做 s1
+这个是你的环境,你的环境呢,输出一个 Observation,叫做 $s_1$
 
-- 这个 s1 呢,会变成你的 Actor 的输入
+- 这个 $s_1$ 呢,会变成你的 Actor 的输入
 
-- 你的 Actor 呢,接下来就是输出 a1
+- 你的 Actor 呢,接下来就是输出 $a_1$
 
-- 然后这个 a1 呢,又变成环境的输入
+- 然后这个 $a_1$ 呢,又变成环境的输入
 
-- 你的环境呢,看到 a1 以后,又输出 s2
+- 你的环境呢,看到 $a_1$ 以后,又输出 $s_2$
 
-然后这个互动的过程啊,就会继续下去,s2 又输入给 Actor,它就输出 a2,a2 又输入给 Environment,它就输出给,它就产生 s3
+然后这个互动的过程啊,就会继续下去,$s_2$ 又输入给 Actor,它就输出 $a_2$,$a_2$ 又输入给 Environment,它就输出给,它就产生 $s_3$
 
-它这个互动呢,一直下去,直到满足游戏中止的条件,好 那这个 s 跟 a 所形成的这个 Sequence,就是 s1 a1 s2 a2 s3 a3 这个 Sequence,又叫做 Trajectory,那我们用 $τ $来表示 Trajectory
+它这个互动呢,一直下去,直到满足游戏中止的条件,好 那这个 s 跟 a 所形成的这个 Sequence,就是 $s_1$ $a_1$ $s_2$ $a_2$ $s_3$ $a_3$ 这个 Sequence,又叫做 Trajectory,那我们用 $τ $来表示 Trajectory
 
 ![image-20210912220319849](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912220319849.png)
 
@@ -248,7 +248,7 @@
 
 所以通常 **Reward Function 在定义的时候,不是只看 Action,它还需要看 Observation**,同时看 Action 跟 Observation,才能够知道现在有没有得到分数,所以 Reward 是一个 Function,
 
-这个 Reward 的 Function,它拿 a1 跟 s1 当作输入,然后它产生 r1 作为输出,它拿 a2 跟 s2 当作输入,产生 r2 作为输出,把所有的 r 通通结合起来,把 r1 加 r2 加 r3 一直加到 T,全部结合起来就得到 R,这个就是 Total Reward,也就是 Return,这个是我们要最大化要去 Maximize 的对象
+这个 Reward 的 Function,它拿 $a_1$ 跟 $s_1$ 当作输入,然后它产生 $r_1$ 作为输出,它拿 $a_2$ 跟 $s_2$ 当作输入,产生 $r_2$ 作为输出,把所有的 r 通通结合起来,把 $r_1$ 加 $r_2$ 加 $r_3$ 一直加到 T,全部结合起来就得到 R,这个就是 Total Reward,也就是 Return,这个是我们要最大化要去 Maximize 的对象
 
 
 
@@ -264,8 +264,119 @@
 
 ![image-20210912221135459](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912221135459.png)
 
-这个 **a1 它是用 Sample 产生的**,你定同样的 s1 每次产生的 a1 不一定会一样,所以假设你把 Environment Actor 跟 Reward,合起来当做是一个巨大的 Network 来看待,这个 Network 可不是一般的 Network,这个 Network 裡面是有随机性的,这个 Network 裡面的某一个 Layer 是,每次产生出来结果是不一样的,这个 Network 裡面某一个 Layer 是,它的输出每次都是不一样的,另外还有一个更大的问题就是,你的 Environment 跟 Reward,它根本就不是 Network 啊,它只是一个黑盒子而已,你根本不知道裡面发生了什么事情,Environment 就是游戏机,那这个游戏机它裡面发生什么事情你不知道,你只知道说你输入一个东西会输出一个东西,你採取一个行为它会有对应的回应,但是到底是怎麽产生这个对应的回应,我们不知道,它只是一个黑盒子,而 Reward 呢,Reward 可能比较明确,但它也不是一个 Network,它就是一条规则嘛,它就是一个规则说,看到这样子的 Optimization 跟这样的 Action,会得到多少的分数,它就只是一个规则而已,所以它也不是 Network,而且更糟,而且更麻烦的地方是,往往 Reward 跟 Environment,它也是有随机性的,如果是在电玩裡面,通常 Reward 可能比较不会有随机性,因为规则是定好的,对有一些 RL 的问题裡面,Reward 是有可能有随机性的,但是在 Environment 裡面,就算是在电玩的这个应用中,它也是有随机性的,你给定同样的行为,到底游戏机会怎麽样回应,它裡面可能也是有乱数的,它可能每次的回应也都是不一样,如果是下围棋,你落同一个子,你落在,你落子在同一个位置,你的对手会怎麽样回应,每次可能也是不一样,所以环境很有可能也是有随机性的,所以这不是一个一般的 Optimization 的问题,你可能不能够用我们这门课已经学过的,训练 Network 的方法来找出这个 Actor,来最大化 Reward,所以 RL 真正的难点就是,我们怎麽解这一个 Optimization 的问题,怎麽找到一组 Network 参数,可以让 R 越大越好,其实你再仔细想一想啊,这整个问题跟 GAN 其实有异曲同工之妙,它们有一样的地方,也有不一样的地方,先说它们一样的地方在哪裡,你记不记得在训练 GAN 的时候,在训练 Generator 的时候,你会把 Generator 跟 Discriminator 接在一起,然后你希望去调整 Generator 的参数,让 Discriminator 的输出越大越好,今天在 RL 裡面,我们也可以说这个 Actor 就像是 Generator,Environment 跟 Reward 就像是 Discriminator,我们要去调整 Generator 的参数,让 Discriminator 的输出越大越好,所以它跟 GAN 有异曲同工之妙,但什么地方不一样呢,在 GAN 裡面你的 Discriminator,也是一个 Neural Network,你了解 Discriminator 裡面的每一件事情,它也是一个 Network,你可以用 Gradient Descent,来 train 你的 Generator,让 Discriminator 得到最大的输出,但是在 RL 的问题裡面,你的 Reward 跟 Environment,你可以把它们当 Discriminator 来看,但它们不是 Network,它们是一个黑盒子,所以你没有办法用,一般 Gradient Descent 的方法来调整你的参数,来得到最大的输出,所以这是 RL,跟一般 Machine Learning不一样的地方,但是我们还是可以把 RL 就看成三个阶段,只是在 Optimization 的时候,在你怎麽 Minimize Loss,也就怎麽 Maximize Reward 的时候,跟之前我们学到的方法是不太一样的
+这个 **$a_1$ 它是用 Sample 产生的**,你定同样的 $s_1$ 每次产生的 $a_1$ 不一定会一样,所以假设你把 Environment Actor 跟 Reward,合起来当做是一个巨大的 Network 来看待,这个 Network 可不是一般的 Network,**这个 Network 裡面是有随机性的**,这个 Network 裡面的某一个 Layer 是,每次产生出来结果是不一样的,**这个 Network 裡面某一个 Layer 是,它的输出每次都是不一样的**
+
+另外还有一个更大的问题就是,**你的 Environment 跟 Reward,它根本就不是 Network 啊,它只是一个黑盒子而已**,你根本不知道裡面发生了什么事情,Environment 就是游戏机,那这个游戏机它裡面发生什么事情你不知道,你只知道说你输入一个东西会输出一个东西,你採取一个行为它会有对应的回应,但是到底是怎麽产生这个对应的回应,我们不知道,它只是一个黑盒子,
+
+**Reward 可能比较明确,但它也不是一个 Network,它就是一条规则**嘛,它就是一个规则说,看到这样子的 Optimization 跟这样的 Action,会得到多少的分数,它就只是一个规则而已,所以它也不是 Network
+
+而且更麻烦的地方是,**往往 Reward 跟 Environment,它也是有随机性的**,如果是在电玩裡面,通常 Reward 可能比较不会有随机性,因为规则是定好的,对有一些 RL 的问题裡面,Reward 是有可能有随机性的
+
+但是在 Environment 裡面,就算是在电玩的这个应用中,它也是有随机性的,你给定同样的行为,到底游戏机会怎麽样回应,它裡面可能也是有乱数的,它可能每次的回应也都是不一样,如果是下围棋,你落同一个子,你落在,你落子在同一个位置,你的对手会怎麽样回应,每次可能也是不一样
+
+![image-20210912230423421](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912230423421.png)
+
+所以环境很有可能也是有随机性的,所以这不是一个一般的 Optimization 的问题,你可能不能够用我们这门课已经学过的,训练 Network 的方法来找出这个 Actor,来最大化 Reward
+
+**所以 RL 真正的难点就是,我们怎麽解这一个 Optimization 的问题**,怎麽找到一组 Network 参数,可以让 R 越大越好
+
+其实你再仔细想一想啊,这整个问题**跟 GAN 其实有异曲同工之妙**,它们有一样的地方,也有不一样的地方
+
+- 先说它们**一样**的地方在哪裡,你记不记得在训练 GAN 的时候,在训练 Generator 的时候,你会把 Generator 跟 Discriminator 接在一起,然后你希望去调整 Generator 的参数,让 Discriminator 的输出越大越好,今天在 RL 裡面,我们也可以说这个 Actor 就像是 Generator,Environment 跟 Reward 就像是 Discriminator,我们要去**调整 Generator 的参数,让 Discriminator 的输出越大越好**,所以它跟 GAN 有异曲同工之妙
+
+- 但什么地方**不一样**呢,在 GAN 裡面你的 Discriminator,也是一个 Neural Network,你了解 Discriminator 裡面的每一件事情,它也是一个 Network,你可以用 Gradient Descent,来 train 你的 Generator,让 Discriminator 得到最大的输出,但是在 RL 的问题裡面,你的 **Reward 跟 Environment,你可以把它们当 Discriminator 来看,但它们不是 Network,它们是一个黑盒子,所以你没有办法用,一般 Gradient Descent 的方法来调整你的参数,来得到最大的输出**,所以这是 RL,跟一般 Machine Learning不一样的地方
+
+但是我们还是可以把 RL 就看成三个阶段,只是在 Optimization 的时候,在你怎麽 Minimize Loss,也就怎麽 Maximize Reward 的时候,跟之前我们学到的方法是不太一样的
+
+# Policy Gradient
+
+接下来啊,我们就要讲一个拿来解 RL,拿来做 Optimization 那一段常用的一个演算法,叫做 Policy Gradient
+
+![image-20210912231113114](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912231113114.png)
+
+那如果你真的想知道,Policy Gradient 是哪裡来的,你可以参见过去上课的[录影](https://youtu.be/W8XF3ME8G2I),对 Policy Gradient 有比较详细的推导,那今天我们是从另外一个角度,来讲 Policy Gradient 这件事情
+
+### How to control your actor 
+
+那在讲 Policy Gradient 之前,我们先来想想看,我们要怎麽操控一个 Actor 的输出,我们要怎麽让一个 Actor,在看到某一个特定的 Observation 的时候,採取某一个特定的行为呢,我们怎麽让一个 Actor,它的输入是 s 的时候,它就要输出 Action $\hat{a}$ 呢
+
+![image-20210912231731634](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912231731634.png)
+
+那你其实完全可以把它**想成一个分类的问题**,也就是说假设你要让 Actor 输入 s,输出就是 $\hat{a}$,假设 $\hat{a}$ 就是向左好了,假设你要让,假设你已经知道,假设你就是要教你的 Actor 说,看到这个游戏画面向左就是对的,你就是给我向左,那你要怎麽让你的 Actor 学到这件事呢
+
+![image-20210912231832863](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912231832863.png)
+
+那也就说 s 是 Actor 的输入,$\hat{a}$ 就是我们的 Label,就是我们的 Ground Truth,就是我们的正确答案,而接下来呢,你就可以计算你的 Actor,它的输出跟 Ground Truth 之间的 Cross-entropy,那接下来你就可以定义一个 Loss
+
+假设你希望你的 Actor,它**採取 $\hat{a}$ 这个行为的话**,你就定一个 Loss,这个 Loss 等于 Cross-entropy
+
+![image-20210912232003035](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912232003035.png)
+
+然后呢,你再去 Learn 一个 θ,你再去 Learn 一个 θ,然后这个 θ 可以让 Loss 最小,那你就可以让这个 Actor 的输出,跟你的 Ground Truth 越接近越好
+
+你就可以让你的 Actor 学到说,看到这个游戏画面的时候,它就是要向左,这个是要让你的 Actor,採取某一个行为的时候的做法
+
+但是假设你想要让你的 Actor,**不要採取某一个行为**的话,那要怎麽做呢,假设你希望做到的事情是,你的 Actor 看到某一个 Observation s 的时候,我就千万不要向左的话怎麽做呢,其实很容易,你**只需要把 Loss 的定义反过来就好**
+
+![image-20210912232223834](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912232223834.png)
+
+你希望你的 Actor 採取 $\hat{a}$ 这个行为,你就定义你的大 L 等于 Cross-entropy,然后你要 Minimize Cross-entropy,假设你要让你的 Actor,不要採取 $\hat{a}$ 这个行为的话,那你就把你就定一个 Loss,叫做负的 Cross-entropy,Cross-entropy 乘一个负号,那你去 Minimize 这个 L,你去 Minimize 这个 L,就是让 Cross-entropy 越大越好,那也就是让 a 跟 $\hat{a}$ 的距离越远越好,那你就可以避免你的 Actor 在看到 s 的时候,去採取 $\hat{a}$ 这个行为,所以我们有办法控制我们的 Actor,做我们想要做的事,只要我们给它适当的 Label 跟适当的 Loss,
 
 
 
-好 那这个就是有关,RL 跟 Machine Learning 三个步骤的关係,好 我们看一下大家有没有问题问,好 有一位同学问说,为什么负的 Total Reward 等于 Loss,好 为什么负的 Total Reward 会等于 Loss 呢,我们在 Training 的时候啊,在我们之前讲过的,所有的 Deep Learning 的 Training 裡面,我们都是定义了一个 Loss,要让这个 Loss 越小越好,在 RL 裡面呢,我们是定义了一个 Total Reward  R,然后我们要让那个 R 越大越好,但是要让 R 越大越好这件事情,我们完全可以反过来说,就是我们要让负的 R,就是 R 乘上一个负号,越小越好,所以我们就可以说,R 乘上一个负号就是 RL 的 Loss,如果以前学的模型没有固定,Random Seed 的话也算是有随机性吗,嗯 这两个随机性是不一样的,我们在之前的学模型的时候,没有固定 Random Seed,你是 Training 的时候有随机性,就是你没有固定 Random Seed,你可能 Initialize 的 Parameter 不一样,所以你每次训练出来的结果不一样,但是 RL 是在 Testing 的时候就有随机性,也就是说不是 Training 的时候有随机性喔,是测试的时候就已经有随机性了,所以如果拿一般的 Training 来比喻的话,就是你在你 Network Train 好以后,你拿这个 Network 在 Testing 的时候,你想要使用它,你把你要把这个 Network,使用在 Testing 的状况下,但发现说你给同样的 Input,每次输出都不一样,这个才是 RL 的随机性,所以 RL 是说你 Train 好一个 Actor,Actor 你 Learn 好了,Actor 参数都是固定的,但你拿这个 Actor 去跟环境互动的时候,每次的结果都是不一样的,因为你的环境就算是看到同样的输入,它每次给输出也可能是不一样的,所以 RL 是一个随机性特别大的问题啦,所以你可以想见这个作业有可能是,也确实是特别困难的,不过我觉得一个作业的难度啊,有时候不好说,因为 RL,如果今天你没有任何网路上参考资料的话,它可能是最难的,但另外一方面 RL 又蛮容易找到,各式各样的 GitHub 上的 Code,所以好像又没有那麽难,但是 RL 的随机性是会非常非常大的,就算是同样的 Network,你每次测试的时候,结果都可以是不一样,a1 下方写 （00：34：47）是写错了吗,这个我投影片后来有,可能是有改了一下,如果你有不清楚的地方你再问我好了,就是这个投影片我刚才在上课前改了一下,之后会把新的投影片再释出,好,好 大家还有问题要问一下吗,好 如果大家暂时没有问题的话,那我们就再继续,那我们就是在讲到一个段落呢,我们再休息,好 那接下来啊,我们就要讲一个拿来解 RL,拿来做 Optimization 那一段常用的一个演算法,叫做 Policy Gradient,那如果你真的想知道,Policy Gradient 是哪裡来的,你可以参见过去上课的录影,对 Policy Gradient 有比较详细的推导,那今天我们是从另外一个角度,来讲 Policy Gradient 这件事情,好 那在讲 Policy Gradient 之前,我们先来想想看,我们要怎麽操控一个 Actor 的输出,我们要怎麽让一个 Actor,在看到某一个特定的 Observation 的时候,採取某一个特定的行为呢,我们怎麽让一个 Actor,它的输入是 s 的时候,它就要输出 Action a^ 呢,那你其实完全可以把它想成一个分类的问题,也就是说假设你要让 Actor 输入 s,输出就是 a^,假设 a^ 就是向左好了,假设你要让,假设你已经知道,假设你就是要教你的 Actor 说,看到这个游戏画面向左就是对的,你就是给我向左,那你要怎麽让你的 Actor 学到这件事呢,那也就说 s 是 Actor 的输入,a^ 就是我们的 Label,就是我们的 Ground Truth,就是我们的正确答案,而接下来呢,你就可以计算你的 Actor,它的输出跟 Ground Truth 之间的 Cross-entropy,那接下来你就可以定义一个 Loss,假设你希望你的 Actor,它採取 a^ 这个行为的话,你就定一个 Loss,这个 Loss 等于 Cross-entropy,然后呢,你再去 Learn 一个 θ,你再去 Learn 一个 θ,然后这个 θ 可以让 Loss 最小,那你就可以让这个 Actor 的输出,跟你的 Ground Truth 越接近越好,你就可以让你的 Actor 学到说,看到这个游戏画面的时候,它就是要向左,这个是要让你的 Actor,採取某一个行为的时候的做法,但是假设你想要让你的 Actor,不要採取某一个行为的话,那要怎麽做呢,假设你希望做到的事情是,你的 Actor 看到某一个 Observation s 的时候,我就千万不要向左的话怎麽做呢,其实很容易,你只需要把 Loss 的定义反过来就好,你希望你的 Actor 採取 a^ 这个行为,你就定义你的大 L 等于 Cross-entropy,然后你要 Minimize Cross-entropy,假设你要让你的 Actor,不要採取 a^ 这个行为的话,那你就把你就定一个 Loss,叫做负的 Cross-entropy,Cross-entropy 乘一个负号,那你去 Minimize 这个 L,你去 Minimize 这个 L,就是让 Cross-entropy 越大越好,那也就是让 a 跟 a^ 的距离越远越好,那你就可以避免你的 Actor 在看到 s 的时候,去採取 a^ 这个行为,所以我们有办法控制我们的 Actor,做我们想要做的事,只要我们给它适当的 Label 跟适当的 Loss,所以假设我们要让我们的 Actor,看到 s 的时候採取 a^,看到 s' 的时候不要採取 a^' 的话,要怎麽做呢,这个时候你就会说,Given s 这个 Observation,我们的 Ground Truth 叫做 a^,Given s' 这个 Observation 的时候,我们有个 Ground Truth 叫做 a^',那对这两个 Ground Truth,我们都可以去计算 Cross-entropy,好 我们都可以去计算 Cross-entropy,e1 跟 e2,然后接下来呢,我们就定义说我们的 Loss,就是 e1 减 e2,也就是说我们要让这个 Case,它的 Cross-entropy 越小越好,这个 Case 它的 Cross-entropy 越大越好,然后呢,我们去找一个 θ 去 Minimize Loss,得到 θ⋆,那就是一个可以在 s,可以在看到 s 的时候採取 a^,看到 s' 的时候採取 a^' 的 Actor,所以藉由很像是在,Train 一个 Classifier 的这种行为,藉由很像是现在 Train 一个 Classifier,的这种 Data,我们可以去控制一个 Actor 的行为,好 我刚才讲到这边,有没有同学要问问题,好 有一个同学问了一个非常好的问题,就是如果以 Alien 的游戏来说的话,因为只有射中 Alien 才会有 Reward,这样 Model 不是就会一直倾向于射击吗,对 这个问题我们等一下会来解决它,之后的投影片就会来解决它,然后又有另外一个同学,问了一个非常好的问题就是,哇 这样不就回到 Supervised Learning 了嘛,这个投影片上看起来,就是在训练一个 Classifier 而已啊,我们就是在训练 Classifier,你只是告诉它说,看到 s 的时候就要输出 a^,看到 s' 的时候就不要输出 a^,a^',这不就是 Supervised Learning 吗,这就是 Supervised Learning,这个就是跟 Supervised Learning Train 的,Image Classifier 是一模一样的,但等下我们会看到它跟,一般的 Supervised Learning 不一样在哪裡,好 那我们就再继续再稍微看一段,我们再休息,那所以呢,如果我们要训练一个 Actor,我们其实就需要收集一些训练资料,就收集训练资料说,我希望在 s1 的时候採取 a^1,我希望在 s2 的时候不要採取 a^2,但可能会问说,欸 这个训练资料哪来的,这个我们等一下再讲训练资料哪来的,所以你就收集一大堆的资料,这个跟 Train 一个 Image 的 Classifier 很像的,这个 s 你就想成是 Image,这个 a^ 你就想成是 Label,只是现在有的行为是想要被採取的,有的行为是不想要被採取的,你就收集一堆这种资料,你就可以去定义一个 Loss Function,有了这个 Loss Function 以后,你就可以去训练你的 Actor,去 Minimize 这个 Loss Function,就结束了,你就可以训练一个 Actor,期待它执行我们的行为,期待它执行的行为是我们想要的,而你甚至还可以更进一步,你可以说每一个行为并不是只有好或不好,并不是有想要执行跟不想要执行而已,它是有程度的差别的,有执行的非常好的,有 Nice to have 的,有有点不好的,有非常差的,所以刚才啊,我们是说每一个行为就是要执行 不要执行,这是一个 Binary 的问题,这是我们就用 ±1 来表示,但是现在啊,我们改成每一个 s 跟 a 的 Pair,它有对应的一个分数,这个分数代表说,我们多希望机器在看到 s1 的时候,执行 a1^ 这个行为,那比如说这边第一笔资料跟第三笔资料,我们分别是定 +1.5 跟 +0.5,就代表说我们期待机器看到 s1 的时候,它可以做 a1^,看到 s3 的时候它可以做 a3^,但是我们期待它看到 s1 的时候,做 a1^ 的这个期待更强烈一点,比看到 s3 做 a3^ 的期待更强烈一点,那我们希望它在看到 s2 的时候,不要做 a2^,我们期待它看到 sN 的时候,不要做 aN^,而且我们非常不希望,它在看到 sN 的时候做 aN^,有了这些资讯,你一样可以定义一个 Loss Function,你只是在你的原来的 Cross-entropy 前面,本来是 Cross-entropy 前面,要嘛是 +1 要嘛是 -1,现在改成乘上 An 这一项,改成乘上 An 这一项,告诉它说有一些行为,我们非常期待 Actor 去执行,有一些行为我们非常不期待 Actor 去执行,有一些行为如果执行是比较好的,有一些行为希望儘量不要执行比较好,但就算执行了也许伤害也没有那麽大,所以我们透过这个 An 来控制说,每一个行为我们多希望 Actor 去执行,然后接下来有这个 Loss 以后,一样 Train 一个 θ,Train 下去你就找一个 θ⋆,你就有个 Actor 它的行为是符合我们期待的,那接下来的难点就是,要怎麽定出这一个 a 呢,这个就是我们接下来的难点,就是我们接下来要面对的问题,我们还有另外一个要面对的问题是,怎麽产生这个 s 跟 a 的 Pair 呢,怎麽知道在 s1 的时候要执行 a1,或在 s2 的时候不要执行 a2 呢,那这个也是等一下我们要处理的问题,
+所以假设我们要让我们的 Actor,**看到 s 的时候採取 $\hat{a}$,看到 s' 的时候不要採取 $\hat{a}$'** 的话,要怎麽做呢
+
+这个时候你就会说,Given s 这个 Observation,我们的 Ground Truth 叫做 $\hat{a}$,Given s' 这个 Observation 的时候,我们有个 Ground Truth 叫做 $\hat{a}$',那对这两个 Ground Truth, 我们都可以去计算 Cross-entropy,$e_1$ 跟 $e_2$
+
+![image-20210912232542292](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912232542292.png)
+
+然后接下来呢,我们就定义说我们的 Loss,就是 $e_1$ 减 $e_2$,也就是说我们要让这个 Case,它的 Cross-entropy 越小越好,这个 Case 它的 Cross-entropy 越大越好
+
+然后呢,我们去找一个 θ 去 Minimize Loss,得到 $θ^⋆$,那就是一个可以在 s,可以在看到 s 的时候採取 $\hat{a}$,看到 s' 的时候採取 $\hat{a}$' 的 Actor,所以藉由很像是在,Train 一个 Classifier 的这种行为,藉由很像是现在 Train 一个 Classifier,的这种 Data,我们可以去控制一个 Actor 的行为,
+
+
+
+有一个同学问了一个非常好的问题
+
+- **Q:**就是如果以 Alien 的游戏来说的话,因为只有射中 Alien 才会有 Reward,这样 Model 不是就会一直倾向于射击吗
+
+  **A:**对 这个问题我们等一下会来解决它,之后的投影片就会来解决它
+
+然后又有另外一个同学,问了一个非常好的问题就是
+
+- **Q:**哇 这样不就回到 Supervised Learning 了嘛,这个投影片上看起来,就是在训练一个 Classifier 而已啊,我们就是在训练 Classifier,你只是告诉它说,看到 s 的时候就要输出 $\hat{a}$,看到 s' 的时候就不要输出 $\hat{a}$,$\hat{a}$',这不就是 Supervised Learning 吗
+- **A:**这就是 Supervised Learning,这个就是跟 Supervised Learning Train 的,Image Classifier 是一模一样的,但等下我们会看到它跟,一般的 Supervised Learning 不一样在哪裡,
+
+
+
+那所以呢,如果我们要训练一个 Actor,我们其实就需要收集一些训练资料,就收集训练资料说,我希望在 $s_1$ 的时候採取 $\hat{a}$1,我希望在 $s_2$ 的时候不要採取 $\hat{a}$2
+
+![image-20210912233019856](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912233019856.png)
+
+但可能会问说,欸 这个训练资料哪来的,这个我们等一下再讲训练资料哪来的
+
+所以你就**收集一大堆的资料,这个跟 Train 一个 Image 的 Classifier 很像的**,这个 s 你就想成是 Image,这个 $\hat{a}$ 你就想成是 Label,只是现在有的行为是想要被採取的,有的行为是不想要被採取的,你就收集一堆这种资料,你就可以去定义一个 Loss Function,有了这个 Loss Function 以后,你就可以去训练你的 Actor,去 **Minimize 这个 Loss Function,就结束了**,你就可以训练一个 Actor,期待它执行我们的行为,期待它执行的行为是我们想要的
+
+
+
+而你甚至还可以更进一步,你可以说**每一个行为并不是只有好或不好**,并不是有想要执行跟不想要执行而已,**它是有程度的差别的**,有执行的非常好的,有 Nice to have 的,有有点不好的,有非常差的
+
+所以刚才啊,我们是说每一个行为就是要执行 不要执行,这是一个 Binary 的问题,这是我们就用 ±1 来表示
+
+![image-20210912233324323](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912233324323.png)
+
+但是现在啊,我们改成**每一个 s 跟 a 的 Pair,它有对应的一个分数**,这个分数代表说,我们多希望机器在看到 $s_1$ 的时候,执行 $\hat{a}_1$ 这个行为
+
+那比如说这边第一笔资料跟第三笔资料,我们分别是定 +1.5 跟 +0.5,就代表说我们期待机器看到 $s_1$ 的时候,它可以做 $\hat{a}_1$,看到 $s_3$ 的时候它可以做 $\hat{a}_3$,但是我们期待它看到 $s_1$ 的时候,做 $\hat{a}_1$ 的这个期待更强烈一点,比看到 $s_3$ 做 $\hat{a}_3$ 的期待更强烈一点
+
+那我们希望它在看到 $s_2$ 的时候,不要做 $\hat{a}_2$,我们期待它看到 sN 的时候,不要做 $\hat{a}_N$,而且我们非常不希望,它在看到 sN 的时候做 $\hat{a}_N$
+
+有了这些资讯,你一样可以定义一个 Loss Function,你只是在你的原来的 Cross-entropy 前面,本来是 Cross-entropy 前面,要嘛是 +1 要嘛是 -1
+
+现在改成乘上 An 这一项,改成乘上 An 这一项,告诉它说有一些行为,我们非常期待 Actor 去执行,有一些行为我们非常不期待 Actor 去执行,有一些行为如果执行是比较好的,有一些行为希望儘量不要执行比较好,但就算执行了也许伤害也没有那麽大
+
+所以我们**透过这个 An 来控制说,每一个行为我们多希望 Actor 去执行**,然后接下来有这个 Loss 以后,一样 Train 一个 θ,Train 下去你就找一个 $θ^⋆$,你就有个 Actor 它的行为是符合我们期待的
+
+![image-20210912233513464](https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210912233513464.png)
+
+那接下来的难点就是,要怎麽定出这一个 a 呢,这个就是我们接下来的难点,就是我们接下来要面对的问题,我们还有另外一个要面对的问题是,怎麽产生这个 s 跟 a 的 Pair 呢,怎麽知道在 $s_1$ 的时候要执行 $a_1$,或在 $s_2$ 的时候不要执行 $a_2$ 呢,那这个也是等一下我们要处理的问题,
