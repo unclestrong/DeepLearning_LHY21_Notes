@@ -58,3 +58,5 @@
 
 [29_Reinforcement Learning_P2](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/29_Reinforcement%20Learning_P2.html)
 
+[30_Reinforcement Learning_P3](https://unclestrong.github.io/DeepLearning_LHY21_Notes/Notes_html/30_Reinforcement%20Learning_P3.html)
+
