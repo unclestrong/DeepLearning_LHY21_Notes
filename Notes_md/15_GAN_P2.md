@@ -6,7 +6,7 @@ P1是用了一堆比喻说明GAN 的操作是怎麼进行的
 
 那我们先来弄清楚,我们今天的**训练的目标**到底是什麼
 
-<img src="C:\Users\10131\AppData\Roaming\Typora\typora-user-images\image-20210516185456967.png" alt="image-20210516185456967" style="zoom: 50%;" />
+<img src="https://gitee.com/unclestrong/deep-learning21_note/raw/master/imgbed/image-20210516185456967.png" alt="image-20210516185456967" style="zoom: 50%;" />
 
 我们在训练 Network 的时候,你就是要
 
