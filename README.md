@@ -1,62 +1,62 @@
 ## HTML 链接
 
-[01_Regression_P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/01_Regression_P1.md)
+[01_Regression_P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/01_Regression_P1.pdf)
 
-[02_Regression_P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/02_Regression_P2.md)
+[02_Regression_P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/02_Regression_P2.pdf)
 
-[03_GeneralGuidance_Overfitting](https://gitee.com/unclestrong/deep-learning21_note/blob/master/03_General%20Guidance.md)
+[03_GeneralGuidance_Overfitting](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/03_General%20Guidance.pdf)
 
-[04_Local Minimum And Saddle Point](https://gitee.com/unclestrong/deep-learning21_note/blob/master/04_Local%20Minimum%20And%20Saddle%20Point.md)
+[04_Local Minimum And Saddle Point](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/04_Local%20Minimum%20And%20Saddle%20Point.pdf)
 
-[05_Batch and Momentum](https://gitee.com/unclestrong/deep-learning21_note/blob/master/05_Batch%20and%20Momentum.md)
+[05_Batch and Momentum](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/05_Batch%20and%20Momentum.pdf)
 
-[06_Adaptive Learning Rate](https://gitee.com/unclestrong/deep-learning21_note/blob/master/06_Adaptive%20Learning%20Rate.md)
+[06_Adaptive Learning Rate](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/06_Adaptive%20Learning%20Rate.pdf)
 
-[07_Batch Normalization](https://gitee.com/unclestrong/deep-learning21_note/blob/master/07_Batch%20Normalization.md)
+[07_Batch Normalization](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/07_Batch%20Normalization.pdf)
 
-[08_Classification](https://gitee.com/unclestrong/deep-learning21_note/blob/master/08_Classification.md)
+[08_Classification](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/08_Classification.pdf)
 
-[09_CNN](https://gitee.com/unclestrong/deep-learning21_note/blob/master/09_CNN.md)
+[09_CNN](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/09_CNN.pdf)
 
-[10_Self-Attention P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/10_Self-attention_P1.md)
+[10_Self-Attention P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/10_Self-attention_P1.pdf)
 
-[11_Self-Attention P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/11_Self-attention_P2.md)
+[11_Self-Attention P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/11_Self-attention_P2.pdf)
 
-[12_Transformer P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/12_Transformer_P1.md)
+[12_Transformer P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/12_Transformer_P1.pdf)
 
-[13_Transformer P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/13_Transformer_P2.md)
+[13_Transformer P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/13_Transformer_P2.pdf)
 
-[14_GAN P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/14_GAN_P1.md)
+[14_GAN P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/14_GAN_P1.pdf)
 
-[15_GAN P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/15_GAN_P2.md)
+[15_GAN P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/15_GAN_P2.pdf)
 
-[16_GAN P3](https://gitee.com/unclestrong/deep-learning21_note/blob/master/16_GAN_P3.md)
+[16_GAN P3](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/16_GAN_P3.pdf)
 
-[17_GAN P4](https://gitee.com/unclestrong/deep-learning21_note/blob/master/17_GAN_P4.md)
+[17_GAN P4](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/17_GAN_P4.pdf)
 
-[18_BERT_P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/18_BERT_P1.md)
+[18_BERT_P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/18_BERT_P1.pdf)
 
-[19_BERT_P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/19_BERT_P2.md)
+[19_BERT_P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/19_BERT_P2.pdf)
 
-[20_BERT_P3](https://gitee.com/unclestrong/deep-learning21_note/blob/master/20_BERT_P3.md)
+[20_BERT_P3](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/20_BERT_P3.pdf)
 
-[21_Auto-encoder_P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/21_Auto-encoder_P1.md)
+[21_Auto-encoder_P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/21_Auto-encoder_P1.pdf)
 
-[22_Auto-encoder_P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/22_Auto-encoder_P2.md)
+[22_Auto-encoder_P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/22_Auto-encoder_P2.pdf)
 
-[23_Adversarial Attack_P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/23_Adversarial%20Attack_P1.md)
+[23_Adversarial Attack_P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/23_Adversarial%20Attack_P1.pdf)
 
-[24_Adversarial Attack_P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/24_Adversarial%20Attack_P2.md)
+[24_Adversarial Attack_P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/24_Adversarial%20Attack_P2.pdf)
 
-[25_Explainable AI_P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/25_Explainable%20AI_P1.md)
+[25_Explainable AI_P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/25_Explainable%20AI_P1.pdf)
 
-[26_Explainable AI_P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/26_Explainable%20AI_P2.md)
+[26_Explainable AI_P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/26_Explainable%20AI_P2.pdf)
 
-[27_Domain Adaptation](https://gitee.com/unclestrong/deep-learning21_note/blob/master/27_Domain%20Adaptation.md)
+[27_Domain Adaptation](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/27_Domain%20Adaptation.pdf)
 
-[28_Reinforcement Learning_P1](https://gitee.com/unclestrong/deep-learning21_note/blob/master/28_Reinforcement%20Learning_P1.md)
+[28_Reinforcement Learning_P1](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/28_Reinforcement%20Learning_P1.pdf)
 
-[29_Reinforcement Learning_P2](https://gitee.com/unclestrong/deep-learning21_note/blob/master/29_Reinforcement%20Learning_P2.md)
+[29_Reinforcement Learning_P2](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/29_Reinforcement%20Learning_P2.pdf)
 
-[30_Reinforcement Learning_P3](https://gitee.com/unclestrong/deep-learning21_note/blob/master/30_Reinforcement%20Learning_P3.md)
+[30_Reinforcement Learning_P3](https://github.com/unclestrong/DeepLearning_LHY21_Notes/blob/master/Notes_PDF/30_Reinforcement%20Learning_P3.pdf)
 
