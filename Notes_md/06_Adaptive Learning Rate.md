@@ -100,7 +100,7 @@ gradient是一个向量，下面是gradient的norm,即gradient这个向量的长
 $$
 {θ{_i}{^{t+1}}} ← {θ{_i}{^{t}}}-{\eta}{g{_i}{^{t}}}
 $$
-我们只看一个参数,这个参数叫做${θ{_i}{^{t}}}$,这个${θ{_i}{^{t}}}$在第t个iteration的值,减掉在第t个iteration这个参数i算出来的gradient ${g{_i}{^{t}}}$
+我们只看一个参数,这个参数叫做${θ{_i}{^{t+1}}}$,这个${θ{_i}{^{t+1}}}$是在第t个iteration的值减掉在第t个iteration这个参数i算出来的gradient ${g{_i}{^{t}}}$
 $$
 {g{_i}{^{t}}}=\frac{\partial{L}}{\partial{θ_i}}|_{θ=θ^t}
 $$
